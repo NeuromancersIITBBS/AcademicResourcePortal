@@ -22,5 +22,5 @@ var getResourcesByCode = function(str){
 var  getSubjectsByBranch=function(str){
     var jsonData = jsonSubjectsByBranch(str); //calling model function
     var jsObj=JSON.parse(jsonData);
-  return
+  return jsObj;
 }
