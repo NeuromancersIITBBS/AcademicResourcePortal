@@ -15,3 +15,12 @@ var getResourcesByCode = function(str){
 }
 
 
+//2.getSubjectsByBranch
+//Function that would a JS object
+//with all the subjects of a branches
+
+var  getSubjectsByBranch=function(str){
+    var jsonData = jsonSubjectsByBranch(str); //calling model function
+    var jsObj=JSON.parse(jsonData);
+  return
+}
