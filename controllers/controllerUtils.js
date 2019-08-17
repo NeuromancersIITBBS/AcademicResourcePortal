@@ -9,7 +9,7 @@
 
 //call the model
 var getResourcesByCode = function(str){
-    var jsonData = jsonResourcesByCode(str);
+    var jsonData = jsonResourcesByCode(str);  //model function
     var jsObj = JSON.parse(jsonData);
     return jsObj;
 }
