@@ -6,9 +6,9 @@
 
 // enter linking code here (link to uploadModel.js)
 
-var prepareFile = function(str, jsObj){       // str = subject code ; jsObj = file in JS object format
+var prepareFile = function(subjectCode, jsObj){       // subject code: eg. CS, EE, PH ; jsObj = file in JS object format
 
     // Convert Javascript object to JSON format
     var jsonData = JSON.stringify(jsObj);
-    postFile(str, jsonData);
+    postFile(subjectCode, jsonData);
 };
