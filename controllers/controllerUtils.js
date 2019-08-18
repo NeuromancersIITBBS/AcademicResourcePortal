@@ -8,19 +8,19 @@
 // enter linking code here (link to modelUtils.js)
 
 //call the model
-var getResourcesByCode = function(str){       //str is the subject code
-    var jsonData = jsonResourcesByCode(str);  //model function
+var getResourcesByCode = function(subjectCode){       
+    var jsonData = jsonResourcesByCode(subjectCode);  //model function
     var jsObj = JSON.parse(jsonData);
     return jsObj;
 }
 
 
-//2.getSubjectsByBranch
+//2. getSubjectsByBranch
 //Function that would return a JS object
 //with all the subjects of the specified branch
 
 var  getSubjectsByBranch=function(branch){       // branch = branch code eg. CS, EE, PH
-    var jsonData = jsonSubjectsByBranch(str); //calling model function
+    var jsonData = jsonSubjectsByBranch(branch); //calling model function
     var jsObj=JSON.parse(jsonData);
-  return jsObj;
+    return jsObj;
 }
