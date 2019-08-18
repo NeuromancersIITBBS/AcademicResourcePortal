@@ -1,7 +1,7 @@
 /* Model function */
 
-// 1. jsonAllSubjects
-// Function that would call the REST api and  fetch the json object containing
+// jsonAllSubjects
+// Function that would call the REST api and fetch the json object containing
 // all the subjects irrespective of branches.
 
 
