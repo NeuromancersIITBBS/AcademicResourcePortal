@@ -1,10 +1,8 @@
+// postFile
+// Function that would post file to the server
 
-
-var upload_file_function_at_model = function(str, jsonData){
-    var branch = str.substring(0,2);
+var postFile = function(str, jsonData){
+    var branch = str.substring(0,2);  //extracting branch from the subject code eg. CS from CS1L001
     var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${str}`;
-
-    // send file to endpoint
-    $.post(endpoint, jsonData);
-
+    $.post(endpoint, jsonData); // send file to endpoint
 };
