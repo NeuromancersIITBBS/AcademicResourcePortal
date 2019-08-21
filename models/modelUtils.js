@@ -19,7 +19,7 @@ var jsonResourcesByCode = function(subjectCode){
 // Function that would call the REST api and fetch the json object containing
 // all the subjects of the specified branch
 
-  var jsonSubjectsByBranch=function(branch){         // branch = branch code eg. CS, EE, PH
+  var jsonSubjectsByBranch = function(branch){         // branch = branch code eg. CS, EE, PH
   var endpoint=`http://server/studyResouces/branches/${branch}/subjects`;
   var jsondata;
   $.getJSON(endpoint, function(res){

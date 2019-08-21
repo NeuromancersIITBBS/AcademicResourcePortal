@@ -1,4 +1,4 @@
-//Requests by admin(s) are sent to server.
+//Requests by admin are sent to server.
 
 // deleteRequest(uniqueId)
 // Function that tells server to delete the file with this id.

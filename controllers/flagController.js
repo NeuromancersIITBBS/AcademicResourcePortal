@@ -1,8 +1,6 @@
 // functions for the flagging operation 
 // Assuming that unique id is in the format "subjectCode-id" eg. CS1L001235
 
-//linking code 
-
 var flag = 0; 
 
 var flagFile = function(uniqueID){

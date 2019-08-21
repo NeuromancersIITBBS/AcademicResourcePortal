@@ -1,4 +1,4 @@
-// postFile
+// postFile()
 // Function that would post file to the server
 
 var postFile = function(subjectCode, jsonData){
