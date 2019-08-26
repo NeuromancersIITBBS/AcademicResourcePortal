@@ -3,10 +3,12 @@
 //An array of relevant objects is returned
 
 //Loding data when document loads and process it to prepare for search.
+
+var searchArray = [];
+var searchResult = [];
 $(document).ready(function(){
     var jsonData = jsonAllSubjects();  //calling model function
-    var jsArray = JSON.parse(jsonData);
-    var searchArray = [];
+    var jsArray = JSON.parse(jsonData);    
     jsArray.forEach(function(item){
         let searchID = item.subjectName + item.subjectCode;
         searchID = searchID.toLowerCase();
@@ -17,8 +19,8 @@ $(document).ready(function(){
 
 // function to get the search results as per the query
 var search = function(query){
-  query = query.toLowerCase();
-  var searchResult = [];
+  query = query.toLowerCase(); 
+  searchResult.length=0;
   searchArray.forEach(function(item){
     if(item.searchID.includes(query)){
         searchResult.push(item);
