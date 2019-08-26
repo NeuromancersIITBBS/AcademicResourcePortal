@@ -1,12 +1,13 @@
-// prepareFile()
-// Function that would convert jsObj to JSON format and calls the postFile function in uploadModel.js
+// The function processes multiple files and their related data into JSON
+//and triggers the upload function for each file
 
-//Authentication code to be added soon.
-//Code for converting PDF/jpeg to suitable format for uploading ti be added soon.
-
-var prepareFile = function(subjectCode, jsObj){       // subject code: eg. CS, EE, PH ; jsObj = file in JS object format
-
-    // Convert Javascript object to JSON format
-    var jsonData = JSON.stringify(jsObj);
-    postFile(subjectCode, jsonData);
-};
+var uploadPreprocessing = function(email, num){   //num : number of files being uploaded at once
+    
+    let i = 0;
+    for(i=0 ; i<num ; i++){        
+        let formData = new FormData($("upload-form-subunit").get(i));
+        formData.append("email", email);
+        formJSON = JSON.stringify(formData);
+        upload(formData.subjectCode, formJSON);       
+    }   
+};  
