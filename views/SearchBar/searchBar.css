@@ -1,0 +1,80 @@
+/*Div containing input field and search button*/
+.autocomplete {
+  /*the container must be positioned relative:*/
+  margin: 10px auto;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+/*Input field css*/
+#myInput {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 18px;
+}
+#myInput[type=text] {
+  background-color: #fff;
+  width: 100%;
+}
+#myInput[type=text]:focus{
+  outline: 2px solid #ffc107;
+}
+
+
+/*Search button*/
+#searchSubject {
+  background-color: #ffc107;
+  color: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1px solid transparent;
+}
+#searchSubject:focus{
+  outline: none;
+}
+#searchSubject:hover{
+  background-color: #000;
+  color: #fff;
+  outline: none;
+}
+
+
+/*css for suggestion list*/
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid black;
+  z-index: 99;
+  /*The z-index property specifies the stack order of an element.
+  An element with greater stack order is always in front of an 
+  element with a lower stack order.*/
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+
+/*css for each suggestion item*/
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #ffc107; 
+  color: #000;
+}
+
+
+/*css for an active suggestion item*/
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #ffc107 !important; 
+  color: #000; 
+}
