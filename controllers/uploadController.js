@@ -2,12 +2,12 @@
 //and triggers the upload function for each file
 
 var uploadPreprocessing = function(email, num){   //num : number of files being uploaded at once
-    
+
     let i = 0;
-    for(i=0 ; i<num ; i++){        
-        let formData = new FormData($("upload-form-subunit").get(i));
+    for(i=0 ; i<num ; i++){
+        let formData = new FormData($(".upload-form-subunit").get(i));
         formData.append("email", email);
         formJSON = JSON.stringify(formData);
-        upload(formData.subjectCode, formJSON);       
-    }   
-};  
+        upload(formData.subjectCode, formJSON);
+    }
+};
