@@ -1,0 +1,33 @@
+
+.flag-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.unflag-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.all-files {
+  max-width: 650px;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.file-name {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+
+.flag-count {
+  font-size: 0.9rem;
+  color: #888;
+  vertical-align: middle;
+}
