@@ -9,8 +9,12 @@
     $.ajax({
         url: endpoint,
         type: 'PUT',
+        error: function(xhr){
+          alert("Something went wrong, please try again.");
+        },
         success: function(result) {
         response = 1;
+        alert("Successfully flagged! ");
         }
     });
     return response;
@@ -27,8 +31,12 @@ var unflagRequest = function(uniqueID){
    $.ajax({
        url: endpoint,
        type: 'PUT',
+       error: function(xhr){
+         alert("Something went wrong, please try again.");
+       },
        success: function(result) {
        response = 0;
+       alert("Successfully unflagged! ");
        }
    });
    return response;

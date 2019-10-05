@@ -8,10 +8,18 @@ var jsonResourcesByCode = function(subjectCode){
     var branch = subjectCode.substring(0,2);          //extracting branch from the subject code eg. CS from CS1L001
     var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}`;
     var jsonData;
-    $.getJSON(endpoint, function(res){
-        jsonData = res ;
+    var success = 0;
+    $.getJSON(endpoint, function(res,status,xhr){
+      if(status === "success")
+        success = 1;
+      jsonData = res ;
     });
-    return jsonData;
+    if(success)
+      return jsonData;
+    else {
+      alert("Something went wrong, please try again.");
+      return;
+    }
 };
 
 
@@ -22,10 +30,18 @@ var jsonResourcesByCode = function(subjectCode){
   var jsonSubjectsByBranch = function(branch){         // branch = branch code eg. CS, EE, PH
   var endpoint=`http://server/studyResouces/branches/${branch}/subjects`;
   var jsondata;
-  $.getJSON(endpoint, function(res){
-      jsonData = res ;
+  var success = 0;
+  $.getJSON(endpoint, function(res,status,xhr){
+    if(status === "success")
+      success = 1;
+    jsonData = res ;
   });
-  return jsonData;
+  if(success)
+    return jsonData;
+  else {
+    alert("Something went wrong, please try again.");
+    return;
+  }
 };
 
 
@@ -36,8 +52,16 @@ var jsonResourcesByCode = function(subjectCode){
   var jsonAllResources = function(){
   var endpoint="http://server/studyResouces";
   var jsondata;
-  $.getJSON(endpoint, function(res){
-      jsonData = res ;
+  var success = 0;
+  $.getJSON(endpoint, function(res,status,xhr){
+    if(status === "success")
+      success = 1;
+    jsonData = res ;
   });
-  return jsonData;
+  if(success)
+    return jsonData;
+  else {
+    alert("Something went wrong, please try again.");
+    return;
+  }
 };

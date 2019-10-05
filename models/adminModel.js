@@ -7,6 +7,12 @@ var deleteRequest = function(uniqueID){
   var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   $.ajax({
       url: endpoint,
-      type: 'DELETE'
+      type: 'DELETE',
+      error: function(xhr){
+        alert("Something went wrong, please try again.");
+      },
+      success: function(res){
+        alert("Success!");
+      }
   });
 }
