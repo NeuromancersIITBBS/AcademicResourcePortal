@@ -22,7 +22,6 @@
   text-decoration: none;
 }
 
-
 /*css for each card*/
 
 /*Gives proper spacing and sets text*/
@@ -52,5 +51,20 @@ cards while using bootstrap grid system) of the card*/
 .cardCover{
   margin: 10px 0px;
   float: left;
+}
+
+/*Style for return button*/
+.btnReturn{
+  background-color: #ffc107;
+  color: #000;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1px solid transparent;
+}
+.btnReturn:hover{
+  background-color: #ff1010;
 }
 
