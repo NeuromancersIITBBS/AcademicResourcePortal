@@ -8,8 +8,16 @@
 var jsonAllSubjects = function(){
   var endpoint = "http://server/studyResouces/subjects";
   var jsonData;
-  $.getJSON(endpoint, function(res){
+  var success = 0;
+  $.getJSON(endpoint, function(res,status,xhr){
+      if(status === "success")
+        success = 1;
       jsonData = res ;
   });
-  return jsonData;
+  if(success)
+    return jsonData;
+  else {
+    alert("Something went wrong, please try again.");
+    return;
+  }
 };

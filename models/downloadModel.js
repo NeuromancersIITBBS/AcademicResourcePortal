@@ -9,6 +9,9 @@
     $.ajax({
         url: endpoint,
         type: 'GET',
+        error: function(xhr){
+          alert("Something went wrong, please try again.");
+        },
         success: function(result) {
         //
         }
