@@ -27,3 +27,17 @@ var jsonResourcesByCode = function(subjectCode){
   });
   return jsonData;
 };
+
+
+// 3. jsonAllResources
+// Function that would call the REST api and fetch the json containing
+// all the information about all the resources.
+
+  var jsonAllResources = function(){
+  var endpoint="http://server/studyResouces";
+  var jsondata;
+  $.getJSON(endpoint, function(res){
+      jsonData = res ;
+  });
+  return jsonData;
+};
