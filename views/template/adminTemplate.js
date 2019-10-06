@@ -42,9 +42,9 @@ window.onload = function() {
 var flagArr=[],unflagArr=[];
 function countFlag(count) {
   if(count == 0) {
-    return `<img src="views/images/flag.png" style='width:20px'>`;
+    return `<img src="./views/images/flag.png" style='width:20px'>`;
   }else {
-    return `<img src="views/images/unflag.png" style='width:20px'>`;
+    return `<img src="./views/images/unflag.png" style='width:20px'>`;
   }
 }
 function flagTemplate(dataArr) {
