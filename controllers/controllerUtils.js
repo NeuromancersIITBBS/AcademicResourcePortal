@@ -4,11 +4,11 @@
 // Function that would return the JS object containing
 // all the academic resources available in the specified course code.
 
-var getResourcesByCode = function(subjectCode){       
-    var jsonData = jsonResourcesByCode(subjectCode);  //calling model function 
+var getResourcesByCode = function(subjectCode){
+    var jsonData = jsonResourcesByCode(subjectCode);  //calling model function
     var jsArray = JSON.parse(jsonData);
     return jsArray;
-}
+};
 
 
 //2. getSubjectsByBranch
@@ -19,4 +19,15 @@ var  getSubjectsByBranch=function(branch){       // branch = branch code eg. CS,
     var jsonData = jsonSubjectsByBranch(branch); //calling model function
     var jsArray=JSON.parse(jsonData);
     return jsArray;
-}
+};
+
+
+//3. getAllResources
+//Function that would return a JS array of objects having info about
+//all the resources available
+
+var getAllResources = function(){
+    var jsonData = jsonAllResources();
+    var jsArray = JSON.parse(jsonData);
+    return jsArray;
+};
