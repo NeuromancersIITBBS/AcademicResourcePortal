@@ -167,14 +167,12 @@ class SubjectTemplate{
         }
     }
     fillSubjects(subjectListDiv, data){
-        var L = data.length, i = 0, pTag, spanTag;
+        var L = data.length, i = 0, aTag, pTag;
         for(i = 0; i < L; i++){
-            pTag = $('<p>');
-            pTag.text(data[i].subjectName + ' ');
-            spanTag = $('<span>');
-            spanTag.text(data[i].subjectCode);
-            pTag.append(spanTag);
-            subjectListDiv.append(pTag);
+            aTag = $('<a>');
+            aTag.text(data[i].subjectName + ' ' + data[i].subjectCode);
+            aTag.attr('href', 'SubjectTemplate.html?subCode=' + data[i].subjectCode);
+            subjectListDiv.append(aTag);
         }
     }
 }
