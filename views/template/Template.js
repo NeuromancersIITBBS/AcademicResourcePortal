@@ -2,7 +2,7 @@ $(afterLoading);
 function afterLoading(){
     setupSchools();
 }
-
+// School Names and courses offered by the schools are hardcoded
 function setupSchools(){
     // Clear cardContainer
     $('.cardContainer').empty();
@@ -171,6 +171,7 @@ class SubjectTemplate{
         for(i = 0; i < L; i++){
             aTag = $('<a>');
             aTag.text(data[i].subjectName + ' ' + data[i].subjectCode);
+            // Uses subject code to identify the subject 
             aTag.attr('href', 'SubjectTemplate.html?subCode=' + data[i].subjectCode);
             subjectListDiv.append(aTag);
         }
