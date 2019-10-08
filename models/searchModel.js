@@ -6,7 +6,7 @@
 
 
 var jsonAllSubjects = function(){
-  var endpoint = "http://server/studyResouces/subjects";
+  var endpoint = "http://localhost:3000/studyResouces/subjects";
   var jsonData;
   var success = 0;
   $.getJSON(endpoint, function(res,status,xhr){

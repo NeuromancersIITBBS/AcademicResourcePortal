@@ -18,7 +18,7 @@
   border: none;
   outline: none;
   display: inline-block;
-  padding: 8px;
+  padding: 0px;
   color: #000;
   text-align: center;
   cursor: pointer;
@@ -55,7 +55,7 @@
 }
 
 
-/*Style for cover(cover is used to give proper spacing between the 
+/*Style for cover(cover is used to give proper spacing between the
 cards while using bootstrap grid system) of the card*/
 .cardCover{
   margin: 10px 0px;
@@ -65,8 +65,9 @@ cards while using bootstrap grid system) of the card*/
 /*Right aligning flags*/
 .links span{
   float: right;
+  background-color: #aaa;
+  margin: 0;
 }
-
 #note{
   background-color: black;
   color: white;

@@ -10,10 +10,11 @@ var cors = require('cors');
 
 
 // Mongo URI
-const mongoURI = 'mongodb://';
+//const mongoURI = "mongodb+srv://p_ash:mongoavp@cluster0-wogcq.mongodb.net/admin?retryWrites=true&w=majority
+//";
 
 // Create mongo connection
-var conn = mongoose.createConnection(mongoURI);
+var conn = mongoose.createConnection("mongodb+srv://p_ash:<password>@cluster0-wogcq.mongodb.net/admin?retryWrites=true&w=majority");
 var arpSchema = new mongoose.Schema({
   email_id : String,
   type : String,
@@ -46,7 +47,7 @@ conn.once('open', () => {
 
 // Create storage engine
 const storage = new GridFsStorage({
-  url: mongoURI,
+  url: "mongodb+srv://p_ash:<password>@cluster0-wogcq.mongodb.net/admin?retryWrites=true&w=majority",
   file: function(req, file){
       return new Promise((resolve, reject) => {
       crypto.randomBytes(16, (err, buf) => {
