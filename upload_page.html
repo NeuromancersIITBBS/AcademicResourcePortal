@@ -5,17 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <!--<script type="text/javascript" src="uploadFormTemplate.js"></script> -->
     <title>Upload Page</title>
-
+    <!--jQuery-->
+      <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous"></script>
     <!-- Model Imports -->
-    <script type="text/javascript" src="./models/uploadModel.js"></script>
+    <script type="text/javascript" src="models/uploadModel.js"></script>
 
     <!-- Controller Imports -->
-    <script type="text/javascript" src="./controllers/uploadController.js"></script>
+    <script type="text/javascript" src="controllers/uploadController.js"></script>
 
     <!-- Upload javascript import -->
-    <script type="text/javascript" src="./views/template/UploadTemplate.js"></script>
+
+    <script type="text/javascript" src="views/template/UploadTemplate.js"></script>
 
     <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,15 +28,15 @@
   <body style="background-color:#f2f2f2">
 
       <nav class="navbar navbar-expand-lg navbar-light text-dark fixed-top"  style="width:100%;background-color:#ffc107">
-              <img class="navbar-brand" src='./views/Images/collegelogo.png' style='width:30px '>
+              <img class="navbar-brand" src='views/images/collegelogo.png' style='width:30px '>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <img src="./views/Images/Hamburger.png" class="flexright" style='width:20px'>
+              <img src="views/images/hamburger.png" class="flexright" style='width:20px'>
               </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="#">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Contact us</a>
@@ -53,13 +57,13 @@
         </div>
 
 
+      <!--Here the form template will be created -->
+       <div class="container">
 
-      <div class="container">
-<!--            <form class="" id="UploadForm" action="" method="post">-->
-                  <div id="formContainer">
-                  </div>
+            <div id="formContainer">
+
+            </div>
                   <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-<!--            </form>-->
             <br>
             <button type="button" class="btn btn-primary" onclick=submit()>Submit</button>
             <button class="btn btn-primary" id="add_template_button" onclick=addtemplate() style="float:right">Add another Question paper</button>
@@ -67,21 +71,21 @@
 
 
       <template id="uploadtemplate">
-            <form enctype="multipart/form-data" class="upload-form-subunit">
+            <form class="upload-form-subunit">
                   <div class="form-row">
                         <div class="form-group col-sm-6  col-xs-12">
                               <label for="Subject_name">Subject Name</label>
-                              <input type="email" class="form-control" id="Subject_name" required>
+                              <input type="text" class="form-control" id="Subject_name" name="Subject_name" required>
                         </div>
                         <div class="form-group col-sm-6  col-xs-12">
                               <label for="Subject_code">Subject Code</label>
-                              <input type="email" class="form-control" id="Subject_code" placeholder="CSXL003" style="text-transform: uppercase" required />
+                              <input type="text" class="form-control" id="Subject_code" placeholder="CSXL003" style="text-transform: uppercase" name="Subject_code" required />
                         </div>
                   </div>
                   <div class="form-row">
                         <div class="form-group col">
-                              <label for="Subject_name">Type</label>
-                              <select class="form-control" id="type" required >
+                              <label for="Type">Type</label>
+                              <select class="form-control" id="Type" name="Type" required >
                                     <option value="Endsems" selected>Endsems</option>
                                     <option value="Midsems">Midsems</option>
                                     <option value="Tutorials">Tutorials</option>
@@ -90,23 +94,23 @@
                         </div>
                         <div class="form-group col-sm-4">
                               <label for="Semester">Semester</label>
-                              <select class="form-control" id="Subject_code" required>
+                              <select class="form-control" id="Semester" name="Semester" required>
                                     <option value="Autumn" selected>Autumn</option>
                                     <option value="Spring">Spring</option>
                               </select>
                         </div>
                   </div>
                   <div class="form-group">
-                        <label class="year">Question paper of Year</label>
-                        <select class="form-control col-4 col-lg-2" id="year" required>
+                        <label for="Year">Question paper of Year</label>
+                        <select class="form-control col-4 col-lg-2" id="Year" name="Year" required>
                                     <option value="2019" selected>2019</option>
                                     <option value='2018'>2018</option>
                               </select>
                   </div>
 
                   <div class="form-group">
-                        <label class="resource_file">Resource File</label>
-                        <input type="file" name="file" class="form-control-file" id="resource_file" required />
+                        <label for="resource_file">Resource File</label>
+                        <input type="file" class="form-control-file" id="resource_file" name="resource_file" required />
                   </div>
             </form>
       </template>
