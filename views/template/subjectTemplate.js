@@ -19,7 +19,6 @@ function afterLoading(){
 // Set on click listener on each resource file name
 function downloadResource(){
 	$('.links p').click(function(){
-		alert('You want to download a resource file');
 		var uniqueID = $(this).parent().find('input').val();
 		// Calls Controller function
 		downloadFile(uniqueID);
@@ -36,13 +35,8 @@ function flagOnClick(){
 		
 		// Using confirm method to confirm whether user really wants to flag a resource or not
 		var response = confirm('Do you really want to report resource ' + fileName + ' ?');
-		if(response){
-			if(currFlagCount == 0){
-				flagToggle(uniqueID);
-			}
-			else{	
-				alert('This resource is already reported.');
-			}
+		if(response){	
+			flagToggle(uniqueID);
 		}
 	});
 }
