@@ -4,7 +4,8 @@
  var flagRequest = function(uniqueID){
     var branch = uniqueID.substring(0,2);
     var subjectCode = uniqueID.substring(0,7);
-    var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/flag`;
+    var uniqueID = uniqueID.substring(7,uniqueID.length);
+    var endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/flag`;
     var response;
     $.ajax({
         url: endpoint,
@@ -26,6 +27,7 @@
 var unflagRequest = function(uniqueID){
    var branch = uniqueID.substring(0,2);
    var subjectCode = uniqueID.substring(0,7);
+    var uniqueID = uniqueID.substring(7,uniqueID.length);
    var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/unflag`;
    var response;
    $.ajax({
