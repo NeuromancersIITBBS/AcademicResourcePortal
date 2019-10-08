@@ -61,3 +61,14 @@ cards while using bootstrap grid system) of the card*/
   margin: 10px 0px;
   float: left;
 }
+
+/*Right aligning flags*/
+.links span{
+  float: right;
+}
+
+#note{
+  background-color: black;
+  color: white;
+  text-align: center;
+}

@@ -7,6 +7,38 @@ function afterLoading(){
 	else{
 		setupPage(subCode);
 	}
+	// Set on click listener for flags 
+	// When user clicks on a flag ask him for conformation and then flag the resource
+	flagOnClick();
+
+	// Set on click listener for each resource
+	// When user clicks on the resource download the resource
+	downloadResource();
+}
+
+// Set on click listener on each resource file name
+function downloadResource(){
+	$('.links p').click(function(){
+		var uniqueID = $(this).parent().find('input').val();
+		// Calls Controller function
+		downloadFile(uniqueID);
+	});
+}
+
+function flagOnClick(){
+	$('.links p span').click(function(event){
+		// Stop propagation otherwise resource download will be triggered
+		event.stopPropagation(); 
+		var fileName = $(this).parent().text();
+		var uniqueID = $(this).parent().find('input').val();
+		var currFlagCount = $(this).text();
+		
+		// Using confirm method to confirm whether user really wants to flag a resource or not
+		var response = confirm('Do you really want to report resource ' + fileName + ' ?');
+		if(response){	
+			flagToggle(uniqueID);
+		}
+	});
 }
 
 function setupPage(subCode){
@@ -36,7 +68,6 @@ function setupPage(subCode){
         var container = $('#resContainer');	
 
         arr = ['midsem', 'endsem', 'quiz', 'tutorial', 'other'];
-        console.log(arr);
         for(var i = 0; i < arr.length; i++){
         	let clone = template.prop('content'); 
         	$(clone).find('h3').empty();    
@@ -59,7 +90,6 @@ function setupPage(subCode){
     }
 }
 
-
 function fillData(list, resources, type){
 	var pTag, flagTag, idTag;
 	for(var i = 0; i < resources.length; i++){
@@ -67,6 +97,7 @@ function fillData(list, resources, type){
 			pTag = $('<p>');
 			flagTag = $('<span>');
 			pTag.html( resources[i].semester + '-' + resources[i].year);
+			// using font awesome flag icon
 			flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
 			 + ' ' + resources[i]["flags"]);
 			idTag = $('<input>');
@@ -79,42 +110,6 @@ function fillData(list, resources, type){
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Finds a property name in the query string and returns the value of that property
 function getParamByName(name) {
     var url = window.location.href;
@@ -125,6 +120,27 @@ function getParamByName(name) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function getRes(){
  	return [{
 			"email_id": "aaa999@iitbbs.ac.in",

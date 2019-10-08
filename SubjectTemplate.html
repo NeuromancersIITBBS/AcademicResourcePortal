@@ -16,18 +16,22 @@
 
     <!-- Model Imports -->
     <script type="text/javascript" src="models/modelUtils.js"></script>
+    <script type="text/javascript" src="models/downloadModel.js"></script>
+    <script type="text/javascript" src="models/flagModel.js"></script>
 
     <!-- Controller Imports -->
     <script type="text/javascript" src="controllers/controllerUtils.js"></script>
+    <script type="text/javascript" src="controllers/flagController.js"></script>
+    <script type="text/javascript" src="controllers/downloadController.js"></script>
 
     <!-- Subject Template Logic -->
-    <script type="text/javascript" src="views/SubjectTemplate/SubjectTemplate.js"></script>
+    <script type="text/javascript" src="views/template/subjectTemplate.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Subject Template Style -->
-    <link rel="stylesheet" href="views/SubjectTemplate/style.css" type="text/css">
+    <link rel="stylesheet" href="views/template/subjectTemplate.css" type="text/css">
 
     <title>Subject</title>
   </head>
@@ -42,14 +46,14 @@
 
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active">
-	          		<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	        	<li class="nav-item">
+	          		<a class="nav-link" href="index.html">Home</a>
 	        	</li>
 	        	<li class="nav-item">
 	        	  	<a class="nav-link" href="#">Contact us</a>
 	        	</li>
 		        <li class="nav-item">
-	        	  	<a class="nav-link" href="#">Upload</a>
+	        	  	<a class="nav-link" href="upload_page.html">Upload</a>
 	        	</li>
 		        <li class="nav-item">
 		          <a class="nav-link" href="#">Report </a>
@@ -64,9 +68,10 @@
             <p class="lead" id="subjectName"></p>
         </div>
   </div>
+    
+  <p id="note">Click on the flag to report a resource file.</p>
 
   <div id="resContainer">
-      
   </div>
 
   <template id="resTemplate">
