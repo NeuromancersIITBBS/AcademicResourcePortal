@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--jQuery-->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <!-- Model Imports -->
+    <script type="text/javascript" src="models/modelUtils.js"></script>
+    <script type="text/javascript" src="models/downloadModel.js"></script>
+    <script type="text/javascript" src="models/flagModel.js"></script>
+
+    <!-- Controller Imports -->
+    <script type="text/javascript" src="controllers/controllerUtils.js"></script>
+    <script type="text/javascript" src="controllers/flagController.js"></script>
+    <script type="text/javascript" src="controllers/downloadController.js"></script>
+
+    <!-- Subject Template Logic -->
+    <script type="text/javascript" src="views/template/subjectTemplate.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Subject Template Style -->
+    <link rel="stylesheet" href="views/template/subjectTemplate.css" type="text/css">
+
+    <title>Subject</title>
+  </head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light text-dark fixed-top"  style="width:100%;background-color:#ffc107">
+	    <img class="navbar-brand" src='./views/Images/collegelogo.png' style='width:30px '>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    	<img src="./views/Images/Hamburger.png" class="flexright" style='width:20px'>
+	    </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+	        	<li class="nav-item">
+	          		<a class="nav-link" href="index.html">Home</a>
+	        	</li>
+	        	<li class="nav-item">
+	        	  	<a class="nav-link" href="#">Contact us</a>
+	        	</li>
+		        <li class="nav-item">
+	        	  	<a class="nav-link" href="upload_page.html">Upload</a>
+	        	</li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Report </a>
+	    	    </li>
+	      	</ul>
+	    </div>
+	</nav>
+    <!--Heading-->
+    <div class="jumbotron jumbotron-fluid bg-warning" id="jumbotronSection">
+        <div class="container">
+            <h2 class="display-4 jumbotron-mainheading" id="subjectCode"><strong></strong></h2>
+            <p class="lead" id="subjectName"></p>
+        </div>
+  </div>
+
+  <p id="note">Click on the flag to report a resource file.</p>
+
+  <div id="resContainer">
+  </div>
+
+  <template id="resTemplate">
+    <div class="col-lg-4 col-sm-6 col-xs-6 cardCover">
+      <div class="cardContent">
+        <h3></h3>
+        <div class="links"></div>
+      </div>
+    </div>
+  </template>
+</body>
+</html>

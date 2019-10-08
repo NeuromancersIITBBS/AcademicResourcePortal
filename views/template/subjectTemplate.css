@@ -1,14 +1,24 @@
+* { box-sizing: border-box; }
+
+#jumbotronSection{
+  margin: 20px 0px 40px;
+}
+
+.jumbotron-mainheading{
+  font-size:50px;
+}
+
 /*css for div that contains all the cards*/
-.cardContainer p{
+#resContainer p{
   width: 100%;
 }
-.cardContainer p,.cardContainer a {
+#resContainer p{
   text-decoration: none;
   background-color: #f0f0f0;
   border: none;
   outline: none;
   display: inline-block;
-  padding: 8px;
+  padding: 0px;
   color: #000;
   text-align: center;
   cursor: pointer;
@@ -16,14 +26,13 @@
   margin: 5px 0px;
   font-size: 18px;
 }
-.cardContainer p:hover,.cardContainer a:hover {
+#resContainer p:hover{
   background-color: #000;
   color: #fff;
   text-decoration: none;
 }
 
 /*css for each card*/
-
 /*Gives proper spacing and sets text*/
 .cardContent {
   width: 90%;
@@ -46,25 +55,21 @@
 }
 
 
-/*Style for cover(cover is used to give proper spacing between the 
+/*Style for cover(cover is used to give proper spacing between the
 cards while using bootstrap grid system) of the card*/
 .cardCover{
   margin: 10px 0px;
   float: left;
 }
 
-/*Style for return button*/
-.btnReturn{
-  background-color: #ffc107;
-  color: #000;
-  margin: 0px auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 30px;
-  padding-left: 30px;
-  border: 1px solid transparent;
+/*Right aligning flags*/
+.links span{
+  float: right;
+  background-color: #aaa;
+  margin: 0;
 }
-.btnReturn:hover{
-  background-color: #ff1010;
+#note{
+  background-color: black;
+  color: white;
+  text-align: center;
 }
-

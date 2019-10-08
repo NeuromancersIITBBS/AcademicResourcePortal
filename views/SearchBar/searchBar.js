@@ -10,6 +10,9 @@ function onDocReady(){
   $('#searchSubject').click(function(){
     //Write code to call controller
     console.log(selecetedSearchID);
+    // With an assumption that selectedSearchID = subject code
+    window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
+    return false;
   });
 }
 //Calls onDocReady when document is ready
@@ -48,7 +51,7 @@ function searchBarSetup(inp) {
       result.forEach(function (item){
         sItem = $('<div>');
         suggestionLink = item.information;
-        suggestionLink += "<input type='hidden' value='" + item.searchID + "'>";
+        suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
         sItem.html(suggestionLink);
         sItem.on('click', function(e) {
             //Set value of the input field to be clicked subject name

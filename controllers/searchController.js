@@ -10,9 +10,9 @@ $(document).ready(function(){
     var jsonData = jsonAllSubjects();  //calling model function
     var jsArray = JSON.parse(jsonData);    
     jsArray.forEach(function(item){
-        let searchID = item.subjectName + item.subjectCode;
+        var searchID = item.subjectName + item.subjectCode;
         searchID = searchID.toLowerCase();
-        let obj = { information: item, searchID: searchID};
+        var obj = { information: item, searchID: searchID};
         searchArray.push(obj);
     });
 });

@@ -4,7 +4,8 @@
 // Function that tells server to delete the file with this id.
 
 var deleteRequest = function(uniqueID){
-  var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+    var uniqueID = uniqueID.substring(7,uniqueID.length);
+  var endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   $.ajax({
       url: endpoint,
       type: 'DELETE',
