@@ -7,13 +7,29 @@ function afterLoading(){
 	else{
 		setupPage(subCode);
 	}
-	// Sets on click listener for flags 
+	// Set on click listener for flags 
 	// When user clicks on a flag ask him for conformation and then flag the resource
 	flagOnClick();
+
+	// Set on click listener for each resource
+	// When user clicks on the resource download the resource
+	downloadResource();
+}
+
+// Set on click listener on each resource file name
+function downloadResource(){
+	$('.links p').click(function(){
+		alert('You want to download a resource file');
+		var uniqueID = $(this).parent().find('input').val();
+		// Calls Controller function
+		downloadFile(uniqueID);
+	});
 }
 
 function flagOnClick(){
-	$('.links p span').click(function(){
+	$('.links p span').click(function(event){
+		// Stop propagation otherwise resource download will be triggered
+		event.stopPropagation(); 
 		var fileName = $(this).parent().text();
 		var uniqueID = $(this).parent().find('input').val();
 		var currFlagCount = $(this).text();
