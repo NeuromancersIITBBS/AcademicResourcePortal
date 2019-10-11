@@ -9,7 +9,7 @@ var jsonAllSubjects = function(){
 
   $.ajax({
       url: endpoint,
-      type: GET,
+      type: 'GET',
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");
