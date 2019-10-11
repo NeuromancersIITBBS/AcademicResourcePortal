@@ -1,5 +1,5 @@
 // functions for the flagging operation
-// Assuming that unique id is in the format "subjectCode-id" eg. CS1L001235
+//Format of the uniqueID "subjectCode-id" eg. CS1L001235
 
 var flag = 0;
 

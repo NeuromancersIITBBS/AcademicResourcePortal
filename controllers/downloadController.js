@@ -1,6 +1,5 @@
-// functions for triggering download
-// Assuming that unique id is in the format "subjectCode-id" eg. CS1L001235
-//incomplete
-var downloadFile = function(uniqueID){                                 // flagging done only once each session
+// Function for triggering download
+//Expecting further changes based on backend implementation
+var downloadFile = function(uniqueID){
        download(uniqueID);
 };
