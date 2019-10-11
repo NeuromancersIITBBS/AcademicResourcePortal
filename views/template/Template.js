@@ -73,7 +73,7 @@ function branchOnClick(){
         //      Any other Info
         // };
 
-        subjectArr = getSubjectsByBranch(branchID);
+        //subjectArr = getSubjectsByBranch(branchID);
 
         // Propagate semester wise subjects
         let subjectTemp = new SubjectTemplate(subjectArr);
@@ -180,7 +180,7 @@ class SubjectTemplate{
 
 
 // Data for testing
-/*
+
 subjectArr = [[{
         subjectName: 'Physics',
         subjectCode: 'PH1L001'
@@ -244,4 +244,3 @@ subjectArr = [[{
 
 
     ] ];
-*/
