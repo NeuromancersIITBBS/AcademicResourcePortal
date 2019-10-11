@@ -55,11 +55,11 @@ function flagTemplate(dataArr) {
         <strong>Resource Id</strong>: ${dataArr.resource_id} <br>
         <strong>Flag Count</strong>: ${dataArr.flags}
       </h4>
-      <button type="button" class="btn btn-primary" onclick=submit()><img src="views/images/view.png" style='width:20px'></button>
+      <button type="button" class="btn btn-primary" onclick=submit()><img src="./views/images/view.png" style='width:20px'></button>
       <button type="button" class="btn btn-primary" onclick=flagToggle("${dataArr.resource_id}")>
       ${countFlag(dataArr.flags)}
       </button>
-      <button type="button" class="btn btn-primary" onclick=deleteFile("${dataArr.resource_id}")><img src="views/images/delete.png" style='width:20px'></button>
+      <button type="button" class="btn btn-primary" onclick=deleteFile("${dataArr.resource_id}")><img src="./views/images/delete.png" style='width:20px'></button>
     </div>
   `;
 }
