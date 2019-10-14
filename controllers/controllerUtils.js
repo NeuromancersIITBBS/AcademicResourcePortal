@@ -5,9 +5,19 @@
 // all the academic resources available in the specified course code.
 
 var getResourcesByCode = function(subjectCode){
-    var jsonData = jsonResourcesByCode(subjectCode);  //calling model function
-    var jsArray = JSON.parse(jsonData);
-    return jsArray;
+    let jsonData = jsonResourcesByCode(subjectCode);  //calling model function
+    let jsArray = JSON.parse(jsonData);
+    let obj = {
+      endsem : [],
+      midesem : [],
+      tutorial : [],
+      quiz : [],
+      others : []
+    };
+    jsArray.forEach(function(item){
+        obj[item.type].push(item);
+    });
+    return obj;
 };
 
 
