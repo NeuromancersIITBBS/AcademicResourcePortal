@@ -11,6 +11,14 @@ $(afterLoading);
 function afterLoading(){
       var form1 = new UploadTemplate();
       form1.populateTemplate();
+      $('#formContainer .removeBtn').attr('disabled', true);
+
+      $('#addTemplateButton').click(function(){
+            addTemplate();
+      });
+      $('#submit').click(function(){
+            submit();
+      });
 }
 
 class UploadTemplate {
@@ -19,8 +27,22 @@ class UploadTemplate {
                    var template = $('#uploadtemplate');
                    var formcontainer = $('#formContainer');
 
-                   var clone = template.prop('content');
-                   formcontainer.append(clone);  
+                   // var clone = template.prop('content');
+                   formcontainer.append(template.html()); 
+                   $('#formContainer .removeBtn').click(function(item){
+                        console.log(num);
+                        if(num <= 1){
+                              $(this).attr('disabled', true);
+                        }else{
+                              $(this).parent().remove();  
+                              num--;    
+                              if(num <= 1){
+                                    $('#formContainer .removeBtn').attr('disabled', true);
+                              }else{
+                                    resetAllButtons();
+                              }
+                        }
+                    }); 
              }
              else {
                    window.alert('HTML Template is not supported by Browser');
@@ -30,12 +52,18 @@ class UploadTemplate {
 
 
 //Function to add form Template
-function addtemplate(){
+function addTemplate(){
       var temp=new UploadTemplate();
       temp.populateTemplate();
       num++;
+      resetAllButtons();
 }
 
+
+// Sets disabled attribute of all buttons to be false
+function resetAllButtons(){
+      $('#formContainer .removeBtn').attr('disabled', false);
+}
 
 function submit(){
       uploadPreprocessing(email,num);    
