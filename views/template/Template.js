@@ -9,29 +9,55 @@ function setupSchools(){
 
     // Change heading to subjects
     $('#branchLists h3').text('Schools')
-    let SES = {
-        name : 'SES',
-        tData : ['Electrical Engg.', 'Electronics and Communication Engg.', 'Computer Scince Engg.'],
-        tSearchID : ['ee', 'ec', 'cs']
-    }
-    let SMS = {
-        name : 'SMS',
-        tData : ['Mechanical Engg.'],
-        tSearchID : ['me']
-    }
-    let SIF = {
-        name : 'SIF',
-        tData : ['Civil Engg.'],
-        tSearchID : ['ce']
-    }
 
-    let SEST = new BranchTemplate(SES);
-    let SMST = new BranchTemplate(SMS);
-    let SIFT = new BranchTemplate(SIF);
-    SEST.propagateTemplate();
-    SMST.propagateTemplate();
-    SIFT.propagateTemplate();
 
+    // Stores hardcoded schools names and degrees offered by each school and their ID
+    let schools = [{
+        name: 'SBS',
+        tData: ['Physics', 'Chemistry', 'Maths'],
+        tSearchID: ['PH', 'CH', 'MA']
+    },{
+        name: 'SEOCS',
+        tData: ['All Courses'], //Suggest degrees offered by SEOCS
+        tSearchID: ['OC'] // suggest an appropriate code for SEOCS
+    },{
+        name: 'SES',
+        tData: ['Computer Scince Engineering', 'Electronics and Communication Engineering', 'Electrical Engineering'],
+        tSearchID: ['CS', 'EC', 'EE']
+    },{
+        name: 'SHSS&M', //Suggest degrees offered by SHSS&M
+        tData: ['All Courses'],
+        tSearchID: ['HS'],
+    },{
+        name: 'SIF',
+        tData: ['Civil Engineering'],
+        tSearchID: ['CE'],
+    },{
+        name: 'SMS',
+        tData: ['Mechanical Engineering'],
+        tSearchID: ['ME'],
+    },{
+        name: 'SMMME',
+        tData: ['Metallurgical and Materials Engineering'],
+        tSearchID: ['MM'],
+    },{
+        name: 'Others',
+        tData: ['Breadths', 'Laterals', 'IDT Courses'], //Suggest a proper name for IDT Courses
+        tSearchID: ['BRD', 'LAT', 'IDT'] //Suggest proper codes
+    }];
+    
+    // Stores each branch template as a refernce
+    // can be used for some future applications
+    // let BranchTemplateArr = [];
+
+    //Propagates all school templates 
+    schools.forEach(function(item){
+        let template = new BranchTemplate(item);
+        template.propagateTemplate();
+        // BranchTemplateArr.push(template);
+    });
+
+    // Set on click listener for each degree/branch
     branchOnClick();
 }
 
@@ -101,11 +127,14 @@ class BranchTemplate{
 
             let clone = template.prop('content');
 
+            // Set Heading
             var tHeading = $(clone).find('h3');
             tHeading.text(this.tHeading);
 
+            // Fill data in lists
             this.fillData($(clone).find('.links'));
 
+            // Inserts template to the web page
             container.append(template.html());
 
             //Reset template
@@ -117,9 +146,12 @@ class BranchTemplate{
             alert("HTML template element is not supported.")
         }
     }
+
+    // Method that adds degrees/branchs in the school template
     fillData(cardContent){
         var L = this.tData.length, i = 0, pTag, ipTag;
         if(this.tData.length !== this.tSearchID.length){
+            // Only for testing
             console.log('Unequal tData and tSearchID array!');
         }
         for(i = 0; i < L; i++){
@@ -145,15 +177,16 @@ class SubjectTemplate{
             var template = $('#myTemplate');
             var container = $('.cardContainer');
 
-            // tHeading.text(this.tHeading);
+            // Makes seperate templates for each of the semester
             for(var i = 0; i < this.subArray.length; i++){
                 let clone = template.prop('content');
 
+                // Sets heading
                 let semHeading = $(clone).find('h3');
                 semHeading.text('Semseter - ' + (i+1));
 
+                // Fills the semester-i's template with the courses
                 this.fillSubjects($(clone).find('.links'), this.subArray[i]);
-                // this.fillData($(clone).find('.links'));
                 container.append(template.html());
 
                 //Reset template
