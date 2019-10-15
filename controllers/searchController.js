@@ -6,12 +6,11 @@
 var searchArray = [];
 var searchResult = [];
 $(document).ready(function(){
-    var jsonData = jsonAllSubjects();  //calling model function
-    var jsArray = JSON.parse(jsonData);
+    let jsArray = jsonAllSubjects();  //calling model function
     jsArray.forEach(function(item){
-        var searchID = item.subjectName + item.subjectCode;
+        let searchID = item.subjectName + item.subjectCode;
         searchID = searchID.toLowerCase();
-        var obj = { information: item, searchID: searchID};
+        let obj = { information: item, searchID: searchID};
         searchArray.push(obj);
     });
 });

@@ -2,8 +2,8 @@
 // upload(subjectCode, formData)
 
 var upload = function(subjectCode, formData){
-    var branch = subjectCode.substring(0,2);
-    var endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}`;
+    let branch = subjectCode.substring(0,2);
+    let endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}`;
 
     	$.ajax({
 					url : endpoint,
@@ -12,7 +12,7 @@ var upload = function(subjectCode, formData){
 					contentType : false,
 					processData : false
 				}).done(function(response){
-                    alert("Success");
+                    console.log("Success");
 				}).fail(function(){
                     alert("fail!");
 				}).always(function(){
