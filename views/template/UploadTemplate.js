@@ -1,37 +1,42 @@
-window.onload = afterLoading;
+// Global Variables
+
+//to count the number of files being uploaded at once
+var num =  1;
+//dummy data for email
+var email = 'email@gmail.com';
+
+// Runs afterLoading function after the page loads
+$(afterLoading);
+
 function afterLoading(){
-      var form1=new UploadTemplate();
+      var form1 = new UploadTemplate();
       form1.populateTemplate();
 }
 
 class UploadTemplate {
       populateTemplate(){
              if ('content' in document.createElement('template')){
-                   var template=document.querySelector("#uploadtemplate");
-                   var formcontainer=document.querySelector("#formContainer");
+                   var template = $('#uploadtemplate');
+                   var formcontainer = $('#formContainer');
 
-                   var clone=document.importNode(template.content, true);
-                   formcontainer.appendChild(clone);
+                   var clone = template.prop('content');
+                   formcontainer.append(clone);  
              }
              else {
-                   window.alert("HTML Template is not supported by Browser");
+                   window.alert('HTML Template is not supported by Browser');
              }
       }
 }
-//to count the number of files being uploaded at once
-var num=1;
-//dummy data for email
-var email='email@gmail.com';
+
 
 //Function to add form Template
 function addtemplate(){
       var temp=new UploadTemplate();
       temp.populateTemplate();
       num++;
-};
+}
 
 
 function submit(){
-       uploadPreprocessing(email,num);
-
-};
+      uploadPreprocessing(email,num);    
+}
