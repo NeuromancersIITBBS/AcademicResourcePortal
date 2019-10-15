@@ -1,120 +1,124 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <script type="text/javascript" src="uploadFormTemplate.js"></script>
-    <title>Upload Page</title>
+        <title>Upload Page</title>
+        <!--jQuery-->
+        <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+        <!-- Model Imports -->
+        <script type="text/javascript" src="./models/uploadModel.js"></script>
 
-    <!-- Model Imports -->
-    <script type="text/javascript" src="models/uploadModel.js"></script>
+        <!-- Controller Imports -->
+        <script type="text/javascript" src="./controllers/uploadController.js"></script>
 
-    <!-- Controller Imports -->
-    <script type="text/javascript" src="controllers/uploadController.js"></script>
+        <!-- Upload javascript import -->
 
-    <!-- Upload javascript import -->
-    <script type="text/javascript" src="views/template/UploadTemplate.js"></script>
+        <script type="text/javascript" src="./views/template/UploadTemplate.js"></script>
 
-    <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  </head>
-  <body style="background-color:#f2f2f2">
+    </head>
+    <body style="background-color:#f2f2f2">
 
-      <nav class="navbar navbar-expand-lg navbar-light text-dark fixed-top"  style="width:100%;background-color:#ffc107">
-              <img class="navbar-brand" src='views/images/collegelogo.png' style='width:30px '>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <img src="views/images/hamburger.png" class="flexright" style='width:20px'>
-              </button>
+        <nav class="navbar navbar-expand-lg navbar-light text-dark fixed-top"  style="width:100%;background-color:#ffc107">
+            <a href="./index.html">  <img class="navbar-brand" src='./views/Images/collegelogo.png' style='width:30px '></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="./views/Images/Hamburger.png" class="flexright" style='width:20px'>
+            </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Upload <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Report </a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ContactUs.html">Contact us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Upload <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Report </a>
+                    </li> -->
                 </ul>
-              </div>
-            </nav>
-      <div class="jumbotron jumbotron-fluid bg-warning" id="jumbotronSection">
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid bg-warning" id="jumbotronSection">
             <div class="container">
-        	<h4 class="display-4 jumbotron-mainheading"><b>Upload</b></h4>
-        		</div>
+                <h4 class="display-4 jumbotron-mainheading"><b>Upload</b></h4>
+            </div>
         </div>
 
 
+        <!--Here the form template will be created -->
+        <div class="container">
 
-      <div class="container">
-            <form class="" id="UploadForm" action="" method="post">
-                  <div id="formContainer">
-                  </div>
-                  <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-            </form>
+            <div id="formContainer">
+
+            </div>
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
             <br>
             <button type="button" class="btn btn-primary" onclick=submit()>Submit</button>
             <button class="btn btn-primary" id="add_template_button" onclick=addtemplate() style="float:right">Add another Question paper</button>
 
 
 
-      <template id="uploadtemplate">
-            <div class="upload-form-subunit">
-                  <div class="form-row">
+            <template id="uploadtemplate">
+                <form enctype="multipart/form-data" class="upload-form-subunit">
+                    <div class="form-row">
                         <div class="form-group col-sm-6  col-xs-12">
-                              <label for="Subject_name">Subject Name</label>
-                              <input type="email" class="form-control" id="Subject_name" required>
+                            <label for="Subject_name">Subject Name</label>
+                            <input type="text" class="form-control" id="Subject_name" name="subject_name" required>
                         </div>
                         <div class="form-group col-sm-6  col-xs-12">
-                              <label for="Subject_code">Subject Code</label>
-                              <input type="email" class="form-control" id="Subject_code" placeholder="CSXL003" style="text-transform: uppercase" required />
+                            <label for="Subject_code">Subject Code</label>
+                            <input type="text" class="form-control" id="Subject_code" placeholder="CSXL003" style="text-transform: uppercase" name="subject_code" required />
                         </div>
-                  </div>
-                  <div class="form-row">
+                    </div>
+                    <div class="form-row">
                         <div class="form-group col">
-                              <label for="Subject_name">Type</label>
-                              <select class="form-control" id="type" required >
-                                    <option value="Endsems" selected>Endsems</option>
-                                    <option value="Midsems">Midsems</option>
-                                    <option value="Tutorials">Tutorials</option>
-                                    <option value="Quizes">Quizes</option>
-                              </select>
+                            <label for="Type">Type</label>
+                            <select class="form-control" id="Type" name="type" required >
+                                <option value="Endsems" selected>Endsems</option>
+                                <option value="Midsems">Midsems</option>
+                                <option value="Tutorials">Tutorials</option>
+                                <option value="Quizes">Quizes</option>
+                            </select>
                         </div>
                         <div class="form-group col-sm-4">
-                              <label for="Semester">Semester</label>
-                              <select class="form-control" id="Subject_code" required>
-                                    <option value="Autumn" selected>Autumn</option>
-                                    <option value="Spring">Spring</option>
-                              </select>
+                            <label for="Semester">Semester</label>
+                            <select class="form-control" id="Semester" name="semester" required>
+                                <option value="Autumn" selected>Autumn</option>
+                                <option value="Spring">Spring</option>
+                            </select>
                         </div>
-                  </div>
-                  <div class="form-group">
-                        <label class="year">Question paper of Year</label>
-                        <select class="form-control col-4 col-lg-2" id="year" required>
-                                    <option value="2019" selected>2019</option>
-                                    <option value='2018'>2018</option>
-                              </select>
-                  </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Year">Question paper of Year</label>
+                        <select class="form-control col-4 col-lg-2" id="Year" name="year" required>
+                            <option value="2019" selected>2019</option>
+                            <option value='2018'>2018</option>
+                        </select>
+                    </div>
 
-                  <div class="form-group">
-                        <label class="resource_file">Resource File</label>
-                        <input type="file" class="form-control-file" id="resource_file" required />
-                  </div>
-            </div>
-      </template>
-</div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+                    <div class="form-group">
+                        <label for="resource_file">Resource File</label>
+                        <input type="file" class="form-control-file" id="resource_file" name="file" required />
+                    </div>
+                </form>
+            </template>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 </html>

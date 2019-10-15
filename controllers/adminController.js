@@ -1,7 +1,7 @@
-//Special powers for admin are implemented here.
+//Delete functionality (exclusive to admin)
 
-// 1.deleteFile
-// passes unique id to model
+// deleteFile(uniqueID)
+// passes unique id to model function
 
 var deleteFile = function(uniqueID){
   deleteRequest(uniqueID);

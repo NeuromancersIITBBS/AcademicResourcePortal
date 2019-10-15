@@ -1,10 +1,13 @@
-//Requests by admin are sent to server.
-
+//DELETE requests by admin are sent to server.
 // deleteRequest(uniqueId)
-// Function that tells server to delete the file with this id.
+// Function that tells server to delete the file with the uniqueIDd.
+//Format of uniqueID :- CS2L00101256 i.e. sunject_Code + some_number
 
 var deleteRequest = function(uniqueID){
-  var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+  var branch = uniqueID.substring(0,2);
+  var subjectCode = uniqueID.substring(0,7);
+  var uniqueID = uniqueID.substring(7,uniqueID.length);
+  var endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   $.ajax({
       url: endpoint,
       type: 'DELETE',
@@ -15,4 +18,4 @@ var deleteRequest = function(uniqueID){
         alert("Success!");
       }
   });
-}
+};

@@ -42,14 +42,16 @@
   outline: none;
 }
 
-
+.searchBar {
+  text-align: center;
+}
 /*css for suggestion list*/
 .autocomplete-items {
   position: absolute;
   border: 1px solid black;
   z-index: 99;
   /*The z-index property specifies the stack order of an element.
-  An element with greater stack order is always in front of an 
+  An element with greater stack order is always in front of an
   element with a lower stack order.*/
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
@@ -62,12 +64,12 @@
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: #fff; 
-  border-bottom: 1px solid #d4d4d4; 
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items div:hover {
   /*when hovering an item:*/
-  background-color: #ffc107; 
+  background-color: #ffc107;
   color: #000;
 }
 
@@ -75,6 +77,6 @@
 /*css for an active suggestion item*/
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: #ffc107 !important; 
-  color: #000; 
+  background-color: #ffc107 !important;
+  color: #000;
 }
