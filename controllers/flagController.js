@@ -5,12 +5,12 @@ var flag = 0;
 
 var flagToggle = function(uniqueID){
     if(flag === 0){
-        var response = flagRequest(uniqueID);
+        let response = flagRequest(uniqueID);
         if(response === 1)
             flag = 1;
     }
     else if(flag === 1){
-          var response = unflagRequest(uniqueID);
+          let response = unflagRequest(uniqueID);
           if(response === 0)
               flag = 0;
     }

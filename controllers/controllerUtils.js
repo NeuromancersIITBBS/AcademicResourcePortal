@@ -5,9 +5,18 @@
 // all the academic resources available in the specified course code.
 
 var getResourcesByCode = function(subjectCode){
-    var jsonData = jsonResourcesByCode(subjectCode);  //calling model function
-    var jsArray = JSON.parse(jsonData);
-    return jsArray;
+    let jsArray  = jsResourcesByCode(subjectCode);  //calling model function
+    let obj = {
+      endsem : [],
+      midesem : [],
+      tutorial : [],
+      quiz : [],
+      others : []
+    };
+    jsArray.forEach(function(item){
+        obj[item.type].push(item);
+    });
+    return obj;
 };
 
 
@@ -16,8 +25,7 @@ var getResourcesByCode = function(subjectCode){
 //all the subjects of the specified branch
 
 var  getSubjectsByBranch=function(branch){       // branch = branch code eg. CS, EE, PH
-    var jsonData = jsonSubjectsByBranch(branch); //calling model function
-    var jsArray=JSON.parse(jsonData);
+    let jsArray = jsSubjectsByBranch(branch);  //calling model function
     return jsArray;
 };
 
@@ -27,7 +35,6 @@ var  getSubjectsByBranch=function(branch){       // branch = branch code eg. CS,
 //all the resources available
 
 var getAllResources = function(){
-    var jsonData = jsonAllResources();
-    var jsArray = JSON.parse(jsonData);
+    let jsArray  = jsAllResources();
     return jsArray;
 };

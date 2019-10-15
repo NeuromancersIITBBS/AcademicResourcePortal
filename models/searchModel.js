@@ -3,9 +3,9 @@
 // all the subjects irrespective of branches
 
 var jsonAllSubjects = function(){
-  var endpoint = "http://localhost:3000/studyResouces/subjects";
-  var jsonData;
-  var success = 0;
+  let endpoint = "http://localhost:3000/studyResouces/subjects";
+  let jsonData;
+  let success = 0;
 
   $.ajax({
       url: endpoint,
@@ -15,9 +15,10 @@ var jsonAllSubjects = function(){
         alert("Something went wrong, please try again.");
       },
       success: function(res) {
-        alert("Success!");
+        console.log("Success!");
         jsonData = res;
-        return jsonData;
+        let jsArray = JSON.parse(jsonData);
+        return jsArray;
       }
 });
 

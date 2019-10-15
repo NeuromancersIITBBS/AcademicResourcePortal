@@ -2,11 +2,11 @@
 //Function that prompts the server to modify the flag variable.
 
  var flagRequest = function(uniqueID){
-    var branch = uniqueID.substring(0,2);
-    var subjectCode = uniqueID.substring(0,7);
-    var uniqueID = uniqueID.substring(7,uniqueID.length);
-    var endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/flag`;
-    var response;
+    let branch = uniqueID.substring(0,2);
+    let subjectCode = uniqueID.substring(0,7);
+    let uniqueID = uniqueID.substring(7,uniqueID.length);
+    let endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/flag`;
+    let response;
     $.ajax({
         url: endpoint,
         type: 'PUT',
@@ -15,7 +15,7 @@
         },
         success: function(result) {
         response = 1;
-        alert("Successfully flagged! ");
+        console.log("Successfully flagged! ");
         }
     });
     return response;
@@ -25,11 +25,11 @@
 //Function that prompts the server to unflag the already flagged resource.
 
 var unflagRequest = function(uniqueID){
-   var branch = uniqueID.substring(0,2);
-   var subjectCode = uniqueID.substring(0,7);
-   var uniqueID = uniqueID.substring(7,uniqueID.length);
-   var endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/unflag`;
-   var response;
+   let branch = uniqueID.substring(0,2);
+   let subjectCode = uniqueID.substring(0,7);
+   let uniqueID = uniqueID.substring(7,uniqueID.length);
+   let endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/unflag`;
+   let response;
    $.ajax({
        url: endpoint,
        type: 'PUT',
@@ -38,7 +38,7 @@ var unflagRequest = function(uniqueID){
        },
        success: function(result) {
        response = 0;
-       alert("Successfully unflagged! ");
+       console.log("Successfully unflagged! ");
        }
    });
    return response;
