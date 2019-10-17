@@ -1,5 +1,9 @@
 * { box-sizing: border-box; }
 
+body{
+  color: #fff;
+}
+
 #jumbotronSection{
   margin: 20px 0px 40px;
 }
@@ -45,13 +49,13 @@
   margin: 0px auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #99ffff;
+  background-color: #212121;
 }
 
 .cardContent .links{
   overflow: auto;
   height: 150px;
-  border: 2px solid #99ffff;
+  border: 2px solid #212121;
 }
 
 

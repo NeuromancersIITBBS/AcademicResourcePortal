@@ -36,19 +36,19 @@
   margin: 0px auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #99ffff;
+  background-color: #212121;
 }
 
 .cardContent .links{
   overflow: auto;
   height: 150px;
-  border: 2px solid #99ffff;
+  border: 2px solid #212121;
 }
 
 .branchCover .links{
   overflow: auto;
   height: auto;
-  border: 2px solid #99ffff;
+  border: 2px solid #212121;
 }
 
 /*Style for cover(cover is used to give proper spacing between the
@@ -66,7 +66,7 @@ cards while using bootstrap grid system) of the card*/
 
 /*Style for return button*/
 .btnReturn{
-  background-color: #99ffff;
+  background-color: #fff;
   color: #000;
   margin: 0px auto;
   padding-top: 10px;
@@ -76,5 +76,5 @@ cards while using bootstrap grid system) of the card*/
   border: 1px solid transparent;
 }
 .btnReturn:hover{
-  background-color: #ff1010;
+  background-color: #212121;
 }

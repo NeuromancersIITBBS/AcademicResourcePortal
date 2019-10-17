@@ -1,5 +1,7 @@
 * { box-sizing: border-box; }
-
+body{
+  color: #fff;
+}
 #jumbotronSection{
   margin: 20px 0px 40px;
 }

@@ -5,6 +5,7 @@
   position: relative;
   display: inline-block;
   text-align: left;
+  color: #000;
 }
 
 /*Input field css*/
@@ -19,14 +20,14 @@
   width: 100%;
 }
 #myInput[type=text]:focus{
-  outline: 2px solid #99ffff;
+  outline: 2px solid #212121;
 }
 
 
 /*Search button*/
 #searchSubject {
-  background-color: #99ffff;
-  color: #000;
+  background-color: #212121;
+  color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 30px;
@@ -37,8 +38,8 @@
   outline: none;
 }
 #searchSubject:hover{
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #424242;
   outline: none;
 }
 
@@ -69,14 +70,14 @@
 }
 .autocomplete-items div:hover {
   /*when hovering an item:*/
-  background-color: #99ffff;
-  color: #000;
+  background-color: #212121;
+  color: #fff;
 }
 
 
 /*css for an active suggestion item*/
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: #99ffff !important;
-  color: #000;
+  background-color: #212121 !important;
+  color: #fff;
 }

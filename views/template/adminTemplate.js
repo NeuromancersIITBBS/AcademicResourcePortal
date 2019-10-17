@@ -45,9 +45,9 @@ var flagArr=[],unflagArr=[];
 // loads different image acc to flag value
 function countFlag(count) {
   if(count == 0) {
-    return `<img src="./views/images/flag.png" style='width:20px'>`;
+    return `<img src="./views/Images/flag.png" style='width:20px'>`;
   }else {
-    return `<img src="./views/images/unflag.png" style='width:20px'>`;
+    return `<img src="./views/Images/unflag.png" style='width:20px'>`;
   }
 }
 // returns html string
@@ -61,11 +61,11 @@ function flagTemplate(dataArr) {
         <strong>Resource Id</strong>: ${dataArr.resourceId} <br>
         <strong>Flag Count</strong>: ${dataArr.flags}
       </h4>
-      <button type="button" class="btn btn-primary" onclick=submit()><img src="./views/images/view.png" style='width:20px'></button>
-      <button type="button" class="btn btn-primary" onclick=flagToggle("${dataArr.resourceId}")>
+      <button type="button" class="btn btn-light" onclick=submit()><img src="./views/Images/view.png" style='width:20px'></button>
+      <button type="button" class="btn btn-light" onclick=flagToggle("${dataArr.resourceId}")>
       ${countFlag(dataArr.flags)}
       </button>
-      <button type="button" class="btn btn-primary" onclick=deleteFile("${dataArr.resourceId}")><img src="./views/images/delete.png" style='width:20px'></button>
+      <button type="button" class="btn btn-light" onclick=deleteFile("${dataArr.resourceId}")><img src="./views/Images/delete.png" style='width:20px'></button>
     </div>
   `;
 }
