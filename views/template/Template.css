@@ -62,6 +62,7 @@ cards while using bootstrap grid system) of the card*/
 	text-align: center;
 	width: 100%;
 	padding: 60px;
+  color: #000;
 }
 
 /*Style for return button*/
