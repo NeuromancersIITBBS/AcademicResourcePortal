@@ -42,15 +42,15 @@ function setupSchools(){
         tSearchID: ['MM'],
     },{
         name: 'Others',
-        tData: ['Breadths', 'Laterals', 'IDT Courses'], //Suggest a proper name for IDT Courses
-        tSearchID: ['BRD', 'LAT', 'IDT'] //Suggest proper codes
+        tData: ['IDT Courses'], //Suggest a proper name for IDT Courses
+        tSearchID: ['ID'] //Suggest proper code
     }];
-    
+
     // Stores each branch template as a refernce
     // can be used for some future applications
     // let BranchTemplateArr = [];
 
-    //Propagates all school templates 
+    //Propagates all school templates
     schools.forEach(function(item){
         let template = new BranchTemplate(item);
         template.propagateTemplate();
@@ -71,7 +71,7 @@ function branchOnClick(){
         $('.cardContainer').empty();
 
         // Change heading to subjects
-        $('#branchLists h3').text('Subjects')
+        $('#branchLists h3').text(branchID);
 
 
         // Create a button to return to previous page
@@ -91,15 +91,14 @@ function branchOnClick(){
 
         // Call Controller to get subject list for that branch
         // Expected format
-        // jsArray = [sem1, sem2, ...]
-        // sem1 = [subject_1, subject_2, ...]
+        // jsArray = [subject_1, subject_2, ...]
         // subject_1 = {
-        //      subjectName = ,
-        //      subjectCode = , (subjectCode will act as subjectID)
+        //      subject_name = ,
+        //      subject_code = , (subjectCode will act as subjectID)
         //      Any other Info
         // };
 
-        //subjectArr = getSubjectsByBranch(branchID);
+        // subjectArr = getSubjectsByBranch(branchID.toUpperCase());
 
         // Propagate semester wise subjects
         let subjectTemp = new SubjectTemplate(subjectArr);
@@ -122,7 +121,7 @@ class BranchTemplate{
     }
     propagateTemplate(){
         if ('content' in document.createElement('template')) {
-            var template = $('#myTemplate');
+            var template = $('#schoolTemplate');
             var container = $('.cardContainer');
 
             let clone = template.prop('content');
@@ -174,25 +173,23 @@ class SubjectTemplate{
     }
     propagateTemplate(){
         if ('content' in document.createElement('template')) {
-            var template = $('#myTemplate');
+            var template = $('#branchTemplate');
             var container = $('.cardContainer');
 
             // Makes seperate templates for each of the semester
-            for(var i = 0; i < this.subArray.length; i++){
-                let clone = template.prop('content');
+              let clone = template.prop('content');
 
-                // Sets heading
-                let semHeading = $(clone).find('h3');
-                semHeading.text('Semseter - ' + (i+1));
+              // Sets heading
+              let subHeading = $(clone).find('h3');
+              subHeading.text('Subjects');
 
-                // Fills the semester-i's template with the courses
-                this.fillSubjects($(clone).find('.links'), this.subArray[i]);
-                container.append(template.html());
+              // Fills the semester-i's template with the courses
+              this.fillSubjects($(clone).find('.links'), this.subArray);
+              container.append(template.html());
 
-                //Reset template
-                $(clone).find('h3').empty();
-                $(clone).find('.links').empty();
-            }
+              //Reset template
+              $(clone).find('h3').empty();
+              $(clone).find('.links').empty();
          }
          else {
             // the HTML template element is not supported.
@@ -214,7 +211,7 @@ class SubjectTemplate{
 
 // Data for testing
 
-subjectArr = [[{
+subjectArr = [{
         subjectName: 'Physics',
         subjectCode: 'PH1L001'
     },
@@ -229,10 +226,7 @@ subjectArr = [[{
     {
         subjectName: 'Maths',
         subjectCode: 'MA1L001'
-    },],
-
-
-    [{
+    },{
         subjectName: 'Chemistry',
         subjectCode: 'CH1L001'
     },
@@ -247,10 +241,7 @@ subjectArr = [[{
     {
         subjectName: 'Learning English',
         subjectCode: 'HS1L001'
-    }],
-
-
-    [{
+    },{
         subjectName: 'Data Structures',
         subjectCode: 'CS2L003'
     },
@@ -274,6 +265,4 @@ subjectArr = [[{
         subjectName: 'Introduction to Economics',
         subjectCode: 'HS2L007'
     },
-
-
-    ] ];
+  ];

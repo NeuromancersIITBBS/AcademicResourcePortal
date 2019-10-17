@@ -45,8 +45,13 @@
   border: 2px solid #ffc107;
 }
 
+.branchCover .links{
+  overflow: auto;
+  height: auto;
+  border: 2px solid #ffc107;
+}
 
-/*Style for cover(cover is used to give proper spacing between the 
+/*Style for cover(cover is used to give proper spacing between the
 cards while using bootstrap grid system) of the card*/
 .cardCover{
   margin: 10px 0px;
@@ -67,4 +72,3 @@ cards while using bootstrap grid system) of the card*/
 .btnReturn:hover{
   background-color: #ff1010;
 }
-
