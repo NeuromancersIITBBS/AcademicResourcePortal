@@ -114,7 +114,10 @@ var jsResourcesByCode = function(subjectCode){
           flags: '0',
           subjectCode: 'CS2L003',
           resourceId: 'CS2L003050001'
-        },
+        }];
+      }
+      if(subjectCode==='CS1L001'){
+        jsArray=[
         {
           emailId: 'aaa999@iitbbs.ac.in',
           year: '2017',
