@@ -78,11 +78,11 @@ for(i=0;i<dataArr.length;i++) {
 }
 }
 // append return template string to html page
-document.getElementById("flag").innerHTML = `
+$("#flag").html( `
   ${flagArr.map(flagTemplate).join("")}
-`;
-document.getElementById("unflag").innerHTML = `
+`)
+$("#unflag").html( `
   ${unflagArr.map(flagTemplate).join("")}
-`;
+`)
 
 }
