@@ -5,40 +5,40 @@ function afterLoading() {
   // dummy data for testing
   // dataArr = [
   //  {
-  //    email_id: "random1@gmail.com",
+  //    emailId: "random1@gmail.com",
   //    type: "midsem",
   //    semester: "autumn",
-  //    subject_name: "Data Structures",
+  //    subjectName: "Data Structures",
   //    flags: 3,
-  //    subject_code: "CS2L002",
-  //    resource_id: "CS2L002145"
+  //    subjectCode: "CS2L002",
+  //    resourceId: "CS2L002145"
   //  },
   //  {
-  //    email_id: "random2@gmail.com",
+  //    emailId: "random2@gmail.com",
   //    type: "endsem",
   //    semester: "autumn",
-  //    subject_name: "Data Structures",
+  //    subjectName: "Data Structures",
   //    flags: 2,
-  //    subject_code: "CS2L002",
-  //    resource_id: "CS2L002105"
+  //    subjectCode: "CS2L002",
+  //    resourceId: "CS2L002105"
   //  },
   //  {
-  //    email_id: "random3@gmail.com",
+  //    emailId: "random3@gmail.com",
   //    type: "midsem",
   //    semester: "autumn",
-  //    subject_name: "Data Structures",
+  //    subjectName: "Data Structures",
   //    flags: 0,
-  //    subject_code: "CS2L002",
-  //    resource_id: "CS2L002115"
+  //    subjectCode: "CS2L002",
+  //    resourceId: "CS2L002115"
   //  },
   //  {
-  //    email_id: "random4@gmail.com",
+  //    emailId: "random4@gmail.com",
   //    type: "midsem",
   //    semester: "autumn",
-  //    subject_name: "Data Structures",
+  //    subjectName: "Data Structures",
   //    flags: 5,
-  //    subject_code: "CS2L002",
-  //    resource_id: "CS2L002123"
+  //    subjectCode: "CS2L002",
+  //    resourceId: "CS2L002123"
   // }
   // ];
 var flagArr=[],unflagArr=[];
@@ -51,21 +51,21 @@ function countFlag(count) {
   }
 }
 // returns html string
-// div contains email_id, resource_id and flags
+// div contains emailId, resourceId and flags
 // added buttons to view, delete and toggle flag value
 function flagTemplate(dataArr) {
   return `
     <div class="all-files">
       <h4 class="file-name">
-        <strong>Email Id</strong>: ${dataArr.email_id} <br>
-        <strong>Resource Id</strong>: ${dataArr.resource_id} <br>
+        <strong>Email Id</strong>: ${dataArr.emailId} <br>
+        <strong>Resource Id</strong>: ${dataArr.resourceId} <br>
         <strong>Flag Count</strong>: ${dataArr.flags}
       </h4>
       <button type="button" class="btn btn-primary" onclick=submit()><img src="./views/images/view.png" style='width:20px'></button>
-      <button type="button" class="btn btn-primary" onclick=flagToggle("${dataArr.resource_id}")>
+      <button type="button" class="btn btn-primary" onclick=flagToggle("${dataArr.resourceId}")>
       ${countFlag(dataArr.flags)}
       </button>
-      <button type="button" class="btn btn-primary" onclick=deleteFile("${dataArr.resource_id}")><img src="./views/images/delete.png" style='width:20px'></button>
+      <button type="button" class="btn btn-primary" onclick=deleteFile("${dataArr.resourceId}")><img src="./views/images/delete.png" style='width:20px'></button>
     </div>
   `;
 }

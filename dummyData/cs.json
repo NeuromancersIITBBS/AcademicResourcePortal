@@ -1,245 +1,244 @@
  [{
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003010009"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003010009"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "1",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003010008"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003010008"
 	}, {
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "2",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003020007"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003020007"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "3",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003020006"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003020006"
 	}, {
-		"email_id": "ade999@iitbbs.ac.in",
+		"emailId": "ade999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003030005"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003030005"
 	}, {
-		"email_id": "aef999@iitbbs.ac.in",
+		"emailId": "aef999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003030004"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003030004"
 	}, {
-		"email_id": "agh999@iitbbs.ac.in",
+		"emailId": "agh999@iitbbs.ac.in",
 		"year": "2019",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003030003"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003030003"
 	}, {
-		"email_id": "aij999@iitbbs.ac.in",
+		"emailId": "aij999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "quiz",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003040002"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003040002"
 	}, {
-		"email_id": "ajk999@iitbbs.ac.in",
+		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "other",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
-		"subject_code": "CS2L003",
-		"resource_id": "CS2L003050001"
+		"subjectCode": "CS2L003",
+		"resourceId": "CS2L003050001"
 	}, {
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "autumn",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001010901"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001010901"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "spring",
 		"subject_name": "Programming and Data Structure",
 		"flags": "1",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001010801"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001010801"
 	}, {
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "autumn",
 		"subject_name": "Programming and Data Structure",
 		"flags": "2",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001020701"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001020701"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "spring",
 		"subject_name": "Programming and Data Structure",
 		"flags": "3",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001020601"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001020601"
 	}, {
-		"email_id": "ade999@iitbbs.ac.in",
+		"emailId": "ade999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001030501"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001030501"
 	}, {
-		"email_id": "aef999@iitbbs.ac.in",
+		"emailId": "aef999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001030401"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001030401"
 	}, {
-		"email_id": "agh999@iitbbs.ac.in",
+		"emailId": "agh999@iitbbs.ac.in",
 		"year": "2019",
 		"type": "tutorial",
 		"semester": "spring",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001030301"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001030301"
 	}, {
-		"email_id": "aij999@iitbbs.ac.in",
+		"emailId": "aij999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "quiz",
 		"semester": "autumn",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001040201"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001040201"
 	}, {
-		"email_id": "ajk999@iitbbs.ac.in",
+		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "other",
 		"semester": "spring",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
-		"subject_code": "CS1L001",
-		"resource_id": "CS1L001050101"
+		"subjectCode": "CS1L001",
+		"resourceId": "CS1L001050101"
 	}, {
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "autumn",
 		"subject_name": "Discrete Structures",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001010091"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001010091"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "midsem",
 		"semester": "autumn",
 		"subject_name": "Discrete Structures",
 		"flags": "1",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001010081"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001010081"
 	}, {
-		"email_id": "aaa999@iitbbs.ac.in",
+		"emailId": "aaa999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "autumn",
 		"subject_name": "Discrete Structures",
 		"flags": "2",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001020071"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001020071"
 	}, {
-		"email_id": "abc999@iitbbs.ac.in",
+		"emailId": "abc999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "endsem",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "3",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001020061"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001020061"
 	}, {
-		"email_id": "ade999@iitbbs.ac.in",
+		"emailId": "ade999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001030051"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001030051"
 	}, {
-		"email_id": "aef999@iitbbs.ac.in",
+		"emailId": "aef999@iitbbs.ac.in",
 		"year": "2018",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001030041"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001030041"
 	}, {
-		"email_id": "agh999@iitbbs.ac.in",
+		"emailId": "agh999@iitbbs.ac.in",
 		"year": "2019",
 		"type": "tutorial",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001030031"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001030031"
 	}, {
-		"email_id": "aij999@iitbbs.ac.in",
+		"emailId": "aij999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "quiz",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001040021"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001040021"
 	}, {
-		"email_id": "ajk999@iitbbs.ac.in",
+		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
 		"type": "other",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
-		"subject_code": "CS2L001",
-		"resource_id": "CS2L001050011"
+		"subjectCode": "CS2L001",
+		"resourceId": "CS2L001050011"
 	}]
-

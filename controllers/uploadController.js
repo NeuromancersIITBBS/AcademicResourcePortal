@@ -7,6 +7,6 @@ var uploadPreprocessing = function(email, num){   //num : number of files being 
     for(i=0 ; i<num ; i++){
         let formData = new FormData($(".upload-form-subunit").get(i));
         formData.append("email", email);
-        upload(formData.get("subject_code"), formData);
+        upload(formData.get("subjectCode"), formData);
     }
 };
