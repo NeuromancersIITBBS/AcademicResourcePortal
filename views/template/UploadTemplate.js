@@ -3,7 +3,7 @@
 //to count the number of files being uploaded at once
 var num =  1;
 //dummy data for email
-var email = 'email@gmail.com';
+//var email = 'email@gmail.com';
 
 // Runs afterLoading function after the page loads
 $(afterLoading);
@@ -24,13 +24,14 @@ function afterLoading(){
             addTemplate();
       });
 
-      // Submit the form 
+      // Submit the form
       $('#submit').click(function(){
+
             submit();
       });
 
-      // As forms can be dynamically added or removed 
-      // this on click listener on formContainer which listens for 
+      // As forms can be dynamically added or removed
+      // this on click listener on formContainer which listens for
       // any click on a button with removeBtn class
       $('#formContainer').on('click','.removeBtn',function(item){
             item.stopPropagation();
@@ -41,9 +42,9 @@ function afterLoading(){
             }
             // User can remove a form if there are more than one forms
             else{
-                  $(this).parent().remove();  
+                  $(this).parent().remove();
                   // Maintains count of total forms
-                  num--;    
+                  num--;
                   // If after deleting only one form is left it cannot be deleted
                   if(num <= 1){
                         $('#formContainer .removeBtn').attr('disabled', true);
@@ -62,7 +63,7 @@ class UploadTemplate {
                    var formcontainer = $('#formContainer');
 
                    // Append form template at the end of the container
-                   formcontainer.append(template.html());  
+                   formcontainer.append(template.html());
              }
              else {
                    window.alert('HTML Template is not supported by Browser');
@@ -91,6 +92,16 @@ function resetAllRemoveButtons(){
       $('#formContainer .removeBtn').attr('disabled', false);
 }
 
+function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        return profile.getEmail();
+      }
+
 function submit(){
-      uploadPreprocessing(email,num);    
+      let email = onSignIn(googleUser);
+      if(email.includes("@iitbbs.ac.in"))
+        uploadPreprocessing(email,num);
+      else {
+        alert("Please sign in using Institute Email ID");
+      }
 }
