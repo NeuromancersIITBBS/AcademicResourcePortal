@@ -36,13 +36,13 @@ var getResourcesByCode = function(subjectCode){
       if(jsArray[i].type === "endsem")
       endsem.push(jsArray[i]);
       else if(jsArray[i].type === "midsem")
-      endsem.push(jsArray[i]);
+      midsem.push(jsArray[i]);
       else if(jsArray[i].type === "tutorial")
-      endsem.push(jsArray[i]);
+      tutorial.push(jsArray[i]);
       else if(jsArray[i].type === "quiz")
-      endsem.push(jsArray[i]);
+      quiz.push(jsArray[i]);
       else if(jsArray[i].type === "others")
-      endsem.push(jsArray[i]);
+      others.push(jsArray[i]);
     }
 
     let obj = {
@@ -52,6 +52,7 @@ var getResourcesByCode = function(subjectCode){
       quiz : quiz,
       others : others
     };
+    console.log(obj);
     return obj;
 };
 

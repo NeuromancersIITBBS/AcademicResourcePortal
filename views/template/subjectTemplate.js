@@ -73,7 +73,7 @@ function setupPage(subCode){
         	$(clone).find('.links').empty();
         	let tHeading = $(clone).find('h3');
         	tHeading.text(arr[i]);
-        	fillData($(clone).find('.links'), resources, resources[arr[i]]);
+        	fillData($(clone).find('.links'), resources[arr[i]]);
         	container.append(template.html());
         }
 
@@ -89,7 +89,7 @@ function setupPage(subCode){
     }
 }
 
-function fillData(list, resources, type){
+function fillData(list, resources){
 	let pTag, flagTag, idTag;
 	for(let i = 0; i < resources.length; i++){
 		pTag = $('<p>');
