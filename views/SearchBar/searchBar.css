@@ -19,13 +19,13 @@
   width: 100%;
 }
 #myInput[type=text]:focus{
-  outline: 2px solid #ffc107;
+  outline: 2px solid #99ffff;
 }
 
 
 /*Search button*/
 #searchSubject {
-  background-color: #ffc107;
+  background-color: #99ffff;
   color: #000;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -69,7 +69,7 @@
 }
 .autocomplete-items div:hover {
   /*when hovering an item:*/
-  background-color: #ffc107;
+  background-color: #99ffff;
   color: #000;
 }
 
@@ -77,6 +77,6 @@
 /*css for an active suggestion item*/
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: #ffc107 !important;
+  background-color: #99ffff !important;
   color: #000;
 }
