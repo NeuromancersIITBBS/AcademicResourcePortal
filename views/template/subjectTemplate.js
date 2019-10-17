@@ -52,13 +52,13 @@ function setupPage(subCode){
 	if(!resources) {
 		return;
 	}
-	let subName = resources['midsem'][0]["subjectName"];
+	//let subName = resources['midsem'][0]["subjectName"];
 	// Available info: emailId, year, type, semester,
 	//  				subjectName, flags, subjectCode,
 	// 					resourceId
 
 	// Changes heading of the page
-	$('#subjectName').text(subName);
+	//$('#subjectName').text(subName);
 
 	// Creates 5 empty lists: midsem, endsem, tutorial, quiz, others
 
