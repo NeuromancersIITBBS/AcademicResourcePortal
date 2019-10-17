@@ -1,16 +1,16 @@
-
+/* css for flag title */
 .flag-title {
   text-align: center;
   font-weight: normal;
   font-size: 2rem;
 }
-
+/* css for unflag title */
 .unflag-title {
   text-align: center;
   font-weight: normal;
   font-size: 2rem;
 }
-
+/* css for each div */
 .all-files {
   max-width: 450px;
   padding: 20px;

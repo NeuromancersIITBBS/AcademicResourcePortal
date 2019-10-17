@@ -1,45 +1,48 @@
-window.onload = function() {
-  //dataArr = getAllResources();  call controller to get all resources
-  //dummy data for testing
-  dataArr = [
-   {
-     email_id: "random1@gmail.com",
-     type: "midsem",
-     semester: "autumn",
-     subject_name: "Data Structures",
-     flags: 3,
-     subject_code: "CS2L002",
-     resource_id: "CS2L002145"
-   },
-   {
-     email_id: "random2@gmail.com",
-     type: "endsem",
-     semester: "autumn",
-     subject_name: "Data Structures",
-     flags: 2,
-     subject_code: "CS2L002",
-     resource_id: "CS2L002105"
-   },
-   {
-     email_id: "random3@gmail.com",
-     type: "midsem",
-     semester: "autumn",
-     subject_name: "Data Structures",
-     flags: 0,
-     subject_code: "CS2L002",
-     resource_id: "CS2L002115"
-   },
-   {
-     email_id: "random4@gmail.com",
-     type: "midsem",
-     semester: "autumn",
-     subject_name: "Data Structures",
-     flags: 5,
-     subject_code: "CS2L002",
-     resource_id: "CS2L002123"
-  }
-  ];
+$(afterLoading);
+function afterLoading() {
+  // call controller to get all resources
+   dataArr = getAllResources();
+  // dummy data for testing
+  // dataArr = [
+  //  {
+  //    email_id: "random1@gmail.com",
+  //    type: "midsem",
+  //    semester: "autumn",
+  //    subject_name: "Data Structures",
+  //    flags: 3,
+  //    subject_code: "CS2L002",
+  //    resource_id: "CS2L002145"
+  //  },
+  //  {
+  //    email_id: "random2@gmail.com",
+  //    type: "endsem",
+  //    semester: "autumn",
+  //    subject_name: "Data Structures",
+  //    flags: 2,
+  //    subject_code: "CS2L002",
+  //    resource_id: "CS2L002105"
+  //  },
+  //  {
+  //    email_id: "random3@gmail.com",
+  //    type: "midsem",
+  //    semester: "autumn",
+  //    subject_name: "Data Structures",
+  //    flags: 0,
+  //    subject_code: "CS2L002",
+  //    resource_id: "CS2L002115"
+  //  },
+  //  {
+  //    email_id: "random4@gmail.com",
+  //    type: "midsem",
+  //    semester: "autumn",
+  //    subject_name: "Data Structures",
+  //    flags: 5,
+  //    subject_code: "CS2L002",
+  //    resource_id: "CS2L002123"
+  // }
+  // ];
 var flagArr=[],unflagArr=[];
+// loads different image acc to flag value
 function countFlag(count) {
   if(count == 0) {
     return `<img src="./views/images/flag.png" style='width:20px'>`;
@@ -47,6 +50,9 @@ function countFlag(count) {
     return `<img src="./views/images/unflag.png" style='width:20px'>`;
   }
 }
+// returns html string
+// div contains email_id, resource_id and flags
+// added buttons to view, delete and toggle flag value
 function flagTemplate(dataArr) {
   return `
     <div class="all-files">
@@ -63,6 +69,7 @@ function flagTemplate(dataArr) {
     </div>
   `;
 }
+// takes data from json array and separates flagged and unflagged files
 for(i=0;i<dataArr.length;i++) {
   if(dataArr[i].flags!=0) {
    flagArr.push(dataArr[i]);
@@ -70,6 +77,7 @@ for(i=0;i<dataArr.length;i++) {
    unflagArr.push(dataArr[i]);
 }
 }
+// append return template string to html page
 document.getElementById("flag").innerHTML = `
   ${flagArr.map(flagTemplate).join("")}
 `;

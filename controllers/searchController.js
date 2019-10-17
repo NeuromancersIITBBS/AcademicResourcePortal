@@ -6,7 +6,7 @@
 var searchArray = [];
 var searchResult = [];
 $(document).ready(function(){
-    let jsArray = jsonAllSubjects();  //calling model function
+    let jsArray = jsAllSubjects();  //calling model function
     jsArray.forEach(function(item){
         let searchID = item.subjectName + item.subjectCode;
         searchID = searchID.toLowerCase();
