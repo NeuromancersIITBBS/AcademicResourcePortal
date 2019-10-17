@@ -29,12 +29,13 @@ function branchOnClick(){
     // and add semseter wise subject list in the div
     $('.cardContainer p').click(function(){
         branchID = $(this).find('input').val();
-        console.log(branchID);
+        var branchName = $(this).text();
+        console.log(branchName);
         // Clear cardContainer
         $('.cardContainer').empty();
 
         // Change heading to subjects
-        $('#branchLists h3').text(branchID);
+        $('#branchLists h3').text(branchName);
 
 
         // Create a button to return to previous page

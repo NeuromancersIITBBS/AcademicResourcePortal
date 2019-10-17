@@ -50,7 +50,7 @@ function searchBarSetup(inp) {
       //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        suggestionLink = item.information.subjectName + '( ' + item.information.subjectCode + ')';
+        suggestionLink = item.information.subjectName + ' (' + item.information.subjectCode + ')';
         suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
         sItem.html(suggestionLink);
         sItem.on('click', function(e) {
