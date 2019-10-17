@@ -1,9 +1,9 @@
-// Global Variables
+// Global letiables
 
 //to count the number of files being uploaded at once
-var num =  1;
+let num =  1;
 //dummy data for email
-//var email = 'email@gmail.com';
+//let email = 'email@gmail.com';
 
 // Runs afterLoading function after the page loads
 $(afterLoading);
@@ -12,7 +12,7 @@ $(afterLoading);
 
 function afterLoading(){
       // Create first form
-      var form1 = new UploadTemplate();
+      let form1 = new UploadTemplate();
       form1.populateTemplate();
 
       // User cannot remove a form if only one form is there on the screen
@@ -59,8 +59,8 @@ class UploadTemplate {
       populateTemplate(){
              if ('content' in document.createElement('template')){
                    // Select form template and container in which it needs to be appended
-                   var template = $('#uploadtemplate');
-                   var formcontainer = $('#formContainer');
+                   let template = $('#uploadtemplate');
+                   let formcontainer = $('#formContainer');
 
                    // Append form template at the end of the container
                    formcontainer.append(template.html());
@@ -74,7 +74,7 @@ class UploadTemplate {
 
 //Function to add form Template
 function addTemplate(){
-      var temp = new UploadTemplate();
+      let temp = new UploadTemplate();
       temp.populateTemplate();
       // we need to activate remove button of the first form when
       // we add a form and only one form is there on the screen
@@ -93,7 +93,7 @@ function resetAllRemoveButtons(){
 }
 
 function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
+        let profile = googleUser.getBasicProfile();
         return profile.getEmail();
       }
 

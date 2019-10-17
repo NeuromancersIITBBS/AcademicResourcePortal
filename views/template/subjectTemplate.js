@@ -2,7 +2,7 @@
 $(afterLoading);
 
 function afterLoading(){
-	var subCode = getParamByName('subCode');
+	let subCode = getParamByName('subCode');
 	if(!subCode) {alert('Invalid Subject Code')}
 	else{
 		setupPage(subCode);
@@ -19,7 +19,7 @@ function afterLoading(){
 // Set on click listener on each resource file name
 function downloadResource(){
 	$('.links p').click(function(){
-		var uniqueID = $(this).parent().find('input').val();
+		let uniqueID = $(this).parent().find('input').val();
 		// Calls Controller function
 		downloadFile(uniqueID);
 	});
@@ -29,12 +29,12 @@ function flagOnClick(){
 	$('.links p span').click(function(event){
 		// Stop propagation otherwise resource download will be triggered
 		event.stopPropagation();
-		var fileName = $(this).parent().text();
-		var uniqueID = $(this).parent().find('input').val();
-		var currFlagCount = $(this).text();
+		let fileName = $(this).parent().text();
+		let uniqueID = $(this).parent().find('input').val();
+		let currFlagCount = $(this).text();
 
 		// Using confirm method to confirm whether user really wants to flag a resource or not
-		var response = confirm('Do you really want to report resource ' + fileName + ' ?');
+		let response = confirm('Do you really want to report resource ' + fileName + ' ?');
 		if(response){
 			flagToggle(uniqueID);
 		}
@@ -47,13 +47,12 @@ function setupPage(subCode){
 	// Changes heading of the page
 	$('#subjectCode strong').text(subCode);
 	console.log(subCode);
-	var resources = getResourcesByCode(subCode)
-	// var resources = getRes();
+	let resources = getResourcesByCode(subCode)
+	// let resources = getRes();
 	if(!resources) {
 		return;
 	}
-
-	var subName = resources[0]["subjectName"];
+	let subName = resources['midsem'][0]["subjectName"];
 	// Available info: emailId, year, type, semester,
 	//  				subjectName, flags, subjectCode,
 	// 					resourceId
@@ -61,27 +60,27 @@ function setupPage(subCode){
 	// Changes heading of the page
 	$('#subjectName').text(subName);
 
-	// Creates 5 empty lists: midsem, endsem, tutorial, quiz, other
+	// Creates 5 empty lists: midsem, endsem, tutorial, quiz, others
 
 	if ('content' in document.createElement('template')) {
-        var template = $('#resTemplate');
-        var container = $('#resContainer');
+        let template = $('#resTemplate');
+        let container = $('#resContainer');
 
-        arr = ['midsem', 'endsem', 'quiz', 'tutorial', 'other'];
-        for(var i = 0; i < arr.length; i++){
+        arr = ['midsem', 'endsem', 'quiz', 'tutorial', 'others'];
+        for(let i = 0; i < arr.length; i++){
         	let clone = template.prop('content');
         	$(clone).find('h3').empty();
         	$(clone).find('.links').empty();
-        	var tHeading = $(clone).find('h3');
+        	let tHeading = $(clone).find('h3');
         	tHeading.text(arr[i]);
-        	fillData($(clone).find('.links'), resources, arr[i]);
+        	fillData($(clone).find('.links'), resources, resources[arr[i]]);
         	container.append(template.html());
         }
 
         // Set on click listener for all items
         // when user clicks on a resource name download that pdf
         $('resContainer links p').click(function(){
-        	var id = $(this).find('input').val();
+        	let id = $(this).find('input').val();
         });
      }
      else {
@@ -91,30 +90,28 @@ function setupPage(subCode){
 }
 
 function fillData(list, resources, type){
-	var pTag, flagTag, idTag;
-	for(var i = 0; i < resources.length; i++){
-		if(resources[i]['type'] === type){
-			pTag = $('<p>');
-			flagTag = $('<span>');
-			pTag.html( resources[i].semester + '-' + resources[i].year);
-			// using font awesome flag icon
-			flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
-			 + ' ' + resources[i]["flags"]);
-			idTag = $('<input>');
-            idTag.attr('type', 'hidden');
-            idTag.val(resources[i]['resourceId']);
-            pTag.append(idTag);
-			pTag.append(flagTag);
-			list.append(pTag);
-		}
+	let pTag, flagTag, idTag;
+	for(let i = 0; i < resources.length; i++){
+		pTag = $('<p>');
+		flagTag = $('<span>');
+		pTag.html( resources[i].semester + '-' + resources[i].year);
+		// using font awesome flag icon
+		flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
+		 + ' ' + resources[i]["flags"]);
+		idTag = $('<input>');
+          idTag.attr('type', 'hidden');
+          idTag.val(resources[i]['resourceId']);
+          pTag.append(idTag);
+		pTag.append(flagTag);
+		list.append(pTag);
 	}
 }
 
 // Finds a property name in the query string and returns the value of that property
 function getParamByName(name) {
-    var url = window.location.href;
+    let url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
         results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
