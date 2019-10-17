@@ -11,7 +11,9 @@ function onDocReady(){
     //Write code to call controller
     console.log(selecetedSearchID);
     // With an assumption that selectedSearchID = subject code
-    window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
+    if(selecetedSearchID){
+    	window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
+    }
     return false;
   });
 }
