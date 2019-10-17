@@ -57,6 +57,11 @@ cards while using bootstrap grid system) of the card*/
   margin: 10px 0px;
   float: left;
 }
+#branchLists>h3{
+	text-align: center;
+	width: 100%;
+	padding: 60px;
+}
 
 /*Style for return button*/
 .btnReturn{
