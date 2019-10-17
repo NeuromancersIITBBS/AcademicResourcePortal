@@ -81,7 +81,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "autumn",
 			"subjectName": "Theory of Machines - 1",
 			"flags": "2",
@@ -171,7 +171,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "autumn",
 			"subjectName": "Heat Transfer",
 			"flags": "2",
@@ -261,7 +261,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "spring",
 			"subjectName": "IC Engines",
 			"flags": "2",

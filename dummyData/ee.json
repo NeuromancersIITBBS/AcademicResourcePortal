@@ -81,7 +81,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "spring",
 			"subjectName": "Network Theory",
 			"flags": "2",
@@ -171,7 +171,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "autumn",
 			"subjectName": "Electric Machines",
 			"flags": "2",
@@ -261,7 +261,7 @@
 		{
 			"emailId": "ajk999@iitbbs.ac.in",
 			"year": "2017",
-			"type": "other",
+			"type": "others",
 			"semester": "spring",
 			"subjectName": "Control Systems",
 			"flags": "2",

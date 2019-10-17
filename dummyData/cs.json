@@ -73,7 +73,7 @@
 	}, {
 		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
-		"type": "other",
+		"type": "others",
 		"semester": "autumn",
 		"subject_name": "Data Structure",
 		"flags": "0",
@@ -154,7 +154,7 @@
 	}, {
 		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
-		"type": "other",
+		"type": "others",
 		"semester": "spring",
 		"subject_name": "Programming and Data Structure",
 		"flags": "0",
@@ -235,7 +235,7 @@
 	}, {
 		"emailId": "ajk999@iitbbs.ac.in",
 		"year": "2017",
-		"type": "other",
+		"type": "others",
 		"semester": "autumn",
 		"subject_name": "Discrete Structure",
 		"flags": "0",
