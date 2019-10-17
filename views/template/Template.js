@@ -98,7 +98,7 @@ function branchOnClick(){
         //      Any other Info
         // };
 
-        // subjectArr = getSubjectsByBranch(branchID.toUpperCase());
+        subjectArr = getSubjectsByBranch(branchID.toUpperCase());
 
         // Propagate semester wise subjects
         let subjectTemp = new SubjectTemplate(subjectArr);
@@ -207,62 +207,3 @@ class SubjectTemplate{
         }
     }
 }
-
-
-// Data for testing
-
-subjectArr = [{
-        subjectName: 'Physics',
-        subjectCode: 'PH1L001'
-    },
-    {
-        subjectName: 'PDS',
-        subjectCode: 'CS1L001'
-    },
-    {
-        subjectName: 'Mechanics',
-        subjectCode: 'ME1L001'
-    },
-    {
-        subjectName: 'Maths',
-        subjectCode: 'MA1L001'
-    },{
-        subjectName: 'Chemistry',
-        subjectCode: 'CH1L001'
-    },
-    {
-        subjectName: 'Maths',
-        subjectCode: 'MA1L002'
-    },
-    {
-        subjectName: 'Electrical Technology',
-        subjectCode: 'EE1L001'
-    },
-    {
-        subjectName: 'Learning English',
-        subjectCode: 'HS1L001'
-    },{
-        subjectName: 'Data Structures',
-        subjectCode: 'CS2L003'
-    },
-    {
-        subjectName: 'Discrete Structures',
-        subjectCode: 'CS2L001'
-    },
-    {
-        subjectName: 'Introduction to Electronics',
-        subjectCode: 'EC2L001'
-    },
-    {
-        subjectName: 'Signals and Systems',
-        subjectCode: 'EC2L002'
-    },
-    {
-        subjectName: 'Introduction to Bio-Science',
-        subjectCode: 'IDT2L001'
-    },
-    {
-        subjectName: 'Introduction to Economics',
-        subjectCode: 'HS2L007'
-    },
-  ];

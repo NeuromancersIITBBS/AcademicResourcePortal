@@ -46,9 +46,9 @@ function setupPage(subCode){
 	$(document).prop('title', subCode);
 	// Changes heading of the page
 	$('#subjectCode strong').text(subCode);
-
-	// var resources = getResourcesByCode(subCode)
-	var resources = getRes();
+	console.log(subCode);
+	var resources = getResourcesByCode(subCode)
+	// var resources = getRes();
 	if(!resources) {
 		return;
 	}

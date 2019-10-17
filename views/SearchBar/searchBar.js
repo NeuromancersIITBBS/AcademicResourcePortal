@@ -22,7 +22,7 @@ $(onDocReady);
 //Sets up the searchBar
 function searchBarSetup(inp) {
   var currentFocus;
-  
+
   inp.on('input', function(e) {
 
       //variables:
@@ -32,25 +32,25 @@ function searchBarSetup(inp) {
       //suggestionLink -> tmp. variable which stores the html for sItem
       var sContainer, sItem, query = this.value,index, suggestionLink;
       closeAllLists();
-      
+
       if (!query) { return false;}
-      
+
       currentFocus = -1;
-      
+
       sContainer = $('<div>');
       sContainer.attr('id', 'autocomplete-list');
       sContainer.attr('class', 'autocomplete-items');
-      
+
       $(this).parent().append(sContainer);
-      
+
       //Call Controller to get the search results
       //search is a controller function defined inside searchController.js
       var result = search(query)
 
-      //Use controllers result and display it in dropdown 
+      //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        suggestionLink = item.information;
+        suggestionLink = item.information.subjectName + '( ' + item.information.subjectCode + ')';
         suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
         sItem.html(suggestionLink);
         sItem.on('click', function(e) {
@@ -71,7 +71,7 @@ function searchBarSetup(inp) {
       if (e.keyCode == 40) {
         currentFocus++;//If down key is pressed move currentFocus to the next element
         addActive(listItems);
-      } else if (e.keyCode == 38) { 
+      } else if (e.keyCode == 38) {
         currentFocus--;//If up key is pressed move currentFocus to the prev element
         addActive(listItems);
       } else if (e.keyCode == 13) {

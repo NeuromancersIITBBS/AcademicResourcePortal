@@ -971,19 +971,19 @@ if(branch==='EE'){
   });*/
   let jsArray;
   if(branch === 'CS'){
-     array = [{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'
+     jsArray = [{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'
    },{    subjectName: 'Programming and Data Structure',  subjectCode: 'CS1L001'},
    {    subjectName: 'Discrete Structure',  subjectCode: 'CS2L001'}];
       return jsArray;
   }
   if(branch === 'EE'){
-     array = [{    subjectName: 'Network Theory',  subjectCode: 'EE2L001'
+     jsArray = [{    subjectName: 'Network Theory',  subjectCode: 'EE2L001'
    },{    subjectName: 'Electric Machines',  subjectCode: 'EE3L001'},
    {    subjectName: 'Control Systems',  subjectCode: 'EE3L003'}];
       return jsArray;
   }
   if(branch === 'ME'){
-     array = [{    subjectName: 'Theory of Machines - 1',  subjectCode: 'ME2L001'
+     jsArray = [{    subjectName: 'Theory of Machines - 1',  subjectCode: 'ME2L001'
    },{    subjectName: 'Heat Transfer',  subjectCode: 'ME3L001'},
    {    subjectName: 'IC Engines',  subjectCode: 'ME3L005'}];
       return jsArray;
