@@ -298,7 +298,7 @@ var jsResourcesByCode = function(subjectCode){
           subjectCode: 'CS2L001',
           resourceId: 'CS2L001050011'
         }];
-  }
+      }
   if(subjectCode==='CS2L001'){
     jsArray=[{
     emailId: 'aaa999@iitbbs.ac.in',
@@ -309,8 +309,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001010091'
-  },
-  {
+    },
+    {
     emailId: 'abc999@iitbbs.ac.in',
     year: '2017',
     type: 'midsem',
@@ -319,8 +319,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '1',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001010081'
-  },
-  {
+    },
+    {
     emailId: 'aaa999@iitbbs.ac.in',
     year: '2018',
     type: 'endsem',
@@ -329,8 +329,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '2',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001020071'
-  },
-  {
+    },
+    {
     emailId: 'abc999@iitbbs.ac.in',
     year: '2018',
     type: 'endsem',
@@ -339,8 +339,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '3',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001020061'
-  },
-  {
+    },
+    {
     emailId: 'ade999@iitbbs.ac.in',
     year: '2017',
     type: 'tutorial',
@@ -349,8 +349,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001030051'
-  },
-  {
+    },
+    {
     emailId: 'aef999@iitbbs.ac.in',
     year: '2018',
     type: 'tutorial',
@@ -359,8 +359,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001030041'
-  },
-  {
+    },
+    {
     emailId: 'agh999@iitbbs.ac.in',
     year: '2019',
     type: 'tutorial',
@@ -369,8 +369,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001030031'
-  },
-  {
+    },
+    {
     emailId: 'aij999@iitbbs.ac.in',
     year: '2017',
     type: 'quiz',
@@ -379,8 +379,8 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001040021'
-  },
-  {
+    },
+    {
     emailId: 'ajk999@iitbbs.ac.in',
     year: '2017',
     type: 'others',
@@ -389,9 +389,9 @@ var jsResourcesByCode = function(subjectCode){
     flags: '0',
     subjectCode: 'CS2L001',
     resourceId: 'CS2L001050011'
-  }];
+    }];
+    }
   }
-}
 if(branch==='EE'){
   if(subjectCode==='EE2L001'){
     jsArray=[{
@@ -404,86 +404,86 @@ if(branch==='EE'){
   subjectCode: 'EE2L001',
   resourceId: 'EE2L001019009'
 },
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2017',
-  type: 'midsem',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '1',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001018008'
-},
-{
-  emailId: 'aaa999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '2',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001027007'
-},
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '3',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001026006'
-},
-{
-  emailId: 'ade999@iitbbs.ac.in',
-  year: '2017',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '0',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001035005'
-},
-{
-  emailId: 'aef999@iitbbs.ac.in',
-  year: '2018',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '1',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001034004'
-},
-{
-  emailId: 'agh999@iitbbs.ac.in',
-  year: '2019',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '0',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001033003'
-},
-{
-  emailId: 'aij999@iitbbs.ac.in',
-  year: '2017',
-  type: 'quiz',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '3',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001042002'
-},
-{
-  emailId: 'ajk999@iitbbs.ac.in',
-  year: '2017',
-  type: 'others',
-  semester: 'spring',
-  subjectName: 'Network Theory',
-  flags: '2',
-  subjectCode: 'EE2L001',
-  resourceId: 'EE2L001051001'
-}];
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2017',
+        type: 'midsem',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '1',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001018008'
+      },
+      {
+        emailId: 'aaa999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '2',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001027007'
+      },
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '3',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001026006'
+      },
+      {
+        emailId: 'ade999@iitbbs.ac.in',
+        year: '2017',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '0',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001035005'
+      },
+      {
+        emailId: 'aef999@iitbbs.ac.in',
+        year: '2018',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '1',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001034004'
+      },
+      {
+        emailId: 'agh999@iitbbs.ac.in',
+        year: '2019',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '0',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001033003'
+      },
+      {
+        emailId: 'aij999@iitbbs.ac.in',
+        year: '2017',
+        type: 'quiz',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '3',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001042002'
+      },
+      {
+        emailId: 'ajk999@iitbbs.ac.in',
+        year: '2017',
+        type: 'others',
+        semester: 'spring',
+        subjectName: 'Network Theory',
+        flags: '2',
+        subjectCode: 'EE2L001',
+        resourceId: 'EE2L001051001'
+      }];
   }
   if(subjectCode==='EE3L001'){
     jsArray=[{
@@ -496,86 +496,86 @@ if(branch==='EE'){
   subjectCode: 'EE3L001',
   resourceId: 'EE3L001019109'
 },
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2017',
-  type: 'midsem',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '1',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001018208'
-},
-{
-  emailId: 'aaa999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '2',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001027307'
-},
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '3',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001026406'
-},
-{
-  emailId: 'ade999@iitbbs.ac.in',
-  year: '2017',
-  type: 'tutorial',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '0',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001035505'
-},
-{
-  emailId: 'aef999@iitbbs.ac.in',
-  year: '2018',
-  type: 'tutorial',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '1',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001034604'
-},
-{
-  emailId: 'agh999@iitbbs.ac.in',
-  year: '2019',
-  type: 'tutorial',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '0',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001033703'
-},
-{
-  emailId: 'aij999@iitbbs.ac.in',
-  year: '2017',
-  type: 'quiz',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '3',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001042802'
-},
-{
-  emailId: 'ajk999@iitbbs.ac.in',
-  year: '2017',
-  type: 'others',
-  semester: 'autumn',
-  subjectName: 'Electric Machines',
-  flags: '2',
-  subjectCode: 'EE3L001',
-  resourceId: 'EE3L001051901'
-}];
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2017',
+        type: 'midsem',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '1',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001018208'
+      },
+      {
+        emailId: 'aaa999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '2',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001027307'
+      },
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '3',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001026406'
+      },
+      {
+        emailId: 'ade999@iitbbs.ac.in',
+        year: '2017',
+        type: 'tutorial',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '0',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001035505'
+      },
+      {
+        emailId: 'aef999@iitbbs.ac.in',
+        year: '2018',
+        type: 'tutorial',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '1',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001034604'
+      },
+      {
+        emailId: 'agh999@iitbbs.ac.in',
+        year: '2019',
+        type: 'tutorial',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '0',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001033703'
+      },
+      {
+        emailId: 'aij999@iitbbs.ac.in',
+        year: '2017',
+        type: 'quiz',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '3',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001042802'
+      },
+      {
+        emailId: 'ajk999@iitbbs.ac.in',
+        year: '2017',
+        type: 'others',
+        semester: 'autumn',
+        subjectName: 'Electric Machines',
+        flags: '2',
+        subjectCode: 'EE3L001',
+        resourceId: 'EE3L001051901'
+      }];
   }
   if(subjectCode==='EE3L003'){
     jsArray=[{
@@ -588,86 +588,86 @@ if(branch==='EE'){
   subjectCode: 'EE3L003',
   resourceId: 'EE3L003019119'
 },
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2017',
-  type: 'midsem',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '1',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003018228'
-},
-{
-  emailId: 'aaa999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '2',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003027337'
-},
-{
-  emailId: 'abc999@iitbbs.ac.in',
-  year: '2018',
-  type: 'endsem',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '3',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003026446'
-},
-{
-  emailId: 'ade999@iitbbs.ac.in',
-  year: '2017',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '0',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003035555'
-},
-{
-  emailId: 'aef999@iitbbs.ac.in',
-  year: '2018',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '1',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003034664'
-},
-{
-  emailId: 'agh999@iitbbs.ac.in',
-  year: '2019',
-  type: 'tutorial',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '0',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003033773'
-},
-{
-  emailId: 'aij999@iitbbs.ac.in',
-  year: '2017',
-  type: 'quiz',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '3',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003042882'
-},
-{
-  emailId: 'ajk999@iitbbs.ac.in',
-  year: '2017',
-  type: 'others',
-  semester: 'spring',
-  subjectName: 'Control Systems',
-  flags: '2',
-  subjectCode: 'EE3L003',
-  resourceId: 'EE3L003051991'
-}];
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2017',
+        type: 'midsem',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '1',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003018228'
+      },
+      {
+        emailId: 'aaa999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '2',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003027337'
+      },
+      {
+        emailId: 'abc999@iitbbs.ac.in',
+        year: '2018',
+        type: 'endsem',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '3',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003026446'
+      },
+      {
+        emailId: 'ade999@iitbbs.ac.in',
+        year: '2017',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '0',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003035555'
+      },
+      {
+        emailId: 'aef999@iitbbs.ac.in',
+        year: '2018',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '1',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003034664'
+      },
+      {
+        emailId: 'agh999@iitbbs.ac.in',
+        year: '2019',
+        type: 'tutorial',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '0',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003033773'
+      },
+      {
+        emailId: 'aij999@iitbbs.ac.in',
+        year: '2017',
+        type: 'quiz',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '3',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003042882'
+      },
+      {
+        emailId: 'ajk999@iitbbs.ac.in',
+        year: '2017',
+        type: 'others',
+        semester: 'spring',
+        subjectName: 'Control Systems',
+        flags: '2',
+        subjectCode: 'EE3L003',
+        resourceId: 'EE3L003051991'
+      }];
   }
 }
   if(branch==='ME'){

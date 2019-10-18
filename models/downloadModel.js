@@ -5,10 +5,10 @@
  var download = function(uniqueID){
     let branch = uniqueID.substring(0,2);
     let subjectCode = uniqueID.substring(0,7);
-     uniqueID = uniqueID.substring(7,uniqueID.length);
+    uniqueID = uniqueID.substring(7,uniqueID.length);
     let endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
 
-    $.ajax({
+    /*$.ajax({
         url: endpoint,
         type: 'GET',
         error: function(xhr){
@@ -17,6 +17,6 @@
         success: function(result) {
           console.log("Success!");
         }
-    });
+    });*/
 
 };
