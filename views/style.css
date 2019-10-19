@@ -2,6 +2,14 @@
 body{
   color: #fff;
 }
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255,102,203);
+}
+.navbar-toggler-icon{
+  height:1.2rem;
+  width:1.2rem;
+  vertical-align: top;;
+}
 #jumbotronSection{
   margin: 20px 0px 40px;
 }
