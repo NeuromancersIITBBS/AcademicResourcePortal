@@ -183,7 +183,7 @@ function getSchoolList(){
       tSearchID: ['OC'] // suggest an appropriate code for SEOCS
   },{
       name: 'SES',
-      tData: ['Computer Scince Engineering', 'Electronics and Communication Engineering', 'Electrical Engineering'],
+      tData: ['Computer Science and Engineering', 'Electronics and Communication Engineering', 'Electrical Engineering'],
       tSearchID: ['CS', 'EC', 'EE']
   },{
       name: 'SHSS&M', //Suggest degrees offered by SHSS&M
