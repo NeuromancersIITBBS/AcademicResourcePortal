@@ -61,7 +61,7 @@ function flagTemplate(dataArr) {
         <strong>Resource Id</strong>: ${dataArr.resourceId} <br>
         <strong>Flag Count</strong>: ${dataArr.flags}
       </h4>
-      <button type="button" class="btn btn-light" onclick=submit()><img src="./views/Images/view.png" style='width:20px'></button>
+      <button type="button" class="btn btn-light" onclick=downloadFile("${dataArr.resourceID}")><img src="./views/Images/view.png" style='width:20px'></button>
       <button type="button" class="btn btn-light" onclick=flagToggle("${dataArr.resourceId}")>
       ${countFlag(dataArr.flags)}
       </button>
