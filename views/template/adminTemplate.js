@@ -65,7 +65,9 @@ function flagTemplate(dataArr) {
       <button type="button" class="btn btn-light" onclick=flagToggle("${dataArr.resourceId}")>
       ${countFlag(dataArr.flags)}
       </button>
-      <button type="button" class="btn btn-light" onclick=deleteFile("${dataArr.resourceId}")><img src="./views/Images/delete.png" style='width:20px'></button>
+      <button type="button" class="btn btn-light" id="delbtn">
+      <img src="./views/Images/delete.png" style='width:20px'>
+      </button>
     </div>
   `;
 }
@@ -81,8 +83,17 @@ for(i=0;i<dataArr.length;i++) {
 $("#flag").html( `
   ${flagArr.map(flagTemplate).join("")}
 `)
+
+
 $("#unflag").html( `
   ${unflagArr.map(flagTemplate).join("")}
 `)
-
 }
+
+//deleting file from view on clicking delete button
+$("#delbtn").onclick(function(){
+    deleteFile("${dataArr.resourceId}");
+        $(this).fadeOut();
+    //css({"display":"none"});
+    }
+)
