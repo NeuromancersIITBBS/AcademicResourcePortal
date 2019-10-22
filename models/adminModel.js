@@ -26,12 +26,41 @@ var deleteRequest = function(uniqueID){
 var unflagRequest = function(uniqueID){
    let branch = uniqueID.substring(0,2);
    let subjectCode = uniqueID.substring(0,7);
-    uniqueID = uniqueID.substring(7,uniqueID.length);
+   uniqueID = uniqueID.substring(7,uniqueID.length);
    let endpoint = `https://server/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+   let data = {flags: 0};
    let response;
    $.ajax({
        url: endpoint,
        type: 'PUT',
+       data : JSON.stringify(data),
+       contentType: application/json,
+       error: function(xhr){
+         alert("Something went wrong, please try again.");
+       },
+       success: function(result) {
+       response = 0;
+       console.log("Successfully unflagged! ");
+       }
+   });
+   return response;
+};
+
+// reviewRequest(uniqueID)
+//Function that prompts the server to set review to true.
+
+var reviewRequest = function(uniqueID){
+   let branch = uniqueID.substring(0,2);
+   let subjectCode = uniqueID.substring(0,7);
+   uniqueID = uniqueID.substring(7,uniqueID.length);
+   let endpoint = `https://server/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+   let data = {review: true};
+   let response;
+   $.ajax({
+       url: endpoint,
+       type: 'PUT',
+       data : JSON.stringify(data),
+       contentType: application/json,
        error: function(xhr){
          alert("Something went wrong, please try again.");
        },

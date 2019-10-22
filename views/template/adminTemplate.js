@@ -63,7 +63,7 @@ function setOnClickFlagTemplate(){
      }else{
        $(this).find('img').attr('src', './views/Images/flag.png');
      }
-     // removeFlag(resourceID);
+     removeFlag(resourceID);
      $(this).parent().fadeOut();
    });
    $('.flagContainer .btnDelete').click(function(){
@@ -86,7 +86,7 @@ function propagateReviewTemplate(subData){
 }
 
 function fillDataInReviewContainer(resourceObj){
-  // if(!resourceObj.review){
+  if(!resourceObj.review){
     // select template and container
     let template = $('#unreviewedTemplate');
     let containerFlagged = $('.unreviewContainer .unreviewed');
@@ -108,7 +108,7 @@ function fillDataInReviewContainer(resourceObj){
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
-  // }
+  }
 }
 
 function setOnClickReviewTemplate(){
