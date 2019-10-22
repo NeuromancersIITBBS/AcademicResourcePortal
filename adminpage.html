@@ -93,26 +93,33 @@
   <!--flagged Files
     css : views/template/adminTemplate.css
     javascript : views/template/adminTemplate.js-->
-
-  <div class="flagContainer col-xs-6">
-    <div class="flagged">
+  <div class="row">
+    <div class="flagContainer col-md-6 col-xs-12">
       <h2 class="flag-title">Flagged Files</h2>
+      <div class="flagged">
+      </div>
     </div>
-    <div class="unflagged">
-      <h2 class="unflag-title">Unflagged Files</h2>
+    <div class="unreviewContainer col-md-6 col-xs-12">
+      <h2 class="unreview-title">Unreviewed Files</h2>
+      <div class="unreviewed">
+      </div>
     </div>
   </div>
   <template id="unreviewedTemplate">
-    <div class="all-files">
-      <h4 class="file-name">
-        <strong class="emailField">Email Id</strong>: <br>
-        <strong class="IDField">Resource Id</strong>: ${dataArr.resourceId} <br>
+    <div class="all-files"> <!--all-files -->
+      <h4 class="file-name"> <!--file-name -->
+        <p class="fieldEmail"><strong>Email Id</strong>: <span></span></p>
+        <p class="fieldResID"><strong>Resource Id</strong>: <span></span></p>
+        <p class="fieldResName"><strong> Resource Name:</strong>: <span></span></p>
       </h4>
-      <button type="button" class="btn btn-light" onclick=downloadFile("${dataArr.resourceID}")><img src="./views/Images/view.png" style='width:20px'></button>
-      <!-- Toggle Flag/Unflag -->
-      <button type="button" class="btn btn-light"></button>
-      <button type="button" class="btn btn-light" id="delbtn">
-      <img src="./views/Images/delete.png" style='width:20px'>
+      <button type="button" class="btn btn-light btnDownload">
+        <img src="./views/Images/view.png" style="width:20px" alt="download">
+      </button>
+      <button type="button" class="btn btn-light btnReviewOK">
+        <img src="./views/Images/reviewOK.svg" style= "width:20px" alt="flag/unflag">
+      </button>
+      <button type="button" class="btn btn-light btnDelete">
+        <img src="./views/Images/delete.png" style='width:20px' alt = "delete">
       </button>
     </div>
   </template>
@@ -121,10 +128,11 @@
   <template id="flagTemplate">
     <div class="all-files"> <!--all-files -->
       <h4 class="file-name"> <!--file-name -->
-        <strong>Email Id</strong>: <p class="fieldEmail"> </p><br>
-        <strong>Resource Id</strong>: <p class="fieldResID"> </p><br>
-        <strong>Flag Count</strong>:  <p class="fieldFlagCount"> </p>
-        <!-- <strong>Most Voted Reason</strong>:  <p class="fieldFlagCount"> </p> -->
+        <p class="fieldEmail"><strong>Email Id</strong>: <span></span></p>
+        <p class="fieldResID"><strong>Resource Id</strong>: <span></span></p>
+        <p class="fieldResName"><strong> Resource Name:</strong>: <span></span></p>
+        <p class="fieldFlagCount"><strong>Flag Count</strong>: <span></span></p>
+        <p class="fieldReason"><strong>Most Voted Reason</strong>: <span></span> </p>
       </h4>
       <button type="button" class="btn btn-light btnDownload">
         <img src="./views/Images/view.png" style="width:20px" alt="download">
