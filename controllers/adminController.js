@@ -9,3 +9,6 @@ var deleteFile = function(uniqueID){
 var removeFlag = function(uniqueID){
   unflagRequest(uniqueID);
 };
+var markAsReviewed = function(uniqueID){
+  reviewRequest(uniqueID);
+};
