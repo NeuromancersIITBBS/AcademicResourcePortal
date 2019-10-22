@@ -35,11 +35,11 @@ function flagOnClick(){
 		console.log("im in subtempjs");
 		// Using confirm method to confirm whether user really wants to flag a resource or not
 		bootbox.prompt({
-    title: "Please select a reason for flagging",
+    title: "Select a reason for flagging",
     inputType: 'select',
     inputOptions: [
     {
-        text: 'Choose any reason from below',
+        text: 'Select',
         value: '',
     },
     {
