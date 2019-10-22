@@ -28,10 +28,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./views/style.css" type="text/css">
-        <!--Google sign in-->\
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!--Google sign in-->
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body style="background-color:#f2f2f2">
 
@@ -134,6 +134,32 @@
         </div>
         <br>
         <br>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
+        <script>
+        let firebaseConfig = {
+        apiKey : "AIzaSyAA3gAByQRr6WNhmHpw8UtVr0Civi46Ork",
+        authDomain : "academic-resource-portal-b.firebaseapp.com",
+        databaseURL : "https://academic-resource-portal-b.firebaseio.com",
+        projectId : "academic-resource-portal-b",
+        storageBucket : "academic-resource-portal-b.appspot.com",
+        messagingSenderId : "750397614411"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log("i am in firebase");
+        const db = firebase.firestore();
+
+        </script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->

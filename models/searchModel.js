@@ -3,11 +3,11 @@
 // all the subjects irrespective of branches
 
 var jsAllSubjects = function(){
-  let endpoint = "http://localhost:3000/studyResouces/subjects";
+  let endpoint = "https://localhost:3000/studyResouces/search";
   let jsonData;
   let success = 0;
-
-  /*$.ajax({
+/*
+  $.ajax({
       url: endpoint,
       type: 'GET',
       dataType: 'json',
@@ -20,7 +20,8 @@ var jsAllSubjects = function(){
         let jsArray = JSON.parse(jsonData);
         return jsArray;
       }
-});*/
+});
+};*/
 let jsArray=[{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'
 },{    subjectName: 'Programming and Data Structure',  subjectCode: 'CS1L001'},
 {    subjectName: 'Discrete Structure',  subjectCode: 'CS2L001'},{    subjectName: 'Network Theory',  subjectCode: 'EE2L001'

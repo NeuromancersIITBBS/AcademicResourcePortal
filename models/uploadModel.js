@@ -3,7 +3,8 @@
 
 var upload = function(subjectCode, formData){
     let branch = subjectCode.substring(0,2);
-    let endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}`;
+    
+    let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}`;
 
     	$.ajax({
 					url : endpoint,
