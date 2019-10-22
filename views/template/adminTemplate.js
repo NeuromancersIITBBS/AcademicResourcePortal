@@ -112,16 +112,16 @@ function fillDataInReviewContainer(resourceObj){
 }
 
 function setOnClickReviewTemplate(){
-   $('.flagContainer .btnDownload').click(function(){
+   $('.unreviewContainer .btnDownload').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
      downloadFile(resourceID);
    });
-   $('.flagContainer .btnReviewOK').click(function(){
+   $('.unreviewContainer .btnReviewOK').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
      markAsReviewed(resourceID);
      $(this).parent().fadeOut();
    });
-   $('.flagContainer .btnDelete').click(function(){
+   $('.unreviewContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
          deleteFile("${dataArr.resourceId}");
          $(this).parent().fadeOut();
