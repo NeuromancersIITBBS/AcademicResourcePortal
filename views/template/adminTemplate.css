@@ -1,26 +1,23 @@
 /* css for flag title */
-.flag-title {
+.flag-title, .unflag-title {
   text-align: center;
   font-weight: normal;
   font-size: 2rem;
   color: #000;
 }
-/* css for unflag title */
-.unflag-title {
-  text-align: center;
-  font-weight: normal;
-  font-size: 2rem;
-}
 /* css for each div */
 .all-files {
   max-width: 450px;
   padding: 20px;
-  margin: 30px auto;
+  margin: 30px 10px;
   background-color: #000;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
+.flagContainer{
+  margin: 10px 0px;
+  width: 50%;
+}
 .file-name {
   font-size: 1.3rem;
   font-weight: normal;

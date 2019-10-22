@@ -94,14 +94,49 @@
     css : views/template/adminTemplate.css
     javascript : views/template/adminTemplate.js-->
 
-  <div id ="all-flagged-files">
-    <h2 class="flag-title">Flagged Files</h2>
-    <div id ="flag"></div>
-
-    <h2 class="unflag-title">Unflagged Files</h2>
-    <div id ="unflag"></div>
+  <div class="flagContainer col-xs-6">
+    <div class="flagged">
+      <h2 class="flag-title">Flagged Files</h2>
+    </div>
+    <div class="unflagged">
+      <h2 class="unflag-title">Unflagged Files</h2>
+    </div>
   </div>
+  <template id="unreviewedTemplate">
+    <div class="all-files">
+      <h4 class="file-name">
+        <strong class="emailField">Email Id</strong>: <br>
+        <strong class="IDField">Resource Id</strong>: ${dataArr.resourceId} <br>
+      </h4>
+      <button type="button" class="btn btn-light" onclick=downloadFile("${dataArr.resourceID}")><img src="./views/Images/view.png" style='width:20px'></button>
+      <!-- Toggle Flag/Unflag -->
+      <button type="button" class="btn btn-light"></button>
+      <button type="button" class="btn btn-light" id="delbtn">
+      <img src="./views/Images/delete.png" style='width:20px'>
+      </button>
+    </div>
+  </template>
 
+
+  <template id="flagTemplate">
+    <div class="all-files"> <!--all-files -->
+      <h4 class="file-name"> <!--file-name -->
+        <strong>Email Id</strong>: <p class="fieldEmail"> </p><br>
+        <strong>Resource Id</strong>: <p class="fieldResID"> </p><br>
+        <strong>Flag Count</strong>:  <p class="fieldFlagCount"> </p>
+        <!-- <strong>Most Voted Reason</strong>:  <p class="fieldFlagCount"> </p> -->
+      </h4>
+      <button type="button" class="btn btn-light btnDownload">
+        <img src="./views/Images/view.png" style="width:20px" alt="download">
+      </button>
+      <button type="button" class="btn btn-light btnFlagToggle">
+        <img src="./views/Images/flag.png" style= "width:20px" alt="flag/unflag">
+      </button>
+      <button type="button" class="btn btn-light btnDelete">
+        <img src="./views/Images/delete.png" style='width:20px' alt = "delete">
+      </button>
+    </div>
+  </template>
 
     <!-- Optional JavaScript -->
     <!-- jQuery in the head no need to import again -->
