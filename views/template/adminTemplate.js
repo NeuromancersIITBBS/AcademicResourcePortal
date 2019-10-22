@@ -2,14 +2,14 @@ $(afterLoading);
 function afterLoading() {
   // call controller to get all resources
    dataArr = getAllResources();
-   propagateTemplate(dataArr);
+   propagateFlagTemplate(dataArr);
    setOnClickFlagTemplate();
-
-   
+   propagateReviewTemplate(dataArr);
+   setOnClickReviewTemplate();
 }
 
 
-function propagateTemplate(subData){
+function propagateFlagTemplate(subData){
     if ('content' in document.createElement('template')) {
       subData.forEach(function(item){
         this.fillDataInFlagContainer(item);
@@ -22,33 +22,29 @@ function propagateTemplate(subData){
 }
 
 function fillDataInFlagContainer(resourceObj){
-  // select template and container
-  let template = $('#flagTemplate');
-  let containerFlagged = $('.flagContainer .flagged');
-  let containerUnFlagged = $('.flagContainer .unflagged');
+  if(resourceObj.flags != 0){
+    // select template and container
+    let template = $('#flagTemplate');
+    let containerFlagged = $('.flagContainer .flagged');
 
-  // Clone the template
-  let clone = template.prop('content');
+    // Clone the template
+    let clone = template.prop('content');
 
-  // Select field to fill them
-  let email = $(clone).find('.fieldEmail');
-  let resID = $(clone).find('.fieldResID');
-  let flagCount = $(clone).find('.fieldFlagCount');
+    // Select field to fill them
+    let email = $(clone).find('.fieldEmail span');
+    let resID = $(clone).find('.fieldResID span');
+    let flagCount = $(clone).find('.fieldFlagCount span');
+    let flagReason = $(clone).find('.fieldReason span');
+    let resName = $(clone).find('.fieldResName span');
 
-  // Enter Values in the fields
-  email.text(resourceObj.emailId);
-  resID.text(resourceObj.resourceId);
-  flagCount.text(resourceObj.flags);
+    // Enter Values in the fields
+    email.text(resourceObj.emailId);
+    resID.text(resourceObj.resourceId);
+    flagCount.text(resourceObj.flags);
+    // flagReason.text(mostVotedReson);
+    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
+     ' ' + resourceObj.semester + ' ' + resourceObj.year);
 
-  // Set up flag button appropriately
-  let flagBtnImg = $(clone).find('.btnFlagToggle img');
-  flagBtnImg.attr('style', 'width: 20px');
-  if(resourceObj.flags == 0){
-    flagBtnImg.attr('src', './views/Images/flag.png');
-    // Inserts template to the web page
-    containerUnFlagged.append(template.html());
-  }else{
-    flagBtnImg.attr('src', './views/Images/unflag.png');
     // Inserts template to the web page
     containerFlagged.append(template.html());
   }
@@ -67,7 +63,63 @@ function setOnClickFlagTemplate(){
      }else{
        $(this).find('img').attr('src', './views/Images/flag.png');
      }
-     flagToggle(resourceID);
+     // removeFlag(resourceID);
+     $(this).parent().fadeOut();
+   });
+   $('.flagContainer .btnDelete').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+         deleteFile("${dataArr.resourceId}");
+         $(this).parent().fadeOut();
+   });
+}
+
+function propagateReviewTemplate(subData){
+    if ('content' in document.createElement('template')) {
+      subData.forEach(function(item){
+        this.fillDataInReviewContainer(item);
+      });
+    }
+     else {
+        // the HTML template element is not supported.
+        alert("HTML template element is not supported.")
+    }
+}
+
+function fillDataInReviewContainer(resourceObj){
+  // if(!resourceObj.review){
+    // select template and container
+    let template = $('#unreviewedTemplate');
+    let containerFlagged = $('.unreviewContainer .unreviewed');
+
+    // Clone the template
+    let clone = template.prop('content');
+
+    // Select field to fill them
+    let email = $(clone).find('.fieldEmail span');
+    let resID = $(clone).find('.fieldResID span');
+      let flagReason = $(clone).find('.fieldReason span');
+    let resName = $(clone).find('.fieldResName span');
+
+    // Enter Values in the fields
+    email.text(resourceObj.emailId);
+    resID.text(resourceObj.resourceId);
+    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
+     ' ' + resourceObj.semester + ' ' + resourceObj.year);
+
+    // Inserts template to the web page
+    containerFlagged.append(template.html());
+  // }
+}
+
+function setOnClickReviewTemplate(){
+   $('.flagContainer .btnDownload').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     downloadFile(resourceID);
+   });
+   $('.flagContainer .btnReviewOK').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     markAsReviewed(resourceID);
+     $(this).parent().fadeOut();
    });
    $('.flagContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
