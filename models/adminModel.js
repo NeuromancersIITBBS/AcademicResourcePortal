@@ -9,7 +9,7 @@ var deleteRequest = function(uniqueID){
   let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   $.ajax({
       url: endpoint,
-      type: 'DELETE',
+      method: 'DELETE',
       error: function(xhr){
         alert("Something went wrong, please try again.");
       },
@@ -32,7 +32,7 @@ var unflagRequest = function(uniqueID){
    let response;
    $.ajax({
        url: endpoint,
-       type: 'PUT',
+       method: 'PUT',
        data : JSON.stringify(data),
        contentType: application/json,
        error: function(xhr){
@@ -58,7 +58,7 @@ var reviewRequest = function(uniqueID){
    let response;
    $.ajax({
        url: endpoint,
-       type: 'PUT',
+       method: 'PUT',
        data : JSON.stringify(data),
        contentType: application/json,
        error: function(xhr){
