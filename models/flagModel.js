@@ -8,7 +8,7 @@
     uniqueID = uniqueID.substring(7,uniqueID.length);
     let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
     // If flag is 1 server should increment current count by 1
-    let data = {id: uniqueID, flag: 1, flagReason: reason};
+    let data = {resourceID: uniqueID, flag: 1, flagReason: reason};
     let response;
     $.ajax({
         url: endpoint,
