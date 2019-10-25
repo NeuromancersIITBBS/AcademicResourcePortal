@@ -1,15 +1,20 @@
 // flagRequest(uniqueID)
 //Function that prompts the server to modify the flag variable.
 
- var flagRequest = function(uniqueID){
+ var flagRequest = function(uniqueID, reason){
+
     let branch = uniqueID.substring(0,2);
     let subjectCode = uniqueID.substring(0,7);
     uniqueID = uniqueID.substring(7,uniqueID.length);
-    let endpoint = `http://localhost:3000/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/flag`;
+    let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+    // If flag is 1 server should increment current count by 1
+    let data = {resourceID: uniqueID, flag: 1, flagReason: reason};
     let response;
     $.ajax({
         url: endpoint,
-        type: 'PUT',
+        method: 'PUT',
+        data: JSON.stringify(data),
+        contentType: "application/json",
         error: function(xhr){
           alert("Something went wrong, please try again.");
         },
@@ -19,27 +24,4 @@
         }
     });
     return response;
-};
-
-// unflagRequest(uniqueID)
-//Function that prompts the server to unflag the already flagged resource.
-
-var unflagRequest = function(uniqueID){
-   let branch = uniqueID.substring(0,2);
-   let subjectCode = uniqueID.substring(0,7);
-    uniqueID = uniqueID.substring(7,uniqueID.length);
-   let endpoint = `http://server/studyResouces/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}/unflag`;
-   let response;
-   $.ajax({
-       url: endpoint,
-       type: 'PUT',
-       error: function(xhr){
-         alert("Something went wrong, please try again.");
-       },
-       success: function(result) {
-       response = 0;
-       console.log("Successfully unflagged! ");
-       }
-   });
-   return response;
 };

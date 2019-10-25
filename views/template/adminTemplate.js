@@ -2,87 +2,128 @@ $(afterLoading);
 function afterLoading() {
   // call controller to get all resources
    dataArr = getAllResources();
-  // dummy data for testing
-  // dataArr = [
-  //  {
-  //    emailId: "random1@gmail.com",
-  //    type: "midsem",
-  //    semester: "autumn",
-  //    subjectName: "Data Structures",
-  //    flags: 3,
-  //    subjectCode: "CS2L002",
-  //    resourceId: "CS2L002145"
-  //  },
-  //  {
-  //    emailId: "random2@gmail.com",
-  //    type: "endsem",
-  //    semester: "autumn",
-  //    subjectName: "Data Structures",
-  //    flags: 2,
-  //    subjectCode: "CS2L002",
-  //    resourceId: "CS2L002105"
-  //  },
-  //  {
-  //    emailId: "random3@gmail.com",
-  //    type: "midsem",
-  //    semester: "autumn",
-  //    subjectName: "Data Structures",
-  //    flags: 0,
-  //    subjectCode: "CS2L002",
-  //    resourceId: "CS2L002115"
-  //  },
-  //  {
-  //    emailId: "random4@gmail.com",
-  //    type: "midsem",
-  //    semester: "autumn",
-  //    subjectName: "Data Structures",
-  //    flags: 5,
-  //    subjectCode: "CS2L002",
-  //    resourceId: "CS2L002123"
-  // }
-  // ];
-var flagArr=[],unflagArr=[];
-// loads different image acc to flag value
-function countFlag(count) {
-  if(count == 0) {
-    return `<img src="./views/Images/flag.png" style='width:20px'>`;
-  }else {
-    return `<img src="./views/Images/unflag.png" style='width:20px'>`;
+   propagateFlagTemplate(dataArr);
+   setOnClickFlagTemplate();
+   propagateReviewTemplate(dataArr);
+   setOnClickReviewTemplate();
+}
+
+
+function propagateFlagTemplate(subData){
+    if ('content' in document.createElement('template')) {
+      subData.forEach(function(item){
+        this.fillDataInFlagContainer(item);
+      });
+    }
+     else {
+        // the HTML template element is not supported.
+        alert("HTML template element is not supported.")
+    }
+}
+
+function fillDataInFlagContainer(resourceObj){
+  if(resourceObj.flags != 0){
+    // select template and container
+    let template = $('#flagTemplate');
+    let containerFlagged = $('.flagContainer .flagged');
+
+    // Clone the template
+    let clone = template.prop('content');
+
+    // Select field to fill them
+    let email = $(clone).find('.fieldEmail span');
+    let resID = $(clone).find('.fieldResID span');
+    let flagCount = $(clone).find('.fieldFlagCount span');
+    let flagReason = $(clone).find('.fieldReason span');
+    let resName = $(clone).find('.fieldResName span');
+
+    // Enter Values in the fields
+    email.text(resourceObj.emailId);
+    resID.text(resourceObj.resourceId);
+    flagCount.text(resourceObj.flags);
+    // flagReason.text(mostVotedReson);
+    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
+     ' ' + resourceObj.semester + ' ' + resourceObj.year);
+
+    // Inserts template to the web page
+    containerFlagged.append(template.html());
   }
 }
-// returns html string
-// div contains emailId, resourceId and flags
-// added buttons to view, delete and toggle flag value
-function flagTemplate(dataArr) {
-  return `
-    <div class="all-files">
-      <h4 class="file-name">
-        <strong>Email Id</strong>: ${dataArr.emailId} <br>
-        <strong>Resource Id</strong>: ${dataArr.resourceId} <br>
-        <strong>Flag Count</strong>: ${dataArr.flags}
-      </h4>
-      <button type="button" class="btn btn-light" onclick=downloadFile("${dataArr.resourceID}")><img src="./views/Images/view.png" style='width:20px'></button>
-      <button type="button" class="btn btn-light" onclick=flagToggle("${dataArr.resourceId}")>
-      ${countFlag(dataArr.flags)}
-      </button>
-      <button type="button" class="btn btn-light" onclick=deleteFile("${dataArr.resourceId}")><img src="./views/Images/delete.png" style='width:20px'></button>
-    </div>
-  `;
-}
-// takes data from json array and separates flagged and unflagged files
-for(i=0;i<dataArr.length;i++) {
-  if(dataArr[i].flags!=0) {
-   flagArr.push(dataArr[i]);
-}else {
-   unflagArr.push(dataArr[i]);
-}
-}
-// append return template string to html page
-$("#flag").html( `
-  ${flagArr.map(flagTemplate).join("")}
-`)
-$("#unflag").html( `
-  ${unflagArr.map(flagTemplate).join("")}
-`)
 
+function setOnClickFlagTemplate(){
+   $('.flagContainer .btnDownload').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     downloadFile(resourceID);
+   });
+   $('.flagContainer .btnFlagToggle').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     // Toggle Image
+     if($(this).find('img').attr('src') == './views/Images/flag.png'){
+       $(this).find('img').attr('src', './views/Images/unflag.png');
+     }else{
+       $(this).find('img').attr('src', './views/Images/flag.png');
+     }
+     removeFlag(resourceID);
+     $(this).parent().fadeOut();
+   });
+   $('.flagContainer .btnDelete').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+         deleteFile("${dataArr.resourceId}");
+         $(this).parent().fadeOut();
+   });
+}
+
+function propagateReviewTemplate(subData){
+    if ('content' in document.createElement('template')) {
+      subData.forEach(function(item){
+        this.fillDataInReviewContainer(item);
+      });
+    }
+     else {
+        // the HTML template element is not supported.
+        alert("HTML template element is not supported.")
+    }
+}
+
+function fillDataInReviewContainer(resourceObj){
+  if(!resourceObj.review){
+    // select template and container
+    let template = $('#unreviewedTemplate');
+    let containerFlagged = $('.unreviewContainer .unreviewed');
+
+    // Clone the template
+    let clone = template.prop('content');
+
+    // Select field to fill them
+    let email = $(clone).find('.fieldEmail span');
+    let resID = $(clone).find('.fieldResID span');
+      let flagReason = $(clone).find('.fieldReason span');
+    let resName = $(clone).find('.fieldResName span');
+
+    // Enter Values in the fields
+    email.text(resourceObj.emailId);
+    resID.text(resourceObj.resourceId);
+    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
+     ' ' + resourceObj.semester + ' ' + resourceObj.year);
+
+    // Inserts template to the web page
+    containerFlagged.append(template.html());
+  }
+}
+
+function setOnClickReviewTemplate(){
+   $('.unreviewContainer .btnDownload').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     downloadFile(resourceID);
+   });
+   $('.unreviewContainer .btnReviewOK').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+     markAsReviewed(resourceID);
+     $(this).parent().fadeOut();
+   });
+   $('.unreviewContainer .btnDelete').click(function(){
+     let resourceID = $(this).parent().find('fieldResID').text();
+         deleteFile("${dataArr.resourceId}");
+         $(this).parent().fadeOut();
+   });
 }

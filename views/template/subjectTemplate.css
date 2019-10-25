@@ -77,3 +77,7 @@ cards while using bootstrap grid system) of the card*/
   color: white;
   text-align: center;
 }
+
+.modal-title{
+  color: black;
+}

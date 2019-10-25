@@ -1,15 +1,9 @@
 /* css for flag title */
-.flag-title {
+.flag-title, .unreview-title {
   text-align: center;
   font-weight: normal;
   font-size: 2rem;
   color: #000;
-}
-/* css for unflag title */
-.unflag-title {
-  text-align: center;
-  font-weight: normal;
-  font-size: 2rem;
 }
 /* css for each div */
 .all-files {
@@ -20,15 +14,17 @@
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
+.flagContainer, .unreviewContainer{
+  margin: 0px 0px;
+  width: 50%;
+}
+.flagged, .unreviewed{
+  height: 1000px;
+  overflow: auto;
+}
 .file-name {
   font-size: 1.3rem;
   font-weight: normal;
   margin: 0 0 1rem 0;
-}
-
-.flag-count {
-  font-size: 0.9rem;
-  color: #888;
-  vertical-align: middle;
+  display: inline;
 }

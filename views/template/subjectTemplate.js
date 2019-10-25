@@ -32,12 +32,41 @@ function flagOnClick(){
 		let fileName = $(this).parent().text();
 		let uniqueID = $(this).parent().find('input').val();
 		let currFlagCount = $(this).text();
-
+		console.log("im in subtempjs");
 		// Using confirm method to confirm whether user really wants to flag a resource or not
-		let response = confirm('Do you really want to report resource ' + fileName + ' ?');
-		if(response){
-			flagToggle(uniqueID);
-		}
+		bootbox.prompt({
+    title: "Select a reason for flagging",
+    inputType: 'select',
+    inputOptions: [
+    {
+        text: 'Select',
+        value: '',
+    },
+    {
+        text: 'The file is irrelevant',
+        value: 'Irrelevant',
+    },
+    {
+        text: 'This file is a duplicate file',
+        value: 'Duplicate',
+    },
+		{
+			text: 'The file is unclear',
+			value: 'Unclear',
+		},
+    {
+        text: 'The file is an explicit file',
+        value: 'Explicit',
+    }
+    ],
+    callback: function (response) {
+			if(response){
+				flagToggle(uniqueID,response);
+			}
+				console.log(response);
+    }
+});
+
 	});
 }
 
