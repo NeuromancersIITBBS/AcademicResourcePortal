@@ -18,12 +18,43 @@
 #myInput[type=text] {
   background-color: #fff;
   width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
 }
 #myInput[type=text]:focus{
   outline: 2px solid #212121;
 }
+#subjectName {
+  border: 1px solid #ced4da;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 15px;
+  border-radius:0.25rem;
+  color: #495057;
+}
+#subjectName[type=text] {
+  background-color: #fff;
+  width: 100%;
+}
+#subjectName[type=text]:focus{
+  outline: 2px solid #212121;
+}
+#subjectCode {
+  border: 1px solid #ced4da;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 15px;
+  border-radius:0.25rem;
+  color: #495057;
 
-
+}
+#subjectCode[type=text] {
+  background-color: #fff;
+  width: 100%;
+}
+#subjectCode[type=text]:focus{
+  outline: 2px solid #212121;
+}
 /*Search button*/
 #searchSubject {
   background-color: #212121;
@@ -41,6 +72,11 @@
   background-color: #fff;
   color: #424242;
   outline: none;
+}
+
+.subjectBar {
+  text-align: left;
+
 }
 
 .searchBar {
