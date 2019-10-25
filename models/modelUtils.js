@@ -9,7 +9,7 @@ var jsResourcesByCode = function(subjectCode){
     let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}`;
     $.ajax({
         url: endpoint,
-        type: 'GET',
+        method: 'GET',
         dataType: 'json',
         error: function(xhr){
           alert("Something went wrong, please try again.");
@@ -31,7 +31,7 @@ var jsResourcesByCode = function(subjectCode){
   let endpoint=`https://localhost:3000/studyResouces/${branch}`;
   $.ajax({
       url: endpoint,
-      type: 'GET',
+      method: 'GET',
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");

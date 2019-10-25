@@ -5,19 +5,22 @@ var upload = function(subjectCode, formData){
     let branch = subjectCode.substring(0,2);
 
     let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}`;
+    let resource = formData.get("resource_file");
+
+
     //document.querySelector('[type=file]').files
     // Add a new document with a generated id.
     // File or Blob named mountains.jpg
     // File or Blob named mountains.jpg
-    var file = images.jpg;
+    var file = resource.pdf;
 
     // Create the file metadata
     var metadata = {
-    contentType: 'image/jpeg'
+    contentType: 'pdf'
     };
 
     // Upload file and metadata to the object 'images/mountains.jpg'
-    var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+    var uploadTask = storageRef.child('resources/' + file.name).put(file, metadata);
 
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -57,10 +60,10 @@ var upload = function(subjectCode, formData){
     });
     });
 
-
+    formData.append("downloadLink",downloadURL);
     	$.ajax({
 					url : endpoint,
-					type : "POST",
+  				method : "POST",
 					data : formData,
 					contentType : false,
 					processData : false
