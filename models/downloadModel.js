@@ -10,11 +10,12 @@
 
     $.ajax({
         url: endpoint,
-        type: 'GET',
+        method: 'GET',
         error: function(xhr){
           alert("Something went wrong, please try again.");
         },
         success: function(result) {
+          window.open(result, '_blank');
           console.log("Success!");
         }
     });
