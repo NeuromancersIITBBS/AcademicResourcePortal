@@ -192,29 +192,28 @@
                 </div>
             </template>
         </div>
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
 
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
-
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
 
         <script>
-        let firebaseConfig = {
-        apiKey : "AIzaSyAA3gAByQRr6WNhmHpw8UtVr0Civi46Ork",
-        authDomain : "academic-resource-portal-b.firebaseapp.com",
-        databaseURL : "https://academic-resource-portal-b.firebaseio.com",
-        projectId : "academic-resource-portal-b",
-        storageBucket : "academic-resource-portal-b.appspot.com",
-        messagingSenderId : "750397614411"
-        };
-        firebase.initializeApp(firebaseConfig);
-        console.log("i am in firebase");
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyDtZKjy8A1eVOeqw5tRNdclFepFMGfLNyg",
+            authDomain: "testarp-e38ba.firebaseapp.com",
+            databaseURL: "https://testarp-e38ba.firebaseio.com",
+            projectId: "testarp-e38ba",
+            storageBucket: "testarp-e38ba.appspot.com",
+            messagingSenderId: "743643893337",
+            appId: "1:743643893337:web:32b288f79f0164273eab48",
+            measurementId: "G-1HDXL6295Y"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
         const db = firebase.firestore();
 
         </script>
