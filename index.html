@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--jQuery-->
+        <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+        <!-- added logo in title -->
+        <link rel="shortcut icon" type="./image/x-icon" href="./views/Images/collegelogo.png" />
+
+        <!-- Model Imports -->
+        <script type="text/javascript" src="models/searchModel.js"></script>
+        <script type="text/javascript" src="./models/modelUtils.js"></script>
+
+        <!-- Controller Imports -->
+        <script type="text/javascript" src="controllers/searchController.js"></script>
+        <script type="text/javascript" src="./controllers/controllerUtils.js"></script>
+
+        <!-- Search Bar imports -->
+        <link rel="stylesheet" type="text/css" href="./views/SearchBar/searchBar.css">
+        <script type="text/javascript" src="./views/SearchBar/searchBar.js"></script>
+
+        <!-- Branch Template Propagation Imports -->
+        <link rel="stylesheet" type="text/css" href="./views/template/Template.css">
+        <script type="text/javascript" src="./views/template/Template.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./views/style.css" type="text/css">
+
+        <title>Academic Resource Portal</title>
+    </head>
+
+
+
+    <body style="background-color:#f2f2f2">
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark text-dark fixed-top"  style="width:100%;background-color:#212121">
+          <a href="./index.html">  <img class="navbar-brand" src='./views/Images/collegelogo.png' style='width:30px '></a>
+          <button class="navbar-toggler ml-auto"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ContactUs.html">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./upload_page.html">Upload</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Report </a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <!--Heading-->
+        <div class="jumbotron jumbotron-fluid" id="jumbotronSection" style="width:100%;background-color:#212121">
+            <div class="container">
+
+                <h2 class="display-4 jumbotron-mainheading"><b>Academic Resource Portal</b></h2>
+                <p class="lead">Powered by Neuromancers</p>
+
+            </div>
+        </div>
+
+        <!--searchBar
+css : searchBar.css;
+javascript : searchBar.js-->
+        <div class="searchBar" style="width: 100%">
+            <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="subject" placeholder="Search by subject name or code">
+            </div>
+            <button id="searchSubject">Search</button>
+        </div>
+
+        <!--template
+template is used for schoolwise branch list
+css : template.css;
+javascript : template.js-->
+        <div id="branchLists">
+            <h3>Schools</h3>
+            <div class="cardContainer"></div>
+        </div>
+
+
+        <template id="schoolTemplate">
+            <div class="container col-lg-4 col-sm-6 col-xs-6 cardCover">
+                <div class="mx-auto cardContent">
+                    <h3></h3>
+                    <div class="links"></div>
+                </div>
+            </div>
+        </template>
+        <template id="branchTemplate">
+            <div class="container col-xs-10 branchCover">
+                <div class="mx-auto cardContent">
+                    <h3></h3>
+                    <div class="links"></div>
+                </div>
+            </div>
+        </template>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery in the head no need to import again -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+-->
+        <!-- Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html>

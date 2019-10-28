@@ -1,0 +1,81 @@
+/*css for div that contains all the cards*/
+.cardContainer p{
+  width: 100%;
+}
+.cardContainer p,.cardContainer a {
+  text-decoration: none;
+  background-color: #f0f0f0;
+  border: none;
+  outline: none;
+  display: inline-block;
+  padding: 8px;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 90%;
+  margin: 5px 0px;
+  font-size: 18px;
+}
+.cardContainer p:hover,.cardContainer a:hover {
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*css for each card*/
+
+/*Gives proper spacing and sets text*/
+.cardContent {
+  width: 90%;
+  margin: 1.5%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.cardContent h3{
+  margin: 0px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #212121;
+}
+
+.cardContent .links{
+  overflow: auto;
+  height: 150px;
+  border: 2px solid #212121;
+}
+
+.branchCover .links{
+  overflow: auto;
+  height: auto;
+  border: 2px solid #212121;
+}
+
+/*Style for cover(cover is used to give proper spacing between the
+cards while using bootstrap grid system) of the card*/
+.cardCover{
+  margin: 10px 0px;
+  float: left;
+  text-align: center;
+}
+#branchLists>h3{
+	text-align: center;
+	width: 100%;
+	padding: 60px;
+  color: #000;
+}
+
+/*Style for return button*/
+.btnReturn{
+  background-color: #fff;
+  color: #000;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1px solid transparent;
+}
+.btnReturn:hover{
+  background-color: #212121;
+}

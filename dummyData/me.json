@@ -1,0 +1,271 @@
+ [{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "0",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001010151"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "1",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001010152"
+		},
+		{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "2",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001020153"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "3",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001020154"
+		},
+		{
+			"emailId": "ade999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "0",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001030155"
+		},
+		{
+			"emailId": "aef999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "1",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001030156"
+		},
+		{
+			"emailId": "agh999@iitbbs.ac.in",
+			"year": "2019",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "0",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001030157"
+		},
+		{
+			"emailId": "aij999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "quiz",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "3",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001040158"
+		},
+		{
+			"emailId": "ajk999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "others",
+			"semester": "autumn",
+			"subjectName": "Theory of Machines - 1",
+			"flags": "2",
+			"subjectCode": "ME2L001",
+			"resourceId": "ME2L001050159"
+		},
+		{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "0",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001019109"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "1",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001018108"
+		},
+		{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "2",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001027107"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "3",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001026106"
+		},
+		{
+			"emailId": "ade999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "0",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001035105"
+		},
+		{
+			"emailId": "aef999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "1",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001034104"
+		},
+		{
+			"emailId": "agh999@iitbbs.ac.in",
+			"year": "2019",
+			"type": "tutorial",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "0",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001033103"
+		},
+		{
+			"emailId": "aij999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "quiz",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "3",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001042102"
+		},
+		{
+			"emailId": "ajk999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "others",
+			"semester": "autumn",
+			"subjectName": "Heat Transfer",
+			"flags": "2",
+			"subjectCode": "ME3L001",
+			"resourceId": "ME3L001051101"
+		},
+		{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "0",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005019119"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "midsem",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "1",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005018218"
+		},
+		{
+			"emailId": "aaa999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "2",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005027317"
+		},
+		{
+			"emailId": "abc999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "endsem",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "3",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005026416"
+		},
+		{
+			"emailId": "ade999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "tutorial",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "0",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005035515"
+		},
+		{
+			"emailId": "aef999@iitbbs.ac.in",
+			"year": "2018",
+			"type": "tutorial",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "1",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005034614"
+		},
+		{
+			"emailId": "agh999@iitbbs.ac.in",
+			"year": "2019",
+			"type": "tutorial",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "0",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005033713"
+		},
+		{
+			"emailId": "aij999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "quiz",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "3",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005042812"
+		},
+		{
+			"emailId": "ajk999@iitbbs.ac.in",
+			"year": "2017",
+			"type": "others",
+			"semester": "spring",
+			"subjectName": "IC Engines",
+			"flags": "2",
+			"subjectCode": "ME3L005",
+			"resourceId": "ME3L005051911"
+		}
+	]
