@@ -24,11 +24,6 @@ function afterLoading(){
             addTemplate();
       });
 
-      // Submit the form
-      $('#submit').click(function(){
-
-            submit();
-      });
 
       // As forms can be dynamically added or removed
       // this on click listener on formContainer which listens for
@@ -92,15 +87,15 @@ function resetAllRemoveButtons(){
       $('#formContainer .removeBtn').attr('disabled', false);
 }
 
-function onSignIn(googleUser) {
-        let profile = googleUser.getBasicProfile();
-        return profile.getEmail();
-      }
+function submit(email){
+  console.log(email);
+  var last = "@iitbbs.ac.in" ;
+      if(email.includes(last))
+        {
+          console.log(email);
+          uploadPreprocessing(email,num);
 
-function submit(){
-      let email = onSignIn(googleUser);
-      if(email.includes("@iitbbs.ac.in"))
-        uploadPreprocessing(email,num);
+        }
       else {
         alert("Please sign in using Institute Email ID");
       }

@@ -46,9 +46,35 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./views/style.css" type="text/css">
         <!--Google sign in-->
-        <meta name="google-signin-scope" content="profile email">
-        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://apis.google.com/js/api:client.js"></script>
+          <meta name="google-signin-scope" content="profile email">
+          <meta name="google-signin-client_id" content="428652653892-esfauerv7qutgj4iiqn1188r0rn4b5c7.apps.googleusercontent.com">
+
+          <script>
+                var googleUser = {};
+                var startApp = function() {
+                  gapi.load('auth2', function(){
+                    // Retrieve the singleton for the GoogleAuth library and set up the client.
+                    auth2 = gapi.auth2.init({
+                      client_id: '428652653892-esfauerv7qutgj4iiqn1188r0rn4b5c7.apps.googleusercontent.com',
+                      cookiepolicy: 'single_host_origin',
+                      // Request scopes in addition to 'profile' and 'email'
+                      //scope: 'additional_scope'
+                    });
+                    attachSignin(document.getElementById('customBtn'));
+              });
+            };
+
+            function attachSignin(element) {
+
+              auth2.attachClickHandler(element, {},
+                  function(googleUser) {
+                      submit(googleUser.getBasicProfile().getEmail());
+                  }, function(error) {
+                    alert(JSON.stringify(error, undefined, 2));
+                  });
+            }
+            </script>
     </head>
     <body style="background-color:#f2f2f2">
 
@@ -96,8 +122,22 @@
             <button class="btn btn-dark" id="addTemplateButton" style="float:left">Add another Question paper</button>
             <br>
             <br>
-            <button type="button" class="btn btn-dark " data-onsuccess="onSignIn" >Submit</button>
+            <!-- <button type="button" class="btn btn-dark " data-onsuccess="onSignIn" >Submit</button> -->
+            <div id="gSignInWrapper">
 
+              <div id="customBtn" class="customGPlusSignIn">
+
+                <button type="button" class="btn btn-dark" data-onsuccess="onSignIn">Submit</button>
+                <!--<span class="buttonText">submit</span>-->
+                <div id="name">
+
+                </div>
+                <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute mailid</p>
+
+              </div>
+            </div>
+
+            <script>startApp();</script>
 
             <template id="uploadtemplate">
                 <div class="encloseForm">
