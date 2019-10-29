@@ -35,15 +35,25 @@ function fillDataInFlagContainer(resourceObj){
     let resID = $(clone).find('.fieldResID span');
     let flagCount = $(clone).find('.fieldFlagCount span');
     let flagReason = $(clone).find('.fieldReason span');
-    let resName = $(clone).find('.fieldResName span');
+    let subName = $(clone).find('.fieldSubName span');
+    let subCode = $(clone).find('.fieldSubCode span');
+    let sem = $(clone).find('.fieldSem span');
+    let type = $(clone).find('.fieldType span');
+    let year = $(clone).find('.fieldYear span');
+
+    mostVotedReson = " ";
+    // mostVotedReson = getMostVotedReason(resourceObj);
 
     // Enter Values in the fields
     email.text(resourceObj.emailId);
     resID.text(resourceObj.resourceId);
     flagCount.text(resourceObj.flags);
-    // flagReason.text(mostVotedReson);
-    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
-     ' ' + resourceObj.semester + ' ' + resourceObj.year);
+    flagReason.text(mostVotedReson);
+    subName.text(resourceObj.subjectName);
+    subCode.text(resourceObj.subjectCode);
+    sem.text(resourceObj.semester);
+    type.text(resourceObj.type);
+    year.text(resourceObj.year);
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
@@ -97,14 +107,22 @@ function fillDataInReviewContainer(resourceObj){
     // Select field to fill them
     let email = $(clone).find('.fieldEmail span');
     let resID = $(clone).find('.fieldResID span');
-      let flagReason = $(clone).find('.fieldReason span');
-    let resName = $(clone).find('.fieldResName span');
+    let flagReason = $(clone).find('.fieldReason span');
+    let subName = $(clone).find('.fieldSubName span');
+    let subCode = $(clone).find('.fieldSubCode span');
+    let sem = $(clone).find('.fieldSem span');
+    let type = $(clone).find('.fieldType span');
+    let year = $(clone).find('.fieldYear span');
+
 
     // Enter Values in the fields
     email.text(resourceObj.emailId);
     resID.text(resourceObj.resourceId);
-    resName.text(resourceObj.subjectName + ' ' + resourceObj.type +
-     ' ' + resourceObj.semester + ' ' + resourceObj.year);
+    subName.text(resourceObj.subjectName);
+    subCode.text(resourceObj.subjectCode);
+    sem.text(resourceObj.semester);
+    type.text(resourceObj.type);
+    year.text(resourceObj.year);
 
     // Inserts template to the web page
     containerFlagged.append(template.html());

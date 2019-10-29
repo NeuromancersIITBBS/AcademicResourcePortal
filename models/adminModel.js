@@ -71,3 +71,25 @@ var reviewRequest = function(uniqueID){
    });
    return response;
 };
+
+var editDetailsRequest = function(uniqueID, resourceObj){
+  let branch = uniqueID.substring(0,2);
+  let subjectCode = uniqueID.substring(0,7);
+  uniqueID = uniqueID.substring(7,uniqueID.length);
+  let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+  let response;
+  $.ajax({
+      url: endpoint,
+      method: 'PUT',
+      data : JSON.stringify(resourceObj),
+      contentType: application/json,
+      error: function(xhr){
+        alert("Something went wrong, please try again.");
+      },
+      success: function(result) {
+      response = 0;
+      console.log("Successfully unflagged! ");
+      }
+  });
+  return response;
+};

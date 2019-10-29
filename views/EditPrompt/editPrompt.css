@@ -1,0 +1,61 @@
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+.editPromptContainer input[type=text],
+.editPromptContainer input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+.editPromptContainer input[type=text]:focus,
+.editPromptContainer input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Add padding to container elements */
+.editPromptContainer .container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.editPromptContainer {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  color: #000;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.editPromptContainer .modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 500px;
+  max-width: 95%;
+}
+
+/* Style the horizontal ruler */
+.editPromptContainer hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Clear floats */
+.editPromptContainer .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
