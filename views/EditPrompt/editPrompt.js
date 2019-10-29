@@ -30,6 +30,7 @@ function afterLoading(){
       semester: iSem,
       review: true,
     };
+    console.log(resData);
     // Call controller function to send  request to the server
     reviewedAndEdited(iResID, resData);
     $('#editPrompt').css('display', 'none');

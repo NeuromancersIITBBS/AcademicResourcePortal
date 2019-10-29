@@ -31,6 +31,8 @@
     <!-- Search Bar imports -->
     <link rel="stylesheet" type="text/css" href="./views/SearchBar/searchBar.css">
     <script type="text/javascript" src="./views/SearchBar/searchBar.js"></script>
+    <script type="text/javascript" src="./views/SearchBar/codeBar.js"></script>
+    <script type="text/javascript" src="./views/SearchBar/subjectBar.js"></script>
 
     <!-- Template Propagation Imports -->
     <link rel="stylesheet" type="text/css" href="./views/template/adminTemplate.css">
@@ -79,7 +81,7 @@
   <!--Heading-->
   <div class="jumbotron jumbotron-fluid" id="jumbotronSection"style="width:100%;background-color:#212121">
     <div class="container">
-    <h2 class="display-4 jumbotron-mainheading"><b>Admin Page</b></h2>
+    <h2 class="display-4 jumbotron-mainheading"><strong>Admin Page</strong></h2>
     <p class="lead">Powered by Neuromancers</p>
     </div>
   </div>
@@ -115,16 +117,24 @@
           <p>Please correct the data and submit this.</p>
           <hr>
           <input type="hidden" name="resID" class="iResID" value="">
-          <label for="subjectName"><b>Subject Name</b></label>
-          <input type="text" placeholder="Subject Name" class ="iSubjectName" required>
-          <label for="subjectCode"><b>Subject Code</b></label>
-          <input type="text" placeholder="Subject Code" class ="iSubjectCode" required>
-          <label for="semester"><b>Semester</b></label>
-          <input type="text" placeholder="Semester" class ="iSemester" required>
-          <label for="type"><b>Type</b></label>
-          <input type="text" placeholder="Type" class ="iType" required>
-          <label for="year"><b>Year</b></label>
-          <input type="text" placeholder="Year" class ="iYear" required>
+          <!-- <label for="subjectName"><strong>Subject Name</strong></label> -->
+          <!-- <input type="text" placeholder="Subject Name" class ="iSubjectName"> -->
+          <div class="subjectBar autocomplete" style="width: 100%">
+            <label for="subjectName"> <strong>Subject Name</strong></label>
+            <input class="form-control iSubjectName" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name ">
+          </div>
+          <div class="form-group autocomplete col-sm-4">
+            <label for="subjectCode ">Subject Code</label>
+            <input class=" form-control iSubjectCode" id="subjectCode" type="text" name="subject" placeholder="Subject Code (e.g CS1L001)">
+          </div>
+          <label for="subjectCode"><strong>Subject Code</strong></label>
+          <input type="text" placeholder="Subject Code" class ="iSubjectCode">
+          <label for="semester"><strong>Semester</strong></label>
+          <input type="text" placeholder="Semester" class ="iSemester">
+          <label for="type"><strong>Type</strong></label>
+          <input type="text" placeholder="Type" class ="iType">
+          <label for="year"><strong>Year</strong></label>
+          <input type="text" placeholder="Year" class ="iYear">
           <div class="clearfix">
             <button type="button" id="btnCancel" class="btn btn-dark">Cancel</button>
             <button type="button" id="btnSubmit" class="btn btn-dark">Update</button>

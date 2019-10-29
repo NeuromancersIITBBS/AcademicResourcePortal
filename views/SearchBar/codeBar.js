@@ -6,16 +6,6 @@ var selecetedSearchID;  //Stores searchID of clicked item
 function onDocReady(){
   //A subjectsList containing all the subjects
   codeBarSetup($('#subjectCode'));
-
-  $('#searchSubject').click(function(){
-    //Write code to call controller
-    console.log(selecetedSearchID);
-    // With an assumption that selectedSearchID = subject code
-    if(selecetedSearchID){
-    	window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
-    }
-    return false;
-  });
 }
 //Calls onDocReady when document is ready
 $(onDocReady);
