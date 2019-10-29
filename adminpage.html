@@ -137,16 +137,18 @@
               </select>
           </div>
           <div class="form-group">
-              <label for="Type">Type</label>
+              <label for="Type"><strong>Type</strong></label>
               <select class="form-control iType" id="Type" name="type">
                   <option value="endsem" selected>Endsem</option>
                   <option value="midsem">Midsem</option>
                   <option value="tutorial">Tutorial</option>
-                  <option value="quize">Quiz</option>
+                  <option value="quiz">Quiz</option>
               </select>
           </div>
-          <label for="year"><strong>Year</strong></label>
-          <input type="text" placeholder="Year" class ="iYear">
+          <div class="form-group">
+            <label for="year"><strong>Year</strong></label>
+            <input type="text" class="form-control iYear" id="year" placeholder="Year">
+          </div>
           <div class="clearfix">
             <button type="button" id="btnCancel" class="btn btn-dark">Cancel</button>
             <button type="button" id="btnSubmit" class="btn btn-dark">Update</button>
