@@ -36,6 +36,10 @@
     <link rel="stylesheet" type="text/css" href="./views/template/adminTemplate.css">
     <script type="text/javascript" src="./views/template/adminTemplate.js"></script>
 
+    <!-- editPrompt Imports -->
+    <link rel="stylesheet" type="text/css" href="./views/EditPrompt/editPrompt.css">
+    <script type="text/javascript" src="./views/EditPrompt/editPrompt.js"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./views/style.css" type="text/css">
@@ -96,13 +100,37 @@
   <div class="row">
     <div class="flagContainer col-md-6 col-xs-12">
       <h2 class="flag-title">Flagged Files</h2>
-      <div class="flagged">
-      </div>
+      <div class="flagged"></div>
     </div>
     <div class="unreviewContainer col-md-6 col-xs-12">
       <h2 class="unreview-title">Unreviewed Files</h2>
       <div class="unreviewed">
       </div>
+    </div>
+
+    <div id="editPrompt" class="editPromptContainer">
+      <form class="modal-content" action="/action_page.php">
+        <div class="container">
+          <h1>Edit Resource Data</h1>
+          <p>Please correct the data and submit this.</p>
+          <hr>
+          <input type="hidden" name="resID" class="iResID" value="">
+          <label for="subjectName"><b>Subject Name</b></label>
+          <input type="text" placeholder="Subject Name" class ="iSubjectName" required>
+          <label for="subjectCode"><b>Subject Code</b></label>
+          <input type="text" placeholder="Subject Code" class ="iSubjectCode" required>
+          <label for="semester"><b>Semester</b></label>
+          <input type="text" placeholder="Semester" class ="iSemester" required>
+          <label for="type"><b>Type</b></label>
+          <input type="text" placeholder="Type" class ="iType" required>
+          <label for="year"><b>Year</b></label>
+          <input type="text" placeholder="Year" class ="iYear" required>
+          <div class="clearfix">
+            <button type="button" id="btnCancel" class="btn btn-dark">Cancel</button>
+            <button type="button" id="btnSubmit" class="btn btn-dark">Update</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <template id="unreviewedTemplate">
@@ -110,7 +138,11 @@
       <h4 class="file-name"> <!--file-name -->
         <p class="fieldEmail"><strong>Email Id</strong>: <span></span></p>
         <p class="fieldResID"><strong>Resource Id</strong>: <span></span></p>
-        <p class="fieldResName"><strong> Resource Name:</strong>: <span></span></p>
+        <p class="fieldSubName"><strong>Subject Name</strong>: <span></span></p>
+        <p class="fieldSubCode"><strong>Subject Code</strong>: <span></span></p>
+        <p class="fieldSem"><strong>Semester</strong>: <span></span></p>
+        <p class="fieldType"><strong>Type</strong>: <span></span></p>
+        <p class="fieldYear"><strong>Year</strong>: <span></span></p>
       </h4>
       <button type="button" class="btn btn-light btnDownload">
         <img src="./views/Images/view.png" style="width:20px" alt="download">
@@ -121,6 +153,9 @@
       <button type="button" class="btn btn-light btnDelete">
         <img src="./views/Images/delete.png" style='width:20px' alt = "delete">
       </button>
+      <button type="button" class="btn btn-light btnEdit">
+        <img src="./views/Images/edit.png" style='width:20px' alt = "delete">
+      </button>
     </div>
   </template>
 
@@ -130,7 +165,11 @@
       <h4 class="file-name"> <!--file-name -->
         <p class="fieldEmail"><strong>Email Id</strong>: <span></span></p>
         <p class="fieldResID"><strong>Resource Id</strong>: <span></span></p>
-        <p class="fieldResName"><strong> Resource Name:</strong>: <span></span></p>
+        <p class="fieldSubName"><strong>Subject Name</strong>: <span></span></p>
+        <p class="fieldSubCode"><strong>Subject Code</strong>: <span></span></p>
+        <p class="fieldSem"><strong>Semester</strong>: <span></span></p>
+        <p class="fieldType"><strong>Type</strong>: <span></span></p>
+        <p class="fieldYear"><strong>Year</strong>: <span></span></p>
         <p class="fieldFlagCount"><strong>Flag Count</strong>: <span></span></p>
         <p class="fieldReason"><strong>Most Voted Reason</strong>: <span></span> </p>
       </h4>
@@ -142,6 +181,9 @@
       </button>
       <button type="button" class="btn btn-light btnDelete">
         <img src="./views/Images/delete.png" style='width:20px' alt = "delete">
+      </button>
+      <button type="button" class="btn btn-light btnEdit">
+        <img src="./views/Images/edit.png" style='width:20px' alt = "delete">
       </button>
     </div>
   </template>
