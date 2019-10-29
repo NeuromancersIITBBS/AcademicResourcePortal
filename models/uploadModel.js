@@ -4,7 +4,7 @@
 var upload = function(subjectCode, formData){
     let branch = subjectCode.substring(0,2);
 
-    let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}`;
+    let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}`;
     let resource = formData.get("resource_file");
 
 
