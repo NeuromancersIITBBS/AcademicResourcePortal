@@ -1,6 +1,10 @@
 ## AcademicResourcePortal
+
 - A portal which would host academic resources exclusively for the students of IIT Bhubaneswar.
+
 - This repository consists of the codes for frontend of Academic Resource Portal.
+
+![ARPCommunity](/public/images/arpCommunity.jpeg)
 
 ## Table of Contents
 
@@ -16,9 +20,15 @@
 
 - [Admin Page](#admin-page)
 
-- [Contriutors](#contributors)
+- [Built With](#built-with)
 
-- [Contact Us](#contact-us) 
+- [Contributing and Deploying in loacal machine](#contributing-and-deploying-in-loacal-machine)
+
+- [Link to Backend Git Repository](#link-to-backend-git-repository)
+
+- [Contributors](#contributors)
+
+- [Contact Us](#contact-us)
 
 
 
@@ -32,7 +42,7 @@ One can upload and download resources, which are useful for Academic purposes, l
 
 - Google Sign-in enabled
 
-- Authentication employed to allow only IIT Bhubaneswar community to upload resources. 
+- Authentication employed to allow only IIT Bhubaneswar community to upload resources.
 
 - Resources can be flagged by users if found to be inappropriate along with specifying the reason for flagging it.
 
@@ -46,7 +56,7 @@ One can upload and download resources, which are useful for Academic purposes, l
 
 
 
-## Description of MVC model implementation 
+## Description of MVC model implementation
 
 The frontend was implemented using the MVC model which consists of three parts namely Model, View and Controller, apart from the interface.The users directly interact with the interface which calls View to perform specific functions and view further communicates with controller and passes the request to Controller and viceversa, Controller is the only point of contact between view and model. While model passes the requests from contoller to backend and returns the response if any from Backend to the Controller, controller returns the response to view, which finally displays the output to the user.
 
@@ -59,7 +69,7 @@ The frontend was implemented using the MVC model which consists of three parts n
 - Next it consists of Search Bar, which operates by Search by Subject method as follows :
 
     (i) The search routine gets a list of all subjects (irrespective of branh) as soon as the home page loads.(The functions for these operations are present in searchBar.js file.
-    
+
     (ii) Search is done by simple substring checking.
 
     (iii) The file searchModel.js which contains functions to fetch data from Backend and return to searchController.js which further sorts the result and sends to searchBar.js in view.
@@ -94,7 +104,7 @@ The frontend was implemented using the MVC model which consists of three parts n
 
 
 
-## Admin Page 
+## Admin Page
 
 - This page can be only accessed by Admins of the project.
 
@@ -105,14 +115,35 @@ The frontend was implemented using the MVC model which consists of three parts n
 - The unreviewed files if approved by the admins would be uploaded to the main page.
 
 
+## Built With
+
+* [Firebase](https://firebase.google.com/) - Database, Storage.
+* [Github Pages](https://pages.github.com/)  Hosting the portal.
+
+
+## Contributing and Deploying in loacal machine
+
+- Fork the repository https://github.com/NeuromancersIITBBS/AcademicResourcePortal.git and download the code to your local system using 'git clone' command.
+
+- A new method can be suggested to implement the functions in model/uploadModel.js to upload the files in firebase storage and also to extract the downloadable link and the storage loaction of the resource.
+
+- Do verify by testing in loacl machine, any changes you would like to contribute to our codes.
+
+- Create a pull request explaining the details of the changes made.
+
+
+## Link to Backend Git Repository
+
+https://github.com/NeuromancersIITBBS/ARP_Backend.git
+
 
 ## Contributors
 
-- Rishabh Gupta (Project Leads)
+- Rishabh Gupta (Project Lead)
 - Aashay Palliwar
 - Anuj Gupta
 - Raj Shah
-- T.V.S.S.Sripad 
+- T.V.S.S.Sripad
 - Pradyuman Agrawal
 - Jayakar Reddy
 - Sreekanth Vadigi
@@ -120,5 +151,5 @@ The frontend was implemented using the MVC model which consists of three parts n
 
 
 ## Contact us
- 
+
    You can put your queries to us at **secyprogsoc.sg@iitbbs.ac.in**
