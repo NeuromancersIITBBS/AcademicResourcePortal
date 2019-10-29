@@ -29,10 +29,11 @@ function afterLoading(){
       year: iYear,
       semester: iSem,
       review: true,
-      resourceId: iResID
     };
     // Call controller function to send  request to the server
     reviewedAndEdited(iResID, resData);
+    $('#editPrompt').css('display', 'none');
+    // Refresh the page if edit is successful(inComplete)
   });
 
   // Main Button to ambed it in adminTemplate.js
