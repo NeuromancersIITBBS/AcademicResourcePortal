@@ -5,7 +5,7 @@ function afterLoading(){
       event.stopPropagation();
   });
   // Closes the prompt when admin clicks outside the container
-  $('html').on('click', '#editPrompt',function(){
+  $('#editPrompt').click(function(){
     $('#editPrompt').css('display', 'none');
   });
   // discards the changes made by the admin
@@ -23,8 +23,16 @@ function afterLoading(){
     let iYear = $('.editPromptContainer .iYear').val();
     let iResID = $('.editPromptContainer .iResID').val();
     let resData = {
-
-    }
+      subjectName: iSubName,
+      subjectCode: iSubCode,
+      type: iType,
+      year: iYear,
+      semester: iSem,
+      review: true,
+      resourceId: iResID
+    };
+    // Call controller function to send  request to the server
+    reviewedAndEdited(iResID, resData);
   });
 
   // Main Button to ambed it in adminTemplate.js
