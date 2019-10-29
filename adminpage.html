@@ -119,21 +119,32 @@
           <input type="hidden" name="resID" class="iResID" value="">
           <!-- <label for="subjectName"><strong>Subject Name</strong></label> -->
           <!-- <input type="text" placeholder="Subject Name" class ="iSubjectName"> -->
-          <div class="subjectBar autocomplete" style="width: 100%">
+          <div class="subjectBar  autocomplete" style="width: 100%">
             <label for="subjectName"> <strong>Subject Name</strong></label>
-            <input class="form-control iSubjectName" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name ">
+            <input class="form-control iSubjectName" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name "
+            autocomplete="off">
           </div>
-          <div class="form-group autocomplete col-sm-4">
-            <label for="subjectCode ">Subject Code</label>
+          <div class="form-group autocomplete" style="width: 100%">
+            <label for="subjectCode "><strong>Subject Code</strong></label>
             <input class=" form-control iSubjectCode" id="subjectCode" type="text" name="subject" placeholder="Subject Code (e.g CS1L001)"
-            autocomplete="false">
+            autocomplete="off">
           </div>
-          <label for="subjectCode"><strong>Subject Code</strong></label>
-          <input type="text" placeholder="Subject Code" class ="iSubjectCode">
-          <label for="semester"><strong>Semester</strong></label>
-          <input type="text" placeholder="Semester" class ="iSemester">
-          <label for="type"><strong>Type</strong></label>
-          <input type="text" placeholder="Type" class ="iType">
+          <div class="form-group" style="width: 100%">
+              <label for="Semester"><strong>Semester</strong></label>
+              <select class="form-control iSemester" id="semester" name="semester">
+                  <option value="autumn" selected>Autumn</option>
+                  <option value="spring">Spring</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="Type">Type</label>
+              <select class="form-control iType" id="Type" name="type">
+                  <option value="endsem" selected>Endsem</option>
+                  <option value="midsem">Midsem</option>
+                  <option value="tutorial">Tutorial</option>
+                  <option value="quize">Quiz</option>
+              </select>
+          </div>
           <label for="year"><strong>Year</strong></label>
           <input type="text" placeholder="Year" class ="iYear">
           <div class="clearfix">

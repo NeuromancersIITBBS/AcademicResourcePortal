@@ -71,8 +71,6 @@ function subjectBarSetup(inp) {
         if (currentFocus > -1) {
           if (listItems.length != 0) listItems[currentFocus].click();
           //Simulate click on Search and then call controller
-          var searchBtn = $('#searchSubject');
-          searchBtn.click();
         }
       }
   });

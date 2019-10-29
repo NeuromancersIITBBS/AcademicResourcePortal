@@ -70,9 +70,6 @@ function codeBarSetup(inp) {
         e.preventDefault();//If Enter is pressed submit form with the value on which currentfoucs is
         if (currentFocus > -1) {
           if (listItems.length != 0) listItems[currentFocus].click();
-          //Simulate click on Search and then call controller
-          var searchBtn = $('#searchSubject');
-          searchBtn.click();
         }
       }
   });
