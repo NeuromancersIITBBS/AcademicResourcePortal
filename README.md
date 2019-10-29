@@ -24,7 +24,7 @@
 
 - [Contributing and Deploying in loacal machine](#contributing-and-deploying-in-loacal-machine)
 
-- [Link to Backend Git Repository](#link-to-backend-git repository)
+- [Link to Backend Git Repository](#link-to-backend-git-repository)
 
 - [Contributors](#contributors)
 
