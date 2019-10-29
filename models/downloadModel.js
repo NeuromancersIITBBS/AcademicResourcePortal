@@ -6,7 +6,7 @@
     let branch = uniqueID.substring(0,2);
     let subjectCode = uniqueID.substring(0,7);
     uniqueID = uniqueID.substring(7,uniqueID.length);
-    let endpoint = `https://localhost:3000/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+    let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
 
     $.ajax({
         url: endpoint,

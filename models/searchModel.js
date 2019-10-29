@@ -3,7 +3,7 @@
 // all the subjects irrespective of branches
 
 var jsAllSubjects = function(){
-  let endpoint = "https://localhost:3000/studyResouces/search";
+  let endpoint = "https://arpbackend.firebaseapp.com/studyResouces/search";
   let jsonData;
   let success = 0;
 /*
