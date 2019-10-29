@@ -10,18 +10,22 @@
 
 - [Description of MVC model implementation](#description-of-mvc-model-implementation)
 
-- [Home Page implementation](#home-page-implementation)
+- [Home Page](#home-page)
 
-- [Upload Page implementation](#upload-page-implementation)
+- [Upload Page](#upload-page)
 
-- [Admin Page implementation](#admin-page-implementation)
+- [Admin Page](#admin-page)
+
+- [Contriutors](#contributors)
 
 - [Contact Us](#contact-us) 
+
 
 
 ## Basic Application of the Project
 
 One can upload and download resources, which are useful for Academic purposes, like Question papers, Tutorials, Quizzes, Materials,etc wih the help of this portal. The resources would be examined by the Admins before being uploaded, to ensure that users are provided the correct content.
+
 
 
 ## Features
@@ -39,6 +43,13 @@ One can upload and download resources, which are useful for Academic purposes, l
 - Implementation of MVC Model in the front-end, ensuring user-friendly experience.
 
 - Execution of Admin page consisting of various functions to ease the work of Admins monitoring the resources and providing the right information to the Users.
+
+
+
+## Description of MVC model implementation 
+
+The frontend was implemented using the MVC model which consists of three parts namely Model, View and Controller, apart from the interface.The users directly interact with the interface which calls View to perform specific functions and view further communicates with controller and passes the request to Controller and viceversa, Controller is the only point of contact between view and model. While model passes the requests from contoller to backend and returns the response if any from Backend to the Controller, controller returns the response to view, which finally displays the output to the user.
+
 
 
 ## Home Page
@@ -64,6 +75,7 @@ One can upload and download resources, which are useful for Academic purposes, l
 - Clicking on resource would trigger the downloadResource function from subjectTemplate.js file in View, which will request the file to be downloaded through the similar MVC cycle.
 
 - There are also options to flag a resource and to delete a resource which which are also implemented using functions from subjectTemplate.js file in view and using the MVC path.
+
 
 
 ## Upload Page
@@ -92,6 +104,19 @@ One can upload and download resources, which are useful for Academic purposes, l
 
 - The unreviewed files if approved by the admins would be uploaded to the main page.
 
+
+
+## Contributors
+
+- Rishabh Gupta (Project Leads)
+- Aashay Palliwar
+- Anuj Gupta
+- Raj Shah
+- T.V.S.S.Sripad 
+- Pradyuman Agrawal
+- Jayakar Reddy
+- Sreekanth Vadigi
+- Erva Nitish Kumar
 
 
 ## Contact us
