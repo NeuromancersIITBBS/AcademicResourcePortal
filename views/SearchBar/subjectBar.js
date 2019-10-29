@@ -42,7 +42,6 @@ function subjectBarSetup(inp) {
       //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        console.log('Hello from subjectBar');
         suggestionLink = item.information.subjectName ;
         suggestionLink += "<input type='hidden'>";
         sItem.html(suggestionLink);

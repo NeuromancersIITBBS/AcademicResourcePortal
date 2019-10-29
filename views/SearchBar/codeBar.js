@@ -42,7 +42,6 @@ function codeBarSetup(inp) {
       //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        console.log('Hello from codeBar');
         suggestionLink = item.information.subjectCode ;
         suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
         sItem.html(suggestionLink);
