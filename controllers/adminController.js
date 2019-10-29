@@ -12,3 +12,6 @@ var removeFlag = function(uniqueID){
 var markAsReviewed = function(uniqueID){
   reviewRequest(uniqueID);
 };
+var reviewedAndEdited = function(uniqueID, resourceObj){
+  editDetailsRequest(uniqueID, resourceObj);
+};
