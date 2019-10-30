@@ -1,26 +1,22 @@
 // Function that would post file to the server
 // upload(subjectCode, formData)
 
-var upload = function(subjectCode, formData){
+var upload = function(subjectCode, formData,file){
+    console.log("model");
+    console.log(subjectCode);
+    console.log(formData);
+    console.log(formData.get("subjectName"));
     let branch = subjectCode.substring(0,2);
-
+    console.log(branch);
     let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}`;
-    let resource = formData.get("resource_file");
-
-
-    //document.querySelector('[type=file]').files
-    // Add a new document with a generated id.
-    // File or Blob named mountains.jpg
-    // File or Blob named mountains.jpg
-    var file = resource.pdf;
-
     // Create the file metadata
     var metadata = {
     contentType: 'pdf'
     };
-
+    var timeStamp = new Date().valueOf();
     // Upload file and metadata to the object 'images/mountains.jpg'
-    var uploadTask = storageRef.child('resources/' + file.name).put(file, metadata);
+    var uploadTask = storageRef.child(`${timeStamp}/`).put(file);
+  //  var uploadTask = storageRef.child('resources/' + file.name).put(file, metadata);
 
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -57,21 +53,29 @@ var upload = function(subjectCode, formData){
     // Upload completed successfully, now we can get the download URL
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
+    var storageRef2 = firebase.storage().ref().child(`${timeStamp}/`);
+    console.log("somelink" + timeStamp);
+    console.log(storageRef2);
+    console.log(JSON.stringify(formData));
+    return true;
+    /*formData.append("downloadLink",downloadURL);
+      formData.append("storageRef",storageRef2);
+        	$.ajax({
+    					url : endpoint,
+      				method : "POST",
+    					data : formData,
+    					contentType : false,
+    					processData : false
+    				}).done(function(response){
+                        console.log("Success");
+                        return true;
+    				}).fail(function(){
+                        alert("fail!");
+    				}).always(function(){
+
+    					//alert("AJAX request finished!");
+    				});*/
     });
     });
 
-    formData.append("downloadLink",downloadURL);
-    	$.ajax({
-					url : endpoint,
-  				method : "POST",
-					data : formData,
-					contentType : false,
-					processData : false
-				}).done(function(response){
-                    console.log("Success");
-				}).fail(function(){
-                    alert("fail!");
-				}).always(function(){
-					//alert("AJAX request finished!");
-				});
 };

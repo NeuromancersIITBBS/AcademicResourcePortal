@@ -8,8 +8,6 @@ let num =  1;
 // Runs afterLoading function after the page loads
 $(afterLoading);
 
-
-
 function afterLoading(){
       // Create first form
       let form1 = new UploadTemplate();
@@ -23,7 +21,9 @@ function afterLoading(){
       $('#addTemplateButton').click(function(){
             addTemplate();
       });
-
+    /*  $('.upload-form-subunit').click(function(){
+        submit("tss111@iitbbs.ac.in");
+      });*/
 
       // As forms can be dynamically added or removed
       // this on click listener on formContainer which listens for
@@ -93,7 +93,8 @@ function submit(email){
       if(email.includes(last))
         {
           console.log(email);
-          uploadPreprocessing(email,num);
+            if(uploadPreprocessing(email,num) == true)
+             location.reload(true);
 
         }
       else {
