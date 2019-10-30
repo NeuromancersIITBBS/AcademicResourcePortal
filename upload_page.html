@@ -102,15 +102,13 @@
                 </ul>
             </div>
         </nav>
+        <br><br>
         <div class="jumbotron jumbotron-fluid" id="jumbotronSection" style="width:100%;background-color:#212121">
             <div class="container">
                 <h4 class="display-4 jumbotron-mainheading"><b>Upload</b></h4>
                 <p class="lead">Powered by Neuromancers</p>
             </div>
         </div>
-
-
-
 
         <!--Here the form template will be created -->
         <div class="container">
@@ -132,12 +130,12 @@
                 <div id="name">
 
                 </div>
-                <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute mailid</p>
+                <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute email-id</p>
 
               </div>
             </div>
 
-            <script>startApp();</script>
+
 
             <template id="uploadtemplate">
                 <div class="encloseForm">
@@ -146,12 +144,16 @@
                           <div class="form-group col">
                           <div class="subjectBar autocomplete" style="width: 100%">
                                 <label for="subjectName ">Subject Name</label>
+
                                   <input class="form-control subjectName" id="subjectName" type="text" name="subject" placeholder="Enter Subject Name ">
+
                           </div>
                           </div>
                             <div class="form-group autocomplete col-sm-4">
                                     <label for="subjectCode ">Subject Code</label>
+
                                       <input class=" form-control subjectCode" id="subjectCode" type="text" name="subject" placeholder="Subject Code (e.g CS1L001)">
+
                             </div>
                         </div>
                         <div class="form-row">
@@ -180,9 +182,9 @@
                             </select>
                         </div>
                         <div class="form-row">
-                        <div class="form-group col-9 col-sm-3">
-                            <label for="resource_file">Resource File</label>
-                            <input type="file" class="form-control-file" id="resource_file" name="file" required />
+                          <div id="filesubmit" class="form-group col-9 col-sm-3">
+                            <input type="file" class="file-select" id="file" accept="pdf/*" required/>
+                          </div>
                         </div>
                       </div>
                     </form>
@@ -193,7 +195,10 @@
             </template>
         </div>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
         <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -214,9 +219,11 @@
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
-        const db = firebase.firestore();
+
+        const storageRef = firebase.storage().ref();
 
         </script>
+        <script>startApp();</script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
