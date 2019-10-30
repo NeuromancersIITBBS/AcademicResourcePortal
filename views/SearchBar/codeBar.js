@@ -6,16 +6,6 @@ var selecetedSearchID;  //Stores searchID of clicked item
 function onDocReady(){
   //A subjectsList containing all the subjects
   codeBarSetup($('#subjectCode'));
-
-  $('#searchSubject').click(function(){
-    //Write code to call controller
-    console.log(selecetedSearchID);
-    // With an assumption that selectedSearchID = subject code
-    if(selecetedSearchID){
-    	window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
-    }
-    return false;
-  });
 }
 //Calls onDocReady when document is ready
 $(onDocReady);
@@ -52,7 +42,6 @@ function codeBarSetup(inp) {
       //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        console.log('Hello from codeBar');
         suggestionLink = item.information.subjectCode ;
         suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
         sItem.html(suggestionLink);
@@ -81,9 +70,6 @@ function codeBarSetup(inp) {
         e.preventDefault();//If Enter is pressed submit form with the value on which currentfoucs is
         if (currentFocus > -1) {
           if (listItems.length != 0) listItems[currentFocus].click();
-          //Simulate click on Search and then call controller
-          var searchBtn = $('#searchSubject');
-          searchBtn.click();
         }
       }
   });

@@ -6,16 +6,6 @@ var subjectID;  //Stores searchID of clicked item
 function onDocReady(){
   //A subjectsList containing all the subjects
   subjectBarSetup($('#subjectName'));
-
-  $('#searchSubject').click(function(){
-    //Write code to call controller
-    console.log(subjectID);
-    // With an assumption that selectedSearchID = subject code
-    if(subjectID){
-    	window.location.href = 'SubjectTemplate.html?subCode=' + subjectID;
-    }
-    return false;
-  });
 }
 //Calls onDocReady when document is ready
 $(onDocReady);
@@ -52,7 +42,6 @@ function subjectBarSetup(inp) {
       //Use controllers result and display it in dropdown
       result.forEach(function (item){
         sItem = $('<div>');
-        console.log('Hello from subjectBar');
         suggestionLink = item.information.subjectName ;
         suggestionLink += "<input type='hidden'>";
         sItem.html(suggestionLink);
@@ -82,8 +71,6 @@ function subjectBarSetup(inp) {
         if (currentFocus > -1) {
           if (listItems.length != 0) listItems[currentFocus].click();
           //Simulate click on Search and then call controller
-          var searchBtn = $('#searchSubject');
-          searchBtn.click();
         }
       }
   });
