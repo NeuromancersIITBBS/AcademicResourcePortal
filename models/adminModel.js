@@ -2,7 +2,7 @@
 // Function that tells server to delete the file with the uniqueID.
 //Format of uniqueID :- CS2L00101256 i.e. sunject_Code + some_number
 
-var deleteRequest = function(uniqueID){
+var deleteRequest = function(uniqueID, containerID){
   let branch = uniqueID.substring(0,2);
   let subjectCode = uniqueID.substring(0,7);
   uniqueID = uniqueID.substring(7,uniqueID.length);
@@ -16,6 +16,7 @@ var deleteRequest = function(uniqueID){
       success: function(res){
         console.log("Successfully Deleted!");
         // Code to remove that container
+        containerID.fadeOut();
       }
   });
 };
@@ -23,7 +24,7 @@ var deleteRequest = function(uniqueID){
 // reviewRequest(uniqueID)
 //Function that prompts the server to set review to true.
 
-var reviewRequest = function(uniqueID){
+var reviewRequest = function(uniqueID, containerID){
    let branch = uniqueID.substring(0,2);
    let subjectCode = uniqueID.substring(0,7);
    uniqueID = uniqueID.substring(7,uniqueID.length);
@@ -40,11 +41,12 @@ var reviewRequest = function(uniqueID){
        success: function(result) {
          console.log("Successfully unflagged! ");
          // Code to remove that container
+         containerID.fadeOut();
        }
    });
 };
 
-var editDetailsRequest = function(uniqueID, resourceObj){
+var editDetailsRequest = function(uniqueID, resourceObj, containerID){
   let branch = uniqueID.substring(0,2);
   let subjectCode = uniqueID.substring(0,7);
   uniqueID = uniqueID.substring(7,uniqueID.length);
@@ -60,6 +62,7 @@ var editDetailsRequest = function(uniqueID, resourceObj){
       success: function(result) {
         console.log("Successfully edited! ");
         // Code to remove that container
+        containerID.fadeOut();
       }
   });
 };

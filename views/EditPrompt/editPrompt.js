@@ -1,5 +1,8 @@
 $(afterLoading)// Get the modal
 function afterLoading(){
+  let containerID;
+
+
   // Prvents the prompt from closing when admin clicks on the container
   $('#editPrompt .container').click(function(event){
       event.stopPropagation();
@@ -32,9 +35,8 @@ function afterLoading(){
     };
     console.log(resData);
     // Call controller function to send  request to the server
-    reviewedAndEdited(iResID, resData);
+    reviewedAndEdited(iResID, resData, containerID);
     $('#editPrompt').css('display', 'none');
-    // Refresh the page if edit is successful(inComplete)
   });
 
   // Main Button to ambed it in adminTemplate.js
@@ -65,5 +67,7 @@ function afterLoading(){
     iType.val(type);
     iYear.val(year);
     iResID.val(resID);
+
+    containerID = $(this).parent();
   });
 }
