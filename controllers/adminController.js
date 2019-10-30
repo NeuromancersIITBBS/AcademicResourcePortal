@@ -7,7 +7,7 @@ var deleteFile = function(uniqueID){
   deleteRequest(uniqueID);
 };
 var removeFlag = function(uniqueID){
-  unflagRequest(uniqueID);
+  reviewRequest(uniqueID);
 };
 var markAsReviewed = function(uniqueID){
   reviewRequest(uniqueID);

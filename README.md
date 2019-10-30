@@ -1,10 +1,20 @@
 ## AcademicResourcePortal
 
+<<<<<<< HEAD
+=======
+<p align="center">
+  <img width="250" height="200" src="/public/images/arpCommunity.jpeg">
+</p>
+
+>>>>>>> a85935160f207501d6deb780f901eafe58d04781
 - A portal which would host academic resources exclusively for the students of IIT Bhubaneswar.
 
 - This repository consists of the codes for frontend of Academic Resource Portal.
 
+<<<<<<< HEAD
 ![ARPCommunity](/public/images/arpCommunity.jpeg)
+=======
+>>>>>>> a85935160f207501d6deb780f901eafe58d04781
 
 ## Table of Contents
 
@@ -23,9 +33,15 @@
 - [Built With](#built-with)
 
 - [Contributing and Deploying in loacal machine](#contributing-and-deploying-in-loacal-machine)
+<<<<<<< HEAD
 
 - [Link to Backend Git Repository](#link-to-backend-git repository)
 
+=======
+
+- [Link to Backend Git Repository](#link-to-backend-git-repository)
+
+>>>>>>> a85935160f207501d6deb780f901eafe58d04781
 - [Contributors](#contributors)
 
 - [Contact Us](#contact-us)
