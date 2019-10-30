@@ -25,15 +25,9 @@
 - [Built With](#built-with)
 
 - [Contributing and Deploying in loacal machine](#contributing-and-deploying-in-loacal-machine)
-<<<<<<< HEAD
-
-- [Link to Backend Git Repository](#link-to-backend-git repository)
-
-=======
 
 - [Link to Backend Git Repository](#link-to-backend-git-repository)
 
->>>>>>> a85935160f207501d6deb780f901eafe58d04781
 - [Contributors](#contributors)
 
 - [Contact Us](#contact-us)
