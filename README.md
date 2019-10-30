@@ -52,7 +52,7 @@ One can upload and download resources, which are useful for Academic purposes, l
 
 - Option to upload multipe resources at the same time.
 
-- Implementation of MVC Model in the front-end, ensuring user-friendly experience.
+- Implementation of MVC Model in the front-end, making the code more organized and easy to undertand.
 
 - Execution of Admin page consisting of various functions to ease the work of Admins monitoring the resources and providing the right information to the Users.
 
@@ -76,6 +76,7 @@ The frontend was implemented using the MVC model which consists of three parts n
 
     (iii) The file searchModel.js which contains functions to fetch data from Backend and return to searchController.js which further sorts the result and sends to searchBar.js in view.
 
+
 - All branches are hardcoded on HomePage into respective school cards/boxes.
 
 - Clicking on specific branches opens up its own page consisting of list of all subjects, selecting a subject would load its own subjectTemlate.html page.
@@ -85,7 +86,6 @@ The frontend was implemented using the MVC model which consists of three parts n
 - Sorting into cards is implemented in controller. Model function from modelUtils.js helps in fetching the data from server.
 
 - Clicking on resource would trigger the downloadResource function from subjectTemplate.js file in View, which will request the file to be downloaded through the similar MVC cycle.
-
 - There are also options to flag a resource and to delete a resource which which are also implemented using functions from subjectTemplate.js file in view and using the MVC path.
 
 
@@ -108,13 +108,13 @@ The frontend was implemented using the MVC model which consists of three parts n
 
 ## Admin Page
 
-- This page can be only accessed by Admins of the project.
+- The page can be only accessed by Admins of the project.
 
 - Admins moniter the uploaded resorces, which are either unreviewed or flagged by users.
 
-- The page has options to delete a file, unflag a file, mark a file as unreviewed and change the information in a form data.
+- The page has options to delete a file, unflag a file, mark a file as reviewed and change the information in a form data.
 
-- The unreviewed files if approved by the admins would be uploaded to the main page.
+- The reviewed files approved by the admins would be uploaded to the main page.
 
 
 ## Built With
@@ -123,13 +123,13 @@ The frontend was implemented using the MVC model which consists of three parts n
 * [Github Pages](https://pages.github.com/)  Hosting the portal.
 
 
-## Contributing and Deploying in loacal machine
+## Contributing and Deploying on loacal machine
 
 - Fork the repository https://github.com/NeuromancersIITBBS/AcademicResourcePortal.git and download the code to your local system using 'git clone' command.
 
 - A new method can be suggested to implement the functions in model/uploadModel.js to upload the files in firebase storage and also to extract the downloadable link and the storage loaction of the resource.
 
-- Do verify by testing in loacl machine, any changes you would like to contribute to our codes.
+- Do verify by testing on loacl machine, any changes you would like to contribute to our codes.
 
 - Create a pull request explaining the details of the changes made.
 

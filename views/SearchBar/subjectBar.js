@@ -6,7 +6,7 @@ var subjectID;  //Stores searchID of clicked item
 function onDocReady(){
   //A subjectsList containing all the subjects
   // subjectBarSetup($('#subjectName'));
-  $('#formContainer').on('click', '#subjectName', function(){
+  $('#formContainer').on('click','#subjectName', function(){
     subjectBarSetup($(this));
   })
 
