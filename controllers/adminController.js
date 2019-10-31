@@ -15,3 +15,11 @@ var markAsReviewed = function(uniqueID, containerID){
 var reviewedAndEdited = function(uniqueID, resourceObj, containerID){
   editDetailsRequest(uniqueID, resourceObj, containerID);
 };
+var getUnreviewedSubjects = function(){
+  let jsArray = jsUnreviewedSubjects();
+  return jsArray;
+};
+var getFlaggedSubjects = function(){
+  let jsArray = jsFlagggedSubjects();
+  return jsArray;
+};

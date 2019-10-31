@@ -1,10 +1,12 @@
 $(afterLoading);
 function afterLoading() {
   // call controller to get all resources
-   dataArr = getAllResources();
-   propagateFlagTemplate(dataArr);
+   let flagData = getFlaggedSubjects();
+   let unreviewData = getUnreviewedSubjects();
+
+   propagateFlagTemplate(flagData);
    setOnClickFlagTemplate();
-   propagateReviewTemplate(dataArr);
+   propagateReviewTemplate(unreviewData);
    setOnClickReviewTemplate();
 }
 
@@ -22,7 +24,6 @@ function propagateFlagTemplate(subData){
 }
 
 function fillDataInFlagContainer(resourceObj){
-  if(resourceObj.flags != 0){
     // select template and container
     let template = $('#flagTemplate');
     let containerFlagged = $('.flagContainer .flagged');
@@ -57,7 +58,6 @@ function fillDataInFlagContainer(resourceObj){
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
-  }
 }
 
 function setOnClickFlagTemplate(){
@@ -94,7 +94,6 @@ function propagateReviewTemplate(subData){
 }
 
 function fillDataInReviewContainer(resourceObj){
-  if(!resourceObj.review){
     // select template and container
     let template = $('#unreviewedTemplate');
     let containerFlagged = $('.unreviewContainer .unreviewed');
@@ -124,7 +123,6 @@ function fillDataInReviewContainer(resourceObj){
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
-  }
 }
 
 function setOnClickReviewTemplate(){
