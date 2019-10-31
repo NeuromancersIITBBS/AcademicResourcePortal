@@ -3,15 +3,15 @@
 // deleteFile(uniqueID)
 // passes unique id to model function
 
-var deleteFile = function(uniqueID){
-  deleteRequest(uniqueID);
+var deleteFile = function(uniqueID, containerID){
+  deleteRequest(uniqueID, containerID);
 };
-var removeFlag = function(uniqueID){
-  reviewRequest(uniqueID);
+var removeFlag = function(uniqueID, containerID){
+  reviewRequest(uniqueID, containerID);
 };
-var markAsReviewed = function(uniqueID){
-  reviewRequest(uniqueID);
+var markAsReviewed = function(uniqueID, containerID){
+  reviewRequest(uniqueID, containerID);
 };
-var reviewedAndEdited = function(uniqueID, resourceObj){
-  editDetailsRequest(uniqueID, resourceObj);
+var reviewedAndEdited = function(uniqueID, resourceObj, containerID){
+  editDetailsRequest(uniqueID, resourceObj, containerID);
 };

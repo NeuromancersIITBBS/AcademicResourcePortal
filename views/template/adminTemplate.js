@@ -73,13 +73,11 @@ function setOnClickFlagTemplate(){
      }else{
        $(this).find('img').attr('src', './views/Images/flag.png');
      }
-     removeFlag(resourceID);
-     $(this).parent().fadeOut();
+     removeFlag(resourceID, $(this).parent());
    });
    $('.flagContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
-         deleteFile("${dataArr.resourceId}");
-         $(this).parent().fadeOut();
+         deleteFile(resourceID, $(this).parent());
    });
 }
 
@@ -136,12 +134,10 @@ function setOnClickReviewTemplate(){
    });
    $('.unreviewContainer .btnReviewOK').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
-     markAsReviewed(resourceID);
-     $(this).parent().fadeOut();
+     markAsReviewed(resourceID, $(this).parent());
    });
    $('.unreviewContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
-         deleteFile("${dataArr.resourceId}");
-         $(this).parent().fadeOut();
+         deleteFile(resourceID, $(this).parent());
    });
 }

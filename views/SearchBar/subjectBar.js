@@ -5,7 +5,11 @@ var subjectID;  //Stores searchID of clicked item
 //Function which runs after the document is completely loaded
 function onDocReady(){
   //A subjectsList containing all the subjects
-  subjectBarSetup($('#subjectName'));
+  // subjectBarSetup($('#subjectName'));
+  $('#formContainer').on('click','#subjectName', function(){
+    subjectBarSetup($(this));
+  });
+
 }
 //Calls onDocReady when document is ready
 $(onDocReady);
