@@ -6,7 +6,7 @@ var deleteRequest = function(uniqueID, containerID){
   let branch = uniqueID.substring(0,2);
   let subjectCode = uniqueID.substring(0,7);
   uniqueID = uniqueID.substring(7,uniqueID.length);
-  let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+  let endpoint = `https://arpbackend.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   $.ajax({
       url: endpoint,
       method: 'DELETE',
@@ -28,7 +28,7 @@ var reviewRequest = function(uniqueID, containerID){
    let branch = uniqueID.substring(0,2);
    let subjectCode = uniqueID.substring(0,7);
    uniqueID = uniqueID.substring(7,uniqueID.length);
-   let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+   let endpoint = `https://arpbackend.firebaseapp.com/admin/studyResources/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
    let data = {review: true};
    $.ajax({
        url: endpoint,
@@ -50,7 +50,7 @@ var editDetailsRequest = function(uniqueID, resourceObj, containerID){
   let branch = uniqueID.substring(0,2);
   let subjectCode = uniqueID.substring(0,7);
   uniqueID = uniqueID.substring(7,uniqueID.length);
-  let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+  let endpoint = `https://arpbackend.firebaseapp.com/admin/studyResources/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   console.log(endpoint);
   $.ajax({
       url: endpoint,
@@ -70,7 +70,7 @@ var editDetailsRequest = function(uniqueID, resourceObj, containerID){
 
 var jsFlagggedSubjects = function(){
   let endpoint = "https://arpbackend.firebaseapp.com/admin/flagged";
-  let jsArray;
+  let jsArray = [];
   $.ajax({
       url: endpoint,
       method: 'GET',
@@ -89,7 +89,7 @@ var jsFlagggedSubjects = function(){
 
 var jsUnreviewedSubjects = function(){
   let endpoint = "https://arpbackend.firebaseapp.com/admin/unreviewed";
-  let jsArray;
+  let jsArray= [];
   $.ajax({
       url: endpoint,
       method: 'GET',

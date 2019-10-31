@@ -8,7 +8,7 @@ var upload = function(subjectCode, formData,file){
     console.log(formData.get("subjectName"));
     let branch = subjectCode.substring(0,2);
     console.log(branch);
-    let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}`;
+    let endpoint = `https://arpbackend.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}`;
 
     var metadata = {
     contentType: 'pdf'
