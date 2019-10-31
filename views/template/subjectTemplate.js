@@ -10,10 +10,6 @@ function afterLoading(){
 	// Set on click listener for flags
 	// When user clicks on a flag ask him for conformation and then flag the resource
 	flagOnClick();
-
-	// Set on click listener for each resource
-	// When user clicks on the resource download the resource
-	downloadResource();
 }
 
 function flagOnClick(){
@@ -124,23 +120,16 @@ function fillData(list, resources){
 	for(let i = 0; i < resources.length; i++){
 		pTag = $('<p>');
 		flagTag = $('<span>');
-		// pTag.html( resources[i].semester + '-' + resources[i].year);
-		// // using font awesome flag icon
-		// flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
-		//  + ' ' + resources[i]["flags"]);
-		// idTag = $('<input>');
-  	// idTag.attr('type', 'hidden');
-    // idTag.val(resources[i]['resourceId']);
-    // pTag.append(idTag);
-		// pTag.append(flagTag);
-		// list.append(pTag);
 		aTag = $('<a>');
-		aTag.html(resources[i].description + ' ' + resources[i].semester + '-' + resources[i].year);
+		aTag.html(resources[i].semester + '-' + resources[i].year);
 		aTag.attr('href', resources[i].downloadLink);
-		flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
+		flagTag.html('<i class="fa fa-flag" style = "color:black" aria-hidden="true"></i>'
 		 + ' ' + resources[i]["flags"]);
 		 pTag.append(aTag);
 		 pTag.append(flagTag);
+		 if(resources[i].description != '' && resources[i].description != undefined){
+		 	pTag.append('<br>' + resources[i].description);
+		}
 		 list.append(pTag);
 	}
 }
