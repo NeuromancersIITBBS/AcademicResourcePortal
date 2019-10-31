@@ -16,15 +16,6 @@ function afterLoading(){
 	downloadResource();
 }
 
-// Set on click listener on each resource file name
-function downloadResource(){
-	$('.links p').click(function(){
-		let uniqueID = $(this).parent().find('input').val();
-		// Calls Controller function
-		downloadFile(uniqueID);
-	});
-}
-
 function flagOnClick(){
 	$('.links p span').click(function(event){
 		// Stop propagation otherwise resource download will be triggered
@@ -77,7 +68,15 @@ function setupPage(subCode){
 	$('#subjectCode strong').text(subCode);
 	console.log(subCode);
 	let resources = getResourcesByCode(subCode)
-	// let resources = getRes();
+
+	let arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
+	let subName = '';
+	for(var i = 0; i < arr.length; ++i){
+		if(resources[arr[i].toLowerCase()].length){
+			subName = resources[arr[i].toLowerCase()][0].subjectName;
+		}
+	}
+	$('#subjectName').text(subName);
 	if(!resources) {
 		return;
 	}
@@ -95,7 +94,6 @@ function setupPage(subCode){
         let template = $('#resTemplate');
         let container = $('#resContainer');
 
-        arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
         for(let i = 0; i < arr.length; i++){
 					if(resources[arr[i].toLowerCase()].length){
         		let clone = template.prop('content');
