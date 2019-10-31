@@ -28,7 +28,7 @@ var reviewRequest = function(uniqueID, containerID){
    let branch = uniqueID.substring(0,2);
    let subjectCode = uniqueID.substring(0,7);
    uniqueID = uniqueID.substring(7,uniqueID.length);
-   let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+   let endpoint = `https://arpbackend.firebaseapp.com/admin/studyResources/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
    let data = {review: true};
    $.ajax({
        url: endpoint,
@@ -50,7 +50,7 @@ var editDetailsRequest = function(uniqueID, resourceObj, containerID){
   let branch = uniqueID.substring(0,2);
   let subjectCode = uniqueID.substring(0,7);
   uniqueID = uniqueID.substring(7,uniqueID.length);
-  let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
+  let endpoint = `https://arpbackend.firebaseapp.com/admin/studyResources/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
   console.log(endpoint);
   $.ajax({
       url: endpoint,

@@ -3,7 +3,7 @@
 // all the subjects irrespective of branches
 
 var jsAllSubjects = function(){
-  let endpoint = "https://arpbackend.firebaseapp.com/studyResouces/search";
+  let endpoint = "https://arpbackend.firebaseapp.com/search";
   let success = 0;
   let jsArray;
   $.ajax({
