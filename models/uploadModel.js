@@ -58,7 +58,7 @@ var upload = function(subjectCode, formData,file){
     //console.log(storageRef2);
     //console.log(JSON.stringify(formData));
 
-    var jsonobj = {"emailId": formData.get("email"),
+    var jsonObj = {"emailId": formData.get("email"),
                     "subjectName":formData.get("subjectName"),
                       "semester": formData.get("semester"),
                       "subjectCode":formData.get("subjectCode"),
@@ -68,7 +68,7 @@ var upload = function(subjectCode, formData,file){
                       "storageReference": timeStamp,
                     };
 
-    console.log(jsonobj);
+    console.log(jsonObj);
         	$.ajax({
     					url : endpoint,
       				method : "POST",

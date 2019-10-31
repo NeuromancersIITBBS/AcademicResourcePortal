@@ -12,6 +12,24 @@ var uploadPreprocessing = function(email, num){   //num : number of files being 
         console.log(formData.get("subjectCode"));
         var file;
         file = document.getElementById('file').files[i];
-      upload(formData.get("subjectCode"), formData,file);
+        if(file.name.includes(".pdf"))
+        {
+            var subjectCode = formData.get("subjectCode");
+            var subjectName = formData.get("subjectName");
+            if(subjectCode){
+              if(subjectName){
+                upload(subjectCode, formData,file);
+              }
+                else {
+                  alert("Please give proper Subject name");
+                }
+            }
+              else {
+                alert("Please give proper Subject Code");
+              }
+        }
+        else{
+          alert("Please upload only pdf files")
+        }
     }
 };
