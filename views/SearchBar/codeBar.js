@@ -5,9 +5,7 @@ var selecetedSearchID;  //Stores searchID of clicked item
 //Function which runs after the document is completely loaded
 function onDocReady(){
   //A subjectsList containing all the subjects
-  $('#formContainer').on('click', '.subjectCode', function(){
-    codeBarSetup($(this));
-  });
+  codeBarSetup($('.subjectCode'));
 }
 //Calls onDocReady when document is ready
 $(onDocReady);

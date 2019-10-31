@@ -68,6 +68,10 @@ function afterLoading(){
     iYear.val(year);
     iResID.val(resID);
 
+    // Setup subjectBar and codeBar
+    // for subjectName and subject Code input
+    subjectBarSetup($('.iSubjectName'));
+    codeBarSetup($('.iSubjectCode'));
     containerID = $(this).parent();
   });
 }
