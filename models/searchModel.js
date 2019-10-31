@@ -5,7 +5,7 @@
 var jsAllSubjects = function(){
   let endpoint = "https://arpbackend.firebaseapp.com/search";
   let success = 0;
-  let jsArray;
+  let jsArray = [];
   $.ajax({
       url: endpoint,
       method: 'GET',
