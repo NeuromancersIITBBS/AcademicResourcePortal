@@ -81,15 +81,15 @@ var getResourcesByCode = function(subjectCode){
     var quiz = [];
     var others = [];
     for(i = 0; i<len ; i++){
-      if(jsArray[i].type === "endsem")
+      if(jsArray[i].type === "Endsem")
       endsem.push(jsArray[i]);
-      else if(jsArray[i].type === "midsem")
+      else if(jsArray[i].type === "Midsem")
       midsem.push(jsArray[i]);
-      else if(jsArray[i].type === "tutorial")
+      else if(jsArray[i].type === "Tutorial")
       tutorial.push(jsArray[i]);
-      else if(jsArray[i].type === "quiz")
+      else if(jsArray[i].type === "Quiz")
       quiz.push(jsArray[i]);
-      else if(jsArray[i].type === "others")
+      else if(jsArray[i].type === "Others")
       others.push(jsArray[i]);
     }
 
