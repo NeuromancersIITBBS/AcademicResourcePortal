@@ -52,7 +52,8 @@ function afterLoading(){
         let description = $(this).parent().parent().find  ('.resDescription');
         if($(this).val() === 'tutorial' || $(this).val() === 'others'){
           description.css('display','block');
-        }else{$('.resDescription').val()=null;
+        }else{
+          $('.resDescription').val('');
           description.css('display','none');
         }
       });
