@@ -12,7 +12,6 @@ var uploadPreprocessing = function(email, num){   //num : number of files being 
         console.log(formData.get("subjectCode"));
         var file;
         file = document.getElementById('file').files[i];
-      if(upload(formData.get("subjectCode"), formData,file) == true)
-      return true;
+      upload(formData.get("subjectCode"), formData,file);
     }
 };

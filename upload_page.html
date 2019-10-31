@@ -1,4 +1,4 @@
-<!doctype html>
+  <!doctype html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
@@ -102,13 +102,15 @@
                 </ul>
             </div>
         </nav>
-        <br><br>
         <div class="jumbotron jumbotron-fluid" id="jumbotronSection" style="width:100%;background-color:#212121">
             <div class="container">
                 <h4 class="display-4 jumbotron-mainheading"><b>Upload</b></h4>
                 <p class="lead">Powered by Neuromancers</p>
             </div>
         </div>
+
+
+
 
         <!--Here the form template will be created -->
         <div class="container">
@@ -130,7 +132,7 @@
                 <div id="name">
 
                 </div>
-                <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute email-id</p>
+                <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute mailid</p>
 
               </div>
             </div>
@@ -144,22 +146,22 @@
                           <div class="form-group col">
                           <div class="subjectBar autocomplete" style="width: 100%">
                                 <label for="subjectName ">Subject Name</label>
-                                  <input class="form-control" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name ">
+                                  <input class="form-control" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name " required>
                           </div>
                           </div>
                             <div class="form-group autocomplete col-sm-4">
                                     <label for="subjectCode ">Subject Code</label>
-                                      <input class=" form-control" id="subjectCode" type="text" name="subjectCode" placeholder="Subject Code (e.g CS1L001)">
+                                      <input class=" form-control" id="subjectCode" type="text" name="subjectCode" placeholder="Subject Code (e.g CS1L001)" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
                                 <label for="Type">Type</label>
-                                <select class="form-control" id="Type" name="type" required >
-                                    <option value="Endsems" selected>Endsems</option>
-                                    <option value="Midsems">Midsems</option>
-                                    <option value="Tutorials">Tutorials</option>
-                                    <option value="Quizes">Quizes</option>
+                                <select class="form-control" id="type" name="type" required >
+                                    <option value="Endsems" selected>Endsem</option>
+                                    <option value="Midsems">Midsem</option>
+                                    <option value="Tutorials">Tutorial</option>
+                                    <option value="Quizes">Quiz</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-4">
@@ -172,7 +174,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Year">Question paper of Year</label>
-                            <select class="form-control col-4 col-lg-2" id="Year" name="year" required>
+                            <select class="form-control col-4 col-lg-2" id="year" name="year" required>
                                 <option value="2019" selected>2019</option>
                                 <option value='2018'>2018</option>
                             </select>
