@@ -9,7 +9,7 @@ var upload = function(subjectCode, formData,file){
     let branch = subjectCode.substring(0,2);
     console.log(branch);
     let endpoint = `https://arpbackend.firebaseapp.com/studyResouces/${branch}/subjects/${subjectCode}`;
-    // Create the file metadata
+
     var metadata = {
     contentType: 'pdf'
     };
@@ -55,26 +55,35 @@ var upload = function(subjectCode, formData,file){
     console.log('File available at', downloadURL);
     var storageRef2 = firebase.storage().ref().child(`${timeStamp}/`);
     console.log("somelink" + timeStamp);
-    console.log(storageRef2);
-    console.log(JSON.stringify(formData));
-    return true;
-    /*formData.append("downloadLink",downloadURL);
-      formData.append("storageRef",storageRef2);
+    //console.log(storageRef2);
+    //console.log(JSON.stringify(formData));
+
+    var jsonobj = {"emailId": formData.get("email"),
+                    "subjectName":formData.get("subjectName"),
+                      "semester": formData.get("semester"),
+                      "subjectCode":formData.get("subjectCode"),
+                      "type":formData.get("type"),
+                      "year":formData.get("year"),
+                      "downloadLink":downloadURL,
+                      "storageReference": timeStamp,
+                    };
+
+    console.log(jsonobj);
         	$.ajax({
     					url : endpoint,
       				method : "POST",
-    					data : formData,
+    					data : jsonObj,
     					contentType : false,
     					processData : false
     				}).done(function(response){
                         console.log("Success");
-                        return true;
+                        location.reload(true);
+
     				}).fail(function(){
                         alert("fail!");
     				}).always(function(){
 
-    					//alert("AJAX request finished!");
-    				});*/
+    				});
     });
     });
 

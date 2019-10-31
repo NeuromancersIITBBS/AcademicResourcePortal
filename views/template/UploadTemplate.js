@@ -59,6 +59,8 @@ class UploadTemplate {
 
                    // Append form template at the end of the container
                    formcontainer.append(template.html());
+                   subjectBarSetup($('.subjectName'));
+                   codeBarSetup($('.subjectCode'));
              }
              else {
                    window.alert('HTML Template is not supported by Browser');
