@@ -54,7 +54,6 @@
 
 var getResourcesByCode = function(subjectCode){
     var jsArray  = jsResourcesByCode(subjectCode);  //calling model function
-    console.log(jsArray);
     // let obj = {
     //   endsem : [],
     //   midsem : [],
@@ -81,15 +80,15 @@ var getResourcesByCode = function(subjectCode){
     var quiz = [];
     var others = [];
     for(i = 0; i<len ; i++){
-      if(jsArray[i].type === "Endsem")
+      if(jsArray[i].type === "endsem")
       endsem.push(jsArray[i]);
-      else if(jsArray[i].type === "Midsem")
+      else if(jsArray[i].type === "midsem")
       midsem.push(jsArray[i]);
-      else if(jsArray[i].type === "Tutorial")
+      else if(jsArray[i].type === "tutorial")
       tutorial.push(jsArray[i]);
-      else if(jsArray[i].type === "Quiz")
+      else if(jsArray[i].type === "quiz")
       quiz.push(jsArray[i]);
-      else if(jsArray[i].type === "Others")
+      else if(jsArray[i].type === "other")
       others.push(jsArray[i]);
     }
 

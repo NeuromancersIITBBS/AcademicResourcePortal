@@ -18,9 +18,11 @@ var jsResourcesByCode = function(subjectCode){
         },
         success: function(res) {
           console.log("Success!");
-          let jsArray = res;
+          console.log(res);
+          jsArray = res;
         }
-  });          return jsArray;
+  });
+  return jsArray;
 
 }
 // 2. jsSubjectsByBranch
@@ -40,9 +42,11 @@ var jsResourcesByCode = function(subjectCode){
       },
       success: function(res) {
         console.log("Success!");
-        let jsArray = res;
+        jsArray = res;
       }
-  });          return jsArray;
+  });
+  return jsArray;
+
 };
 // var jsResourcesByCode = function(subjectCode){
 //     let branch = subjectCode.substring(0,2);
