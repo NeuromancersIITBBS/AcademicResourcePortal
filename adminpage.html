@@ -111,8 +111,9 @@
     </div>
 
     <div id="editPrompt" class="editPromptContainer">
-      <form class="modal-content" action="/action_page.php">
-        <div class="container">
+      <form class="modal-content">
+        <!-- formContainer id is used in codeBar and subjectBar -->
+        <div class="container"  id="formContainer">
           <h1>Edit Resource Data</h1>
           <p>Please correct the data and submit this.</p>
           <hr>
@@ -121,12 +122,12 @@
           <!-- <input type="text" placeholder="Subject Name" class ="iSubjectName"> -->
           <div class="subjectBar  autocomplete" style="width: 100%">
             <label for="subjectName"> <strong>Subject Name</strong></label>
-            <input class="form-control iSubjectName" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name "
+            <input class="form-control iSubjectName subjectName" type="text" name="subjectName" placeholder="Enter Subject Name "
             autocomplete="off">
           </div>
           <div class="form-group autocomplete" style="width: 100%">
             <label for="subjectCode "><strong>Subject Code</strong></label>
-            <input class=" form-control iSubjectCode" id="subjectCode" type="text" name="subject" placeholder="Subject Code (e.g CS1L001)"
+            <input class=" form-control iSubjectCode subjectCode" type="text" name="subject" placeholder="Subject Code (e.g CS1L001)"
             autocomplete="off">
           </div>
           <div class="form-group" style="width: 100%">
