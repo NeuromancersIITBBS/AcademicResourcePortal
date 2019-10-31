@@ -16,7 +16,7 @@ body{
 #resContainer p{
   width: 100%;
 }
-#resContainer p{
+#resContainer p, #resContainer a{
   text-decoration: none;
   background-color: #f0f0f0;
   border: none;
@@ -30,7 +30,7 @@ body{
   margin: 5px 0px;
   font-size: 18px;
 }
-#resContainer p:hover{
+#resContainer p:hover, #resContainer a:hover{
   background-color: #000;
   color: #fff;
   text-decoration: none;

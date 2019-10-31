@@ -97,13 +97,15 @@ function setupPage(subCode){
 
         arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
         for(let i = 0; i < arr.length; i++){
-        	let clone = template.prop('content');
-        	$(clone).find('h3').empty();
-        	$(clone).find('.links').empty();
-        	let tHeading = $(clone).find('h3');
-        	tHeading.text(arr[i]);
-        	fillData($(clone).find('.links'), resources[arr[i].toLowerCase()]);
-        	container.append(template.html());
+					if(resources[arr[i].toLowerCase()].length){
+        		let clone = template.prop('content');
+        		$(clone).find('h3').empty();
+        		$(clone).find('.links').empty();
+        		let tHeading = $(clone).find('h3');
+        		tHeading.text(arr[i]);
+        		fillData($(clone).find('.links'), resources[arr[i].toLowerCase()]);
+        		container.append(template.html());
+					}
         }
 
         // Set on click listener for all items
@@ -119,20 +121,29 @@ function setupPage(subCode){
 }
 
 function fillData(list, resources){
-	let pTag, flagTag, idTag;
+	let pTag, flagTag, aTag;
+	// let idTag;
 	for(let i = 0; i < resources.length; i++){
 		pTag = $('<p>');
 		flagTag = $('<span>');
-		pTag.html( resources[i].semester + '-' + resources[i].year);
-		// using font awesome flag icon
+		// pTag.html( resources[i].semester + '-' + resources[i].year);
+		// // using font awesome flag icon
+		// flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
+		//  + ' ' + resources[i]["flags"]);
+		// idTag = $('<input>');
+  	// idTag.attr('type', 'hidden');
+    // idTag.val(resources[i]['resourceId']);
+    // pTag.append(idTag);
+		// pTag.append(flagTag);
+		// list.append(pTag);
+		aTag = $('<a>');
+		aTag.html(resources[i].description + ' ' + resources[i].semester + '-' + resources[i].year);
+		aTag.attr('href', resources[i].downloadLink);
 		flagTag.html('<i class="fa fa-flag" style = "color:red" aria-hidden="true"></i>'
 		 + ' ' + resources[i]["flags"]);
-		idTag = $('<input>');
-          idTag.attr('type', 'hidden');
-          idTag.val(resources[i]['resourceId']);
-          pTag.append(idTag);
-		pTag.append(flagTag);
-		list.append(pTag);
+		 pTag.append(aTag);
+		 pTag.append(flagTag);
+		 list.append(pTag);
 	}
 }
 
