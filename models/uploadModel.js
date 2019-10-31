@@ -66,8 +66,8 @@ var upload = function(subjectCode, formData,file){
                       "year":formData.get("year"),
                       "downloadLink":downloadURL,
                       "storageReference": timeStamp,
+                      "description":formData.get("description")
                     };
-
     console.log(jsonObj);
         	$.ajax({
     					url : endpoint,

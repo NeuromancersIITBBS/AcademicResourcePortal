@@ -154,30 +154,37 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col">
-                                <label for="Type">Type</label>
-                                <select class="form-control" id="type" name="type" required >
-                                    <option value="Endsems" selected>Endsem</option>
-                                    <option value="Midsems">Midsem</option>
-                                    <option value="Tutorials">Tutorial</option>
-                                    <option value="Quizes">Quiz</option>
-                                </select>
-                            </div>
                             <div class="form-group col-sm-4">
-                                <label for="Semester">Semester</label>
-                                <select class="form-control" id="Semester" name="semester" required>
-                                    <option value="Autumn" selected>Autumn</option>
-                                    <option value="Spring">Spring</option>
+                                <label for="Type">Type</label>
+                                <select class="form-control restype" id="type" name="type" required >
+                                    <option value="endsem" selected>Endsem</option>
+                                    <option value="midsem">Midsem</option>
+                                    <option value="tutorial">Tutorial</option>
+                                    <option value="quiz">Quiz</option>
+                                    <option value="others">Others</option>
                                 </select>
                             </div>
+
+                            <div class="form-group resDescription col-lg-8" style="display:none ">
+                              <label for="resDesc">Describe Resource (3 words)</label><br>
+                              <input type="text" class="col-lg-12" name="resDesc" id ="description" style=" padding:4px;padding-left:25px;"placeholder="E.g.   Diodes tutorial , Fluid Mechanics Material.">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="Semester">Semester</label>
+                            <select class="form-control" id="semester" name="semester" required>
+                                <option value="autumn" selected>Autumn</option>
+                                <option value="spring">Spring</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="Year">Question paper of Year</label>
-                            <select class="form-control col-4 col-lg-2" id="year" name="year" required>
+                            <select class="form-control col-sm-6 col-lg-2" id="year" name="year" required>
                                 <option value="2019" selected>2019</option>
                                 <option value='2018'>2018</option>
                             </select>
                         </div>
+
                         <div class="form-row">
                           <div id="filesubmit" class="form-group col-9 col-sm-3">
                             <input type="file" class="file-select" id="file" accept="pdf/*" required/>

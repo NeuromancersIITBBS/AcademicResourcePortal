@@ -8,6 +8,7 @@ let num =  1;
 // Runs afterLoading function after the page loads
 $(afterLoading);
 
+
 function afterLoading(){
       // Create first form
       let form1 = new UploadTemplate();
@@ -46,6 +47,15 @@ function afterLoading(){
                   }
             }
       });
+      $('#formContainer').on('change', '#type', function(){
+        // let description = $('.resDescription');
+        let description = $(this).parent().parent().find  ('.resDescription');
+        if($(this).val() === 'tutorial' || $(this).val() === 'others'){
+          description.css('display','block');
+        }else{$('.resDescription').val()=null;
+          description.css('display','none');
+        }
+      });
 }
 
 // Class used to make a form and propagate it
@@ -61,6 +71,7 @@ class UploadTemplate {
                    formcontainer.append(template.html());
                    subjectBarSetup($('.subjectName'));
                    codeBarSetup($('.subjectCode'));
+
              }
              else {
                    window.alert('HTML Template is not supported by Browser');
