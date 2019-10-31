@@ -4,24 +4,23 @@
 
 var jsAllSubjects = function(){
   let endpoint = "https://arpbackend.firebaseapp.com/studyResouces/search";
-  let jsonData;
   let success = 0;
-/*
+  let jsArray;
   $.ajax({
       url: endpoint,
       method: 'GET',
+      async: false,
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");
       },
       success: function(res) {
         console.log("Success!");
-        jsonData = res;
-        let jsArray = JSON.parse(jsonData);
-        return jsArray;
+        jsArray = res;
       }
-});
-};*/
+});        return jsArray;
+};
+/*
 let jsArray=[{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'
 },{    subjectName: 'Programming and Data Structure',  subjectCode: 'CS1L001'},
 {    subjectName: 'Discrete Structure',  subjectCode: 'CS2L001'},{    subjectName: 'Network Theory',  subjectCode: 'EE2L001'
@@ -31,6 +30,4 @@ let jsArray=[{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'
  {    subjectName: 'IC Engines',  subjectCode: 'ME3L005'}];
 
  return jsArray;
-
-
-};
+};*/
