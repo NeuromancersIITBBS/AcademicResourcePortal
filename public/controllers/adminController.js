@@ -15,11 +15,11 @@ var markAsReviewed = function(uniqueID, containerID){
 var reviewedAndEdited = function(uniqueID, resourceObj, containerID){
   editDetailsRequest(uniqueID, resourceObj, containerID);
 };
-var getUnreviewedSubjects = function(){
-  let jsArray = jsUnreviewedSubjects();
+var getUnreviewedSubjects = async function(){
+  let jsArray = await jsUnreviewedSubjects();
   return jsArray;
 };
-var getFlaggedSubjects = function(){
-  let jsArray = jsFlagggedSubjects();
+var getFlaggedSubjects =async function(){
+  let jsArray = await jsFlagggedSubjects();
   return jsArray;
 };

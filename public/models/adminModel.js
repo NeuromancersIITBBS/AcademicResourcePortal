@@ -68,13 +68,12 @@ var editDetailsRequest = function(uniqueID, resourceObj, containerID){
   });
 };
 
-var jsFlagggedSubjects = function(){
+var jsFlagggedSubjects = async function(){
   let endpoint = "https://arpbackend.firebaseapp.com/admin/flagged";
   let jsArray = [];
-  $.ajax({
+  const res = await $.ajax({
       url: endpoint,
       method: 'GET',
-      async: false,
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");
@@ -87,13 +86,12 @@ var jsFlagggedSubjects = function(){
   return jsArray;
 };
 
-var jsUnreviewedSubjects = function(){
+var jsUnreviewedSubjects = async function(){
   let endpoint = "https://arpbackend.firebaseapp.com/admin/unreviewed";
   let jsArray= [];
-  $.ajax({
+  const res = await $.ajax({
       url: endpoint,
       method: 'GET',
-      async: false,
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");

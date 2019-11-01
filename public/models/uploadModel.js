@@ -54,27 +54,27 @@ var upload = function(subjectCode, formData,file){
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
     var storageRef2 = firebase.storage().ref().child(`${timeStamp}/`);
-    console.log("somelink" + timeStamp);
+    console.log("gs://arpbackend-df561.appspot.com/" + timeStamp);
     //console.log(storageRef2);
     //console.log(JSON.stringify(formData));
 
-    var jsonObj = {"emailId": formData.get("email"),
-                    "subjectName":formData.get("subjectName"),
-                      "semester": formData.get("semester"),
-                      "subjectCode":formData.get("subjectCode"),
-                      "type":formData.get("type"),
-                      "year":formData.get("year"),
-                      "downloadLink":downloadURL,
-                      "storageReference": timeStamp,
-                      "description":formData.get("description")
+    let jsObj = {emailId: formData.get("email"),
+                    subjectName:formData.get("subjectName"),
+                      semester: formData.get("semester"),
+                      subjectCode:formData.get("subjectCode"),
+                      type:formData.get("type"),
+                      year:formData.get("year"),
+                      downloadLink:downloadURL,
+                      storageReference: "gs://arpbackend-df561.appspot.com/"+timeStamp,
+                      description:formData.get("resDesc")
                     };
+    let jsonObj = JSON.stringify(jsObj);
     console.log(jsonObj);
         	$.ajax({
     					url : endpoint,
-      				method : "POST",
+      				    method : "POST",
     					data : jsonObj,
-    					contentType : false,
-    					processData : false
+                        contentType : "application/json",
     				}).done(function(response){
                         console.log("Success");
                         location.reload(true);

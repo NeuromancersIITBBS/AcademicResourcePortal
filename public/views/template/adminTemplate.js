@@ -1,8 +1,8 @@
 $(afterLoading);
-function afterLoading() {
+async function afterLoading() {
   // call controller to get all resources
-   let flagData = getFlaggedSubjects();
-   let unreviewData = getUnreviewedSubjects();
+   let flagData = await getFlaggedSubjects();
+   let unreviewData = await getUnreviewedSubjects();
 
    propagateFlagTemplate(flagData);
    setOnClickFlagTemplate();

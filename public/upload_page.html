@@ -48,7 +48,7 @@
         <!--Google sign in-->
         <script src="https://apis.google.com/js/api:client.js"></script>
           <meta name="google-signin-scope" content="profile email">
-          <meta name="google-signin-client_id" content="428652653892-esfauerv7qutgj4iiqn1188r0rn4b5c7.apps.googleusercontent.com">
+          <meta name="google-signin-client_id" content="">
 
           <script>
                 var googleUser = {};
@@ -56,7 +56,7 @@
                   gapi.load('auth2', function(){
                     // Retrieve the singleton for the GoogleAuth library and set up the client.
                     auth2 = gapi.auth2.init({
-                      client_id: '428652653892-esfauerv7qutgj4iiqn1188r0rn4b5c7.apps.googleusercontent.com',
+                      client_id: "",
                       cookiepolicy: 'single_host_origin',
                       // Request scopes in addition to 'profile' and 'email'
                       //scope: 'additional_scope'
@@ -182,6 +182,8 @@
                             <select class="form-control col-sm-6 col-lg-2" id="year" name="year" required>
                                 <option value="2019" selected>2019</option>
                                 <option value='2018'>2018</option>
+                                <option value='2017'>2017</option>
+                                <option value='2016'>2016</option>
                             </select>
                         </div>
 
@@ -209,16 +211,7 @@
 
         <script>
           // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyDtZKjy8A1eVOeqw5tRNdclFepFMGfLNyg",
-            authDomain: "testarp-e38ba.firebaseapp.com",
-            databaseURL: "https://testarp-e38ba.firebaseio.com",
-            projectId: "testarp-e38ba",
-            storageBucket: "testarp-e38ba.appspot.com",
-            messagingSenderId: "743643893337",
-            appId: "1:743643893337:web:32b288f79f0164273eab48",
-            measurementId: "G-1HDXL6295Y"
-          };
+          
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();

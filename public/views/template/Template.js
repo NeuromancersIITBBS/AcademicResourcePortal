@@ -27,7 +27,7 @@ function setupSchools(){
 function branchOnClick(){
     // If someone selects the branch clear cardContainer div
     // and add semseter wise subject list in the div
-    $('.cardContainer p').click(function(){
+    $('.cardContainer p').click(async function(){
         branchID = $(this).find('input').val();
         var branchName = $(this).text();
         console.log(branchName);
@@ -62,7 +62,7 @@ function branchOnClick(){
         //      Any other Info
         // };
 
-        subjectArr = getSubjectsByBranch(branchID.toUpperCase());
+        subjectArr = await getSubjectsByBranch(branchID.toUpperCase());
 
         // Propagate subjects
         let subjectTemp = new SubjectTemplate(subjectArr);

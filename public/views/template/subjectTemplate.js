@@ -18,6 +18,7 @@ function flagOnClick(){
 		event.stopPropagation();
 		let fileName = $(this).parent().text();
 		let uniqueID = $(this).parent().find('input').val();
+	//	console.log(uniqueID);
 		let currFlagCount = $(this).text();
 		console.log("im in subtempjs");
 		// Using confirm method to confirm whether user really wants to flag a resource or not
@@ -48,6 +49,7 @@ function flagOnClick(){
     ],
     callback: function (response) {
 			if(response){
+				console.log(uniqueID);
 				flagToggle(uniqueID,response);
 			}
 				console.log(response);
@@ -57,13 +59,13 @@ function flagOnClick(){
 	});
 }
 
-function setupPage(subCode){
+async function setupPage(subCode){
 	// Changes page title
 	$(document).prop('title', subCode);
 	// Changes heading of the page
 	$('#subjectCode strong').text(subCode);
 	console.log(subCode);
-	let resources = getResourcesByCode(subCode)
+	let resources = await getResourcesByCode(subCode)
 
 	let arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
 	let subName = '';
@@ -127,6 +129,10 @@ function fillData(list, resources){
 		 + ' ' + resources[i]["flags"]);
 		 pTag.append(aTag);
 		 pTag.append(flagTag);
+		 idTag = $('<input>');
+		 idTag.attr('type', 'hidden');
+		 idTag.val(resources[i]['subjectCode']+resources[i]['resourceId']);
+		 pTag.append(idTag);
 		 if(resources[i].description != '' && resources[i].description != undefined){
 		 	pTag.append('<br>' + resources[i].description);
 		}

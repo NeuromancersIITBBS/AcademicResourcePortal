@@ -9,7 +9,7 @@
     let endpoint = `https://arpbackend.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}/resources/${uniqueID}`;
     // If flag is 1 server should increment current count by 1
     let data = {resourceID: uniqueID, flag: 1, flagReason: reason};
-    let response;
+    console.log(data);
     $.ajax({
         url: endpoint,
         method: 'PUT',
@@ -19,9 +19,9 @@
           alert("Something went wrong, please try again.");
         },
         success: function(result) {
-        response = 1;
-        console.log("Successfully flagged! ");
+            console.log("Successfully flagged! ");
+            location.reload();
         }
     });
-    return response;
+
 };

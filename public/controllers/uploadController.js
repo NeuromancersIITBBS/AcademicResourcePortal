@@ -10,7 +10,14 @@ var uploadPreprocessing = function(email, num){   //num : number of files being 
         formData.append("email", email);
         console.log(formData.get("email"));
         console.log(formData.get("subjectCode"));
-        console.log(formData.get("description"));
+        let type = formData.get("type");
+        console.log(type);
+        if(type == "endsem" || type== "midsem" || type == "quiz")
+        {
+          console.log(formData.get("description"));
+          formData.set("description","");
+          console.log(formData.get("description"));
+        }
         var file;
         file = document.getElementById('file').files[i];
         if(file.name.includes(".pdf"))

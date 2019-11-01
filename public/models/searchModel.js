@@ -2,14 +2,13 @@
 // jsAllSubjects()
 // all the subjects irrespective of branches
 
-var jsAllSubjects = function(){
+var jsAllSubjects = async function(){
   let endpoint = "https://arpbackend.firebaseapp.com/search";
   let success = 0;
   let jsArray = [];
-  $.ajax({
+  const res = await $.ajax({
       url: endpoint,
       method: 'GET',
-      async: false,
       dataType: 'json',
       error: function(xhr){
         alert("Something went wrong, please try again.");
@@ -18,7 +17,8 @@ var jsAllSubjects = function(){
         console.log("Success!");
         jsArray = res;
       }
-});        return jsArray;
+    });
+    return jsArray;
 };
 /*
 let jsArray=[{    subjectName: 'Data Structure',  subjectCode: 'CS2L003'

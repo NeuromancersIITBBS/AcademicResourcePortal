@@ -5,8 +5,8 @@
 
 var searchArray = [];
 var searchResult = [];
-$(document).ready(function(){
-    let jsArray = jsAllSubjects();  //calling model function
+$(document).ready(async function(){
+    let jsArray = await jsAllSubjects();  //calling model function
     jsArray.forEach(function(item){
         let searchID = item.subjectName + item.subjectCode;
         searchID = searchID.toLowerCase();
