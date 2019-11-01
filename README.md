@@ -1,7 +1,7 @@
 ## AcademicResourcePortal
 
 <p align="center">
-  <img width="250" height="200" src="/public/images/arpCommunity.jpeg">
+  <img width="250" height="200" src="/public/public/images/arpCommunity.jpeg">
 </p>
 
 - A portal which would host academic resources exclusively for the students of IIT Bhubaneswar.
@@ -70,7 +70,7 @@ The frontend was implemented using the MVC model which consists of three parts n
 
 - Next it consists of Search Bar, which operates by Search by Subject method as follows :
 
-    (i) The search routine gets a list of all subjects (irrespective of branh) as soon as the home page loads.(The functions for these operations are present in searchBar.js file.
+    (i) The search routine gets a list of all subjects (irrespective of branches) as soon as the home page loads.(The functions for these operations are present in searchBar.js file.
 
     (ii) Search is done by simple substring checking.
 
