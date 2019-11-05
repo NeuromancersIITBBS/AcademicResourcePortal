@@ -19,7 +19,7 @@ var uploadPreprocessing = function(email, num){   //num : number of files being 
           console.log(formData.get("description"));
         }
         var file;
-        file = document.getElementById('file').files[i];
+        file = $('.file').get(i).files[0];
         if(file.name.includes(".pdf"))
         {
             var subjectCode = formData.get("subjectCode");

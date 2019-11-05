@@ -1,16 +1,25 @@
 // Global letiables
 
 //to count the number of files being uploaded at once
-let num =  1;
+var uploadNum =  1;
 //dummy data for email
 //let email = 'email@gmail.com';
 
 // Runs afterLoading function after the page loads
-$(afterLoading);
+// $(afterLoading);
 
 
-function afterLoading(){
+function afterLoadingUpload(){
+      // After loading empty formcontainer
+      $('#formContainer').empty();
+
+      //Remove previous click listeners
+    $("#addTemplateButton").off('click', addTemplate);
+    $('#formContainer').off('click', '.removeBtn');
+    $('#formContainer').off('change', '.#type');
+
       // Create first form
+      uploadNum =  1;
       let form1 = new UploadTemplate();
       form1.populateTemplate();
 
@@ -19,9 +28,7 @@ function afterLoading(){
 
 
       // Creates another form when user clicks on Add Another Question Paper button
-      $('#addTemplateButton').click(function(){
-            addTemplate();
-      });
+      $('#addTemplateButton').click(addTemplate);
     /*  $('.upload-form-subunit').click(function(){
         submit("tss111@iitbbs.ac.in");
       });*/
@@ -33,16 +40,16 @@ function afterLoading(){
             item.stopPropagation();
 
             // User cannot remove a form if only one form is there
-            if(num <= 1){
+            if(uploadNum <= 1){
                   $(this).attr('disabled', true);
             }
             // User can remove a form if there are more than one forms
             else{
                   $(this).parent().remove();
                   // Maintains count of total forms
-                  num--;
+                  uploadNum--;
                   // If after deleting only one form is left it cannot be deleted
-                  if(num <= 1){
+                  if(uploadNum <= 1){
                         $('#formContainer .removeBtn').attr('disabled', true);
                   }
             }
@@ -88,11 +95,11 @@ function addTemplate(){
       // we need to activate remove button of the first form when
       // we add a form and only one form is there on the screen
       // before adding second form
-      if(num <= 1){
+      if(uploadNum <= 1){
             resetAllRemoveButtons();
       }
       // Maintains count of total forms
-      num++;
+      uploadNum++;
 }
 
 
@@ -107,7 +114,7 @@ function submit(email){
       if(email.includes(last))
         {
           console.log(email);
-            if(uploadPreprocessing(email,num) == true)
+            if(uploadPreprocessing(email,uploadNum) == true)
              location.reload(true);
 
         }

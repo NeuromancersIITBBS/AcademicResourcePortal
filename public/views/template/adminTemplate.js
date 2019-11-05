@@ -8,8 +8,8 @@ async function afterLoading() {
    setOnClickFlagTemplate();
    propagateReviewTemplate(unreviewData);
    setOnClickReviewTemplate();
+   setupEditPrompt();
 }
-
 
 function propagateFlagTemplate(subData){
     if ('content' in document.createElement('template')) {
@@ -41,9 +41,11 @@ function fillDataInFlagContainer(resourceObj){
     let sem = $(clone).find('.fieldSem span');
     let type = $(clone).find('.fieldType span');
     let year = $(clone).find('.fieldYear span');
+    let downloadLink = $(clone).find('.btnDownload a');
 
     mostVotedReson = " ";
-    // mostVotedReson = getMostVotedReason(resourceObj);
+    console.log(resourceObj.flagReason);
+    // mostVotedReson = getMostVotedReason(resourceObj.flagReason);
 
     // Enter Values in the fields
     email.text(resourceObj.emailId);
@@ -55,25 +57,47 @@ function fillDataInFlagContainer(resourceObj){
     sem.text(resourceObj.semester);
     type.text(resourceObj.type);
     year.text(resourceObj.year);
+    downloadLink.attr('href', resourceObj.downloadLink);
+    downloadLink.attr('target', '_blank');
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
 }
 
+function getMostVotedReason(dataReasons){
+  let frequency = {
+      'Irrelevant': 0,
+      'Duplicate': 0,
+      'Unclear': 0,
+      'Explicit': 0
+  };
+  dataReasons.forEach(function(item){
+    frequency[item]++;
+  });
+}
+
 function setOnClickFlagTemplate(){
-   $('.flagContainer .btnDownload').click(function(){
-     let resourceID = $(this).parent().find('fieldResID').text();
-     downloadFile(resourceID);
-   });
+   // $('.flagContainer .btnDownload').click(function(){
+   //   let resourceID = $(this).parent().find('fieldResID').text();
+   //   downloadFile(resourceID);
+   // });
    $('.flagContainer .btnFlagToggle').click(function(){
-     let resourceID = $(this).parent().find('fieldResID').text();
-     // Toggle Image
-     if($(this).find('img').attr('src') == './views/Images/flag.png'){
-       $(this).find('img').attr('src', './views/Images/unflag.png');
-     }else{
-       $(this).find('img').attr('src', './views/Images/flag.png');
-     }
-     removeFlag(resourceID, $(this).parent());
+     let resourceID = $(this).parent().find('.fieldResID span').text();
+     // make resource object from the current div
+     let subName = $(this).parent().find('.fieldSubName span').text();
+     let subCode = $(this).parent().find('.fieldSubCode span').text();
+     let type = $(this).parent().find('.fieldType span').text();
+     let  year = $(this).parent().find('.fieldYear span').text();
+     let  sem = $(this).parent().find('.fieldSem span').text();
+     let resData = {
+       subjectName: subName,
+       subjectCode: subCode,
+       type: type,
+       year: year,
+       semester: sem,
+       review: true,
+     };
+     removeFlag(resourceID, resData, $(this).parent());
    });
    $('.flagContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();
@@ -110,6 +134,7 @@ function fillDataInReviewContainer(resourceObj){
     let sem = $(clone).find('.fieldSem span');
     let type = $(clone).find('.fieldType span');
     let year = $(clone).find('.fieldYear span');
+    let downloadLink = $(clone).find('.btnDownload a');
 
 
     // Enter Values in the fields
@@ -120,19 +145,35 @@ function fillDataInReviewContainer(resourceObj){
     sem.text(resourceObj.semester);
     type.text(resourceObj.type);
     year.text(resourceObj.year);
+    downloadLink.attr('href', resourceObj.downloadLink);
+    downloadLink.attr('target', '_blank');
 
     // Inserts template to the web page
     containerFlagged.append(template.html());
 }
 
 function setOnClickReviewTemplate(){
-   $('.unreviewContainer .btnDownload').click(function(){
-     let resourceID = $(this).parent().find('fieldResID').text();
-     downloadFile(resourceID);
-   });
+   // $('.unreviewContainer .btnDownload').click(function(){
+   //   let resourceID = $(this).parent().find('fieldResID').text();
+   //   downloadFile(resourceID);
+   // });
    $('.unreviewContainer .btnReviewOK').click(function(){
-     let resourceID = $(this).parent().find('fieldResID').text();
-     markAsReviewed(resourceID, $(this).parent());
+     let resourceID = $(this).parent().find('.fieldResID span').text();
+     // make resource object from the current div
+     let subName = $(this).parent().find('.fieldSubName span').text();
+     let subCode = $(this).parent().find('.fieldSubCode span').text();
+     let type = $(this).parent().find('.fieldType span').text();
+     let  year = $(this).parent().find('.fieldYear span').text();
+     let  sem = $(this).parent().find('.fieldSem span').text();
+     let resData = {
+       subjectName: subName,
+       subjectCode: subCode,
+       type: type,
+       year: year,
+       semester: sem,
+       review: true,
+     };
+     markAsReviewed(resourceID, resData, $(this).parent());
    });
    $('.unreviewContainer .btnDelete').click(function(){
      let resourceID = $(this).parent().find('fieldResID').text();

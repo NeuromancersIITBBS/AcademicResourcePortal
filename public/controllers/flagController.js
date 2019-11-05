@@ -3,9 +3,9 @@
 
 var isFlagged = false;
 
-var flagToggle = function(uniqueID,reason){
+var flagToggle = function(uniqueID,name,reason){
   if(!isFlagged){
-    flagRequest(uniqueID,reason);
+    flagRequest(uniqueID,name,reason);
     }
     else{
       alert('You already flagged this resource file');

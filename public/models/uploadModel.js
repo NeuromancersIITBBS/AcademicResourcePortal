@@ -8,14 +8,14 @@ var upload = function(subjectCode, formData,file){
     console.log(formData.get("subjectName"));
     let branch = subjectCode.substring(0,2);
     console.log(branch);
-    let endpoint = `https://arpbackend.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}`;
+    let endpoint = `https://arpbackend-fd562.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}`;
 
     var metadata = {
     contentType: 'pdf'
     };
     var timeStamp = new Date().valueOf();
     // Upload file and metadata to the object 'images/mountains.jpg'
-    var uploadTask = storageRef.child(`${timeStamp}/`).put(file);
+    var uploadTask = storageRef.child(`${subjectCode}:${timeStamp}.pdf/`).put(file);
   //  var uploadTask = storageRef.child('resources/' + file.name).put(file, metadata);
 
     // Listen for state changes, errors, and completion of the upload.
@@ -71,13 +71,13 @@ var upload = function(subjectCode, formData,file){
     let jsonObj = JSON.stringify(jsObj);
     console.log(jsonObj);
         	$.ajax({
-    					url : endpoint,
-      				    method : "POST",
-    					data : jsonObj,
+    				url : endpoint,
+      		      method : "POST",
+    				data : jsonObj,
                         contentType : "application/json",
     				}).done(function(response){
                         console.log("Success");
-                        location.reload(true);
+                        initUpload();
 
     				}).fail(function(){
                         alert("fail!");

@@ -7,11 +7,7 @@
 
         <title>Upload Page</title>
         <!--jQuery-->
-        <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"></script>
-
+        <script type="text/javascript" src="./resources/jquery.js">        </script>
         <!-- added logo in title -->
         <link rel="shortcut icon" type="./image/x-icon" href="./views/Images/collegelogo2.png" />
 
@@ -43,12 +39,12 @@
 
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./views/style.css" type="text/css">
         <!--Google sign in-->
         <script src="https://apis.google.com/js/api:client.js"></script>
           <meta name="google-signin-scope" content="profile email">
-          <meta name="google-signin-client_id" content="">
+          <meta name="google-signin-client_id" content="97043155554-rrlmb9dsh3kie4as8gvuqkeu4moi2e6k.apps.googleusercontent.com">
 
           <script>
                 var googleUser = {};
@@ -56,7 +52,7 @@
                   gapi.load('auth2', function(){
                     // Retrieve the singleton for the GoogleAuth library and set up the client.
                     auth2 = gapi.auth2.init({
-                      client_id: "",
+                      client_id: "97043155554-rrlmb9dsh3kie4as8gvuqkeu4moi2e6k.apps.googleusercontent.com",
                       cookiepolicy: 'single_host_origin',
                       // Request scopes in addition to 'profile' and 'email'
                       //scope: 'additional_scope'
@@ -189,7 +185,7 @@
 
                         <div class="form-row">
                           <div id="filesubmit" class="form-group col-9 col-sm-3">
-                            <input type="file" class="file-select" id="file" accept="pdf/*" required/>
+                            <input type="file" class="file-select file" accept="pdf/*" required/>
                           </div>
                         </div>
                     </form>
@@ -211,7 +207,16 @@
 
         <script>
           // Your web app's Firebase configuration
-          
+          const firebaseConfig = {
+              apiKey: "AIzaSyB5Zai26tXBytn6RiA_m4GqSizoBsN49i4",
+              authDomain: "arpbackend-df561.firebaseapp.com",
+              databaseURL: "https://arpbackend-df561.firebaseio.com",
+              projectId: "arpbackend-df561",
+              storageBucket: "arpbackend-df561.appspot.com",
+              messagingSenderId: "291422297894",
+              appId: "1:291422297894:web:80dff218bb204efeac2be7",
+              measurementId: "G-0RJQLXV6FQ"
+          };
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
           firebase.analytics();
@@ -224,6 +229,6 @@
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     </body>
 </html>

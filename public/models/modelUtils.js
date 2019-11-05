@@ -6,7 +6,7 @@
 
 var jsResourcesByCode = async function(subjectCode){
     let branch = subjectCode.substring(0,2);
-    let endpoint = `https://arpbackend.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}`;
+    let endpoint = `https://arpbackend-fd562.firebaseapp.com/studyResources/branches/${branch}/subjects/${subjectCode}`;
     let jsArray = [];
     const res  = await $.ajax({
         url: endpoint,
@@ -28,7 +28,7 @@ var jsResourcesByCode = async function(subjectCode){
 // all the subjects of the specified branch
 
   var jsSubjectsByBranch = async function(branch){         // branch = branch code eg. CS, EE, PH
-  let endpoint=`https://arpbackend.firebaseapp.com/studyResources/branches/${branch}`;
+  let endpoint=`https://arpbackend-df561.firebaseapp.com/studyResources/branches/${branch}`;
   let jsArray = [];
   const res = await $.ajax({
       url: endpoint,

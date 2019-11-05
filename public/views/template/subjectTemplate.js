@@ -1,26 +1,25 @@
 // Waits for page to load and then excutes this function
-$(afterLoading);
+// $(afterLoading);
 
-function afterLoading(){
-	let subCode = getParamByName('subCode');
-	if(!subCode) {alert('Invalid Subject Code')}
-	else{
-		setupPage(subCode);
-	}
-	// Set on click listener for flags
-	// When user clicks on a flag ask him for conformation and then flag the resource
-	flagOnClick();
-}
-
+// function afterLoading(){
+// 	let subCode = getParamByName('subCode');
+// 	if(!subCode) {alert('Invalid Subject Code')}
+// 	else{
+// 		setupSubjectTemplate(subCode);
+// 	}
+// }
 function flagOnClick(){
 	$('.links p span').click(function(event){
 		// Stop propagation otherwise resource download will be triggered
 		event.stopPropagation();
 		let fileName = $(this).parent().text();
 		let uniqueID = $(this).parent().find('input').val();
-	//	console.log(uniqueID);
+		let name = $('#subjectCodeST').text();
+		name = name.substring(0,(name.length-7));
+
+		console.log(name);
+		console.log(uniqueID);
 		let currFlagCount = $(this).text();
-		console.log("im in subtempjs");
 		// Using confirm method to confirm whether user really wants to flag a resource or not
 		bootbox.prompt({
     title: "Select a reason for flagging",
@@ -48,9 +47,11 @@ function flagOnClick(){
     }
     ],
     callback: function (response) {
-			if(response){
+			if(response || response != ''){
 				console.log(uniqueID);
-				flagToggle(uniqueID,response);
+				flagToggle(uniqueID,name,response);
+			}else{
+				alert('Select a valid reason');
 			}
 				console.log(response);
     }
@@ -59,21 +60,30 @@ function flagOnClick(){
 	});
 }
 
-async function setupPage(subCode){
-	// Changes page title
-	$(document).prop('title', subCode);
+async function setupSubjectTemplate(subCode,name){
 	// Changes heading of the page
-	$('#subjectCode strong').text(subCode);
-	console.log(subCode);
-	let resources = await getResourcesByCode(subCode)
+	$('#subjectTemplatePage').css('display', 'block');
+	$('#ContactUsPage').css('display', 'none');
+  $('#indexPage').css('display', 'none');
+  $('#uploadPage').css('display', 'none');
 
-	let arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
-	let subName = '';
-	for(var i = 0; i < arr.length; ++i){
-		if(resources[arr[i].toLowerCase()].length){
-			subName = resources[arr[i].toLowerCase()][0].subjectName;
-		}
+	$('#resContainer').empty();
+
+	$('#subjectCodeST').text(name+' '+subCode);
+		console.log(subCode);
+		$('#loadingDiv').css('display', 'block');
+		let resources = await getResourcesByCode(subCode)
+		$('#loadingDiv').css('display', 'none');
+		let arr = ['Midsem', 'Endsem', 'Quiz', 'Tutorial', 'Others'];
+		let subName = '';
+		for(var i = 0; i < arr.length; ++i){
+			if(resources[arr[i].toLowerCase()].length){
+				subName = resources[arr[i].toLowerCase()][0].subjectName;
+			}
 	}
+
+	returnBtnSubjectTemplate();
+
 	$('#subjectName').text(subName);
 	if(!resources) {
 		return;
@@ -114,6 +124,28 @@ async function setupPage(subCode){
         // the HTML template element is not supported.
         alert("HTML template element is not supported.")
     }
+		// Set on click listener for flags
+		// When user clicks on a flag ask him for conformation and then flag the resource
+		flagOnClick();
+}
+
+// Prepends return button on subjectTemplate
+function returnBtnSubjectTemplate(){
+	$('#subjectTemplatePage .btnReturn').remove();
+	let prevButton = $('<button>');
+	let icon = $('<img>');
+	icon.attr('src', './views/Images/btnReturn.png')
+	prevButton.append(icon);
+
+	prevButton.addClass('btnReturn')
+	prevButton.click(function(){
+		$('#subjectTemplatePage').css('display', 'none');
+		$('#ContactUsPage').css('display', 'none');
+  	$('#indexPage').css('display', 'block');
+  	$('#uploadPage').css('display', 'none');
+		$(this).remove();
+	});
+	$('#resContainer').before(prevButton);
 }
 
 function fillData(list, resources){
@@ -125,6 +157,7 @@ function fillData(list, resources){
 		aTag = $('<a>');
 		aTag.html(resources[i].semester + '-' + resources[i].year);
 		aTag.attr('href', resources[i].downloadLink);
+		aTag.attr('target', '_blank');
 		flagTag.html('<i class="fa fa-flag" style = "color:black" aria-hidden="true"></i>'
 		 + ' ' + resources[i]["flags"]);
 		 pTag.append(aTag);

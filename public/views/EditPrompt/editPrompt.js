@@ -1,8 +1,7 @@
-$(afterLoading)// Get the modal
-function afterLoading(){
+// $(afterLoadingEditPrompt)// Get the modal
+function setupEditPrompt(){
   let containerID;
-
-
+  console.log('Hii');
   // Prvents the prompt from closing when admin clicks on the container
   $('#editPrompt .container').click(function(event){
       event.stopPropagation();

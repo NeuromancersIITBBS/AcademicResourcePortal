@@ -6,7 +6,6 @@ function afterLoading(){
 function setupSchools(){
     // Clear cardContainer
     $('.cardContainer').empty();
-
     // Change heading to subjects
     $('#branchLists h3').text('Schools')
 
@@ -41,8 +40,7 @@ function branchOnClick(){
         // Create a button to return to previous page
         let prevButton = $('<button>');
         let icon = $('<img>');
-        icon.attr('src', 'views/Images/btnReturn.png')
-        // prevButton.text('Return');
+        icon.attr('src', './views/Images/btnReturn.png')
         prevButton.append(icon);
 
         prevButton.addClass('btnReturn')
@@ -50,7 +48,7 @@ function branchOnClick(){
             setupSchools();
             $(this).remove();
         });
-
+        $('#loadingDiv').css('display', 'block');
         $('.cardContainer').before(prevButton);
 
         // Call Controller to get subject list for that branch
@@ -63,18 +61,20 @@ function branchOnClick(){
         // };
 
         subjectArr = await getSubjectsByBranch(branchID.toUpperCase());
-
+        $('#loadingDiv').css('display', 'none');
         // Propagate subjects
         let subjectTemp = new SubjectTemplate(subjectArr);
         subjectTemp.propagateTemplate();
 
-        $('.cardContainer p').click(function() {
-            let subjectCode = $(this).find('span').text();
+        $('.cardContainer p').click(function(){
+            let subjectCode = $(this).find('input').val();
+            let subjectName = $(this).find('.ipTag2').val();
             console.log(subjectCode);
+            console.log(subjectName);
+            setupSubjectTemplate(subjectCode,subjectName);
         });
     });
 }
-
 // This class takes data from jSon or arrays and
 // populates template present in the current page with the received data
 class BranchTemplate{
@@ -161,13 +161,20 @@ class SubjectTemplate{
         }
     }
     fillSubjects(subjectListDiv, data){
-        let L = data.length, i = 0, aTag, pTag;
+        let L = data.length, i = 0, ipTag,ipTag2, pTag;
         for(i = 0; i < L; i++){
-            aTag = $('<a>');
-            aTag.text(data[i].subjectName + ' ' + data[i].subjectCode);
-            // Uses subject code to identify the subject
-            aTag.attr('href', 'SubjectTemplate.html?subCode=' + data[i].subjectCode);
-            subjectListDiv.append(aTag);
+            pTag = $('<p>');
+            pTag.text(data[i].subjectName + ' ' + data[i].subjectCode);
+            ipTag = $('<input>');
+            ipTag2 = $('<input>');
+            ipTag.attr('type', 'hidden');
+            ipTag2.attr('type', 'hidden');
+            ipTag2.attr('class','ipTag2');
+            ipTag.val(data[i].subjectCode);
+            ipTag2.val(data[i].subjectName);
+            pTag.append(ipTag);
+            pTag.append(ipTag2);
+            subjectListDiv.append(pTag);
         }
     }
 }
@@ -176,7 +183,7 @@ function getSchoolList(){
   return [{
       name: 'SBS',
       tData: ['Physics', 'Chemistry', 'Maths'],
-      tSearchID: ['PH', 'CH', 'MA']
+      tSearchID: ['PH', 'CY', 'MA']
   },{
       name: 'SEOCS',
       tData: ['All Courses'], //Suggest degrees offered by SEOCS

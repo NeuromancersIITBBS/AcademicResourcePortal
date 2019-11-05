@@ -47,8 +47,8 @@ function codeBarSetup(inp) {
         sItem.html(suggestionLink);
         sItem.on('click', function(e) {
             //Set value of the input field to be clicked subject name
-            inp.val($(this).text());
-            selecetedSearchID = $(this).find('input').val();
+            $(this).parent().parent().find('input').val($(this).text());
+            selecetedSearchID = $(this).parent().find('input').val();
             closeAllLists();
         });
         sContainer.append(sItem);

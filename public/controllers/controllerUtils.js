@@ -22,7 +22,7 @@ var getResourcesByCode = async function(subjectCode){
       tutorial.push(jsArray[i]);
       else if(jsArray[i].type === "quiz")
       quiz.push(jsArray[i]);
-      else if(jsArray[i].type === "other")
+      else if(jsArray[i].type === "others")
       others.push(jsArray[i]);
     }
 
@@ -43,9 +43,24 @@ var getResourcesByCode = async function(subjectCode){
 //all the subjects of the specified branch
 
 var  getSubjectsByBranch=async function(branch){       // branch = branch code eg. CS, EE, PH
+    let subjectList = branchSubjectList.find((element)=>{
+        console.log(element);
+       return element.branchName===branch;
+    });
+    if(!subjectList){
+      return [];
+    }
+    if(subjectList.data){
+      return subjectList.data;
+    }else {
+      return [];
+    }
+};
+
+/*var  getSubjectsByBranch=async function(branch){       // branch = branch code eg. CS, EE, PH
     let jsArray = await jsSubjectsByBranch(branch);  //calling model function
     return jsArray;
-};
+};*/
 
 
 //3. getAllResources

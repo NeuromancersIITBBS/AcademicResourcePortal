@@ -1,5 +1,5 @@
 
-var selecetedSearchID;  //Stores searchID of clicked item
+var selecetedSearchID, selecetedSubjectName;  //Stores searchID of clicked item
 
 
 //Function which runs after the document is completely loaded
@@ -13,7 +13,7 @@ function onDocReady(){
     console.log(selecetedSearchID);
     // With an assumption that selectedSearchID = subject code
     if(selecetedSearchID){
-    	window.location.href = 'SubjectTemplate.html?subCode=' + selecetedSearchID;
+      setupSubjectTemplate(selecetedSearchID, selecetedSubjectName);
     }
     return false;
   });
@@ -55,11 +55,15 @@ function searchBarSetup(inp) {
         sItem = $('<div>');
         suggestionLink = item.information.subjectName + ' (' + item.information.subjectCode + ')';
         suggestionLink += "<input type='hidden' value='" + item.information.subjectCode + "'>";
+        suggestionLink += "<input type='hidden' class='searchName' value='" + item.information.subjectName + "'>";
         sItem.html(suggestionLink);
         sItem.on('click', function(e) {
             //Set value of the input field to be clicked subject name
             inp.val($(this).text());
             selecetedSearchID = $(this).find('input').val();
+            selecetedSubjectName = $(this).find('input.searchName').val();
+
+            console.log(selecetedSubjectName);
             closeAllLists();
         });
         sContainer.append(sItem);
