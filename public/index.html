@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--jQuery-->
+          <script type="text/javascript" src="./resources/jquery.js"></script>
+        <!-- added logo in title -->
+        <link rel="shortcut icon" type="./image/x-icon" href="./views/Images/collegelogo2.png" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Model Imports -->
+        <script type="text/javascript" src="models/searchModel.js"></script>
+        <script type="text/javascript" src="./models/modelUtils.js"></script>
+        <script type="text/javascript" src="./models/uploadModel.js"></script>
+        <script type="text/javascript" src="./models/flagModel.js"></script>
+
+        <!-- Controller Imports -->
+        <script type="text/javascript" src="controllers/searchController.js"></script>
+        <script type="text/javascript" src="./controllers/controllerUtils.js"></script>
+        <script type="text/javascript" src="./controllers/uploadController.js"></script>
+        <script type="text/javascript" src="./controllers/flagController.js"></script>
+
+
+        <!-- Search Bar imports -->
+        <link rel="stylesheet" type="text/css" href="./views/SearchBar/searchBar.css">
+        <script type="text/javascript" src="./views/SearchBar/searchBar.js"></script>
+        <link rel="stylesheet" type="text/css" href="./views/SearchBar/searchBar.css">
+        <script type="text/javascript" src="./views/SearchBar/codeBar.js"></script>
+        <link rel="stylesheet" type="text/css" href="./views/SearchBar/searchBar.css">
+        <script type="text/javascript" src="./views/SearchBar/subjectBar.js"></script>
+
+        <!-- Branch Template Propagation Imports -->
+        <link rel="stylesheet" type="text/css" href="./views/template/Template.css">
+        <script type="text/javascript" src="./views/template/Template.js"></script>
+        <link rel="stylesheet" type="text/css" href="./views/template/subjectTemplate.css">
+        <script type="text/javascript" src="./views/template/subjectTemplate.js"></script>
+        <script type="text/javascript" src="./views/template/UploadTemplate.js"></script>
+        <!--Icluding init.js-->
+        <script type="text/javascript" src="./init.js">
+        </script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./views/style.css" type="text/css">
+<!--Google sign in-->
+<script src="https://apis.google.com/js/api:client.js"></script>
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="">
+
+  <script>
+        var googleUser = {};
+        var startApp = function() {
+          gapi.load('auth2', function(){
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+              client_id: "",
+              cookiepolicy: 'single_host_origin',
+              // Request scopes in addition to 'profile' and 'email'
+              //scope: 'additional_scope'
+            });
+            attachSignin(document.getElementById('customBtn'));
+      });
+    };
+
+    function attachSignin(element) {
+
+      auth2.attachClickHandler(element, {},
+          function(googleUser) {
+              submit(googleUser.getBasicProfile().getEmail());
+          }, function(error) {
+            //alert(JSON.stringify(error, undefined, 2));
+          });
+    }
+    </script>
+
+        <title>Academic Resource Portal</title>
+    </head>
+
+
+
+    <body style="background-color:#f2f2f2">
+
+      <div id="loadingDivContainer">
+        <p style="color:black;" class="h3 text-center">Loading Academic Resource Portal..</p>
+        <div id="loadingDiv" class="mx-auto">
+
+              <div class="mx-auto cardContent">
+
+              </div>
+        </div>
+
+      </div>
+<div id = "bodyPage">
+
+        <nav class="navbar navbar-expand-lg navbar-dark text-dark fixed-top"  style="width:100%;background-color:#212121">
+          <a class="navHome">  <img class="navbar-brand" src='./views/Images/collegelogo.png' style='width:30px '></a>
+          <button class="navbar-toggler ml-auto"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active" id="activeNavHome">
+                        <a class="nav-link navHome">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" id="activeNavContact">
+                        <a class="nav-link navContact">Contact us</a>
+                    </li>
+                    <li class="nav-item" id="activeNavUpload">
+                        <a class="nav-link navUpload">Upload</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Report </a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+        <!--Heading-->
+        <div class="jumbotron jumbotron-fluid" id="jumbotronSection" style="width:100%;background-color:#212121">
+            <div class="container">
+                <h2 class="display-3 jumbotron-mainheading"><b>Academic Resource Portal</b></h2>
+                <p class="lead">Powered by Neuromancers</p>
+
+            </div>
+        </div>
+<div id="indexPage">
+        <!--searchBar
+css : searchBar.css;
+javascript : searchBar.js-->
+        <div class="searchBar" style="width: 100%">
+            <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="subject" placeholder="Search by subject name or code">
+            </div>
+            <button id="searchSubject">Search</button>
+        </div>
+
+        <!--template
+template is used for schoolwise branch list
+css : template.css;
+javascript : template.js-->
+        <div id="branchLists">
+            <h3  style="font-size:37px">Schools</h3>
+            <div class="cardContainer"></div>
+        </div>
+
+
+        <template id="schoolTemplate">
+            <div class="container col-lg-4 col-sm-6 col-xs-6 cardCover">
+                <div class="mx-auto cardContent">
+                    <h3></h3>
+                    <div class="links"></div>
+                </div>
+            </div>
+        </template>
+        <template id="branchTemplate">
+            <div class="container col-xs-10 branchCover">
+                <div class="mx-auto cardContent">
+                    <h3></h3>
+                    <div class="cardContainer2"></div>
+                    <div class="links"></div>
+                </div>
+            </div>
+        </template>
+</div>
+<br>
+        <!-- Optional JavaScript -->
+        <!-- jQuery in the head no need to import again -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+-->
+        <!-- Popper.js, then Bootstrap JS -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <div id="ContactUsPage">
+          <div class="container" style="color:#000">
+              <h5 class="text-center">Write to us at <a href="mailto:secyprogsoc.sg@iitbbs.ac.in">secyprogsoc.sg@iitbbs.ac.in  </a>(Secretary, Neuromancers)</h5>
+            <br>
+
+            <div class="container">
+                      <div id="profiles" class="">
+                          <h1 class="text-center">Our Team</h1><br>
+                          <h3 class="text-center">Project Leads</h3><br>
+                        <div class="row ">
+                          <div class="col-md-3 offset-2 mb-4" style="width: 14rem;">
+                            <img src="./public/images/rishabh.jpg" class="card-img-top mx-auto d-block rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Rishabh Gupta
+                              <a href="https://www.linkedin.com/in/rishabh-gupta-48890613b/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="col-md-3 offset-2 mb-4" style="width: 14rem;">
+                            <img src="./public/images/chiragnighut.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Chirag Nighut
+                              <a href="https://www.linkedin.com/in/chiragnighut/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                            </p>
+                            </div>
+                          </div>
+                          </div>
+                        <br>
+                        <h3 class="text-center">Contributors</h3><br>
+                        <div class="row">
+                            <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/aashay.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Aashay Palliwar
+                              <a href="https://www.linkedin.com/in/aashay-palliwar/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                            </p>
+                            </div>
+                          </div>
+                          <div class=" mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/rajshah.jpeg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center ">Raj Shah
+                              <a href="https://www.linkedin.com/in/raj-shah-a25788187/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/sripad.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">T.V.S.S.Sripad
+                              <a href="https://www.linkedin.com/in/sripad-t-v-s-s-b568b7187/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/jaykar.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Jayakar Reddy
+                              <a href="https://www.linkedin.com/in/karri-jayakar-s-s-reddy-9a538a170/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="row">
+                          <div class=" mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/srikanth.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Sreekanth Vadigi
+                              <a href="#" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+
+
+                          <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/anuj.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Anuj Gupta
+                              <a href="#" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                             </p>
+                            </div>
+                          </div>
+
+
+                          <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/pradyuman.jpg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">Pradyuman Agrawal<a href="#" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="  mx-auto mb-4" style="width: 14rem;">
+                            <img src="./public/images/nitish.jpeg" class="card-img-top rounded-circle" alt="...">
+                            <div class="card-body">
+                              <p class=" font-weight-bold text-center">E Nitish Kumar reddy<a href="https://www.linkedin.com/in/nitish-erva-351587175/" target="null"><img src="./public/images/linkedin.png" alt="" class="ml-2"></a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      </div>
+        </div>
+        <div class="" id="subjectTemplatePage">
+          <h2 id="subjectCodeST" style="color:black;" class="text-center"></h2>
+
+          <p id="note">Click on the flag to report a resource file.</p>
+
+          <div id="resContainer">
+          </div>
+          <template id="resTemplate">
+            <div class="col-lg-4 col-sm-6 col-xs-6 cardCover">
+              <div class="cardContent">
+                <h3></h3>
+                <div class="links"></div>
+              </div>
+            </div>
+          </template>
+
+        </div>
+        <div id="uploadPage">
+
+          <!--Here the form template will be created -->
+          <div class="container">
+              <div class="">
+                <h2 class="text-center" style="color:#000;">Upload Files</h2>
+              </div>
+              <div id="formContainer" style="color:#000;">
+
+              </div>
+              <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+              <button class="btn btn-dark" id="addTemplateButton" style="float:left">Add another Resource</button>
+              <br>
+              <br>
+              <!-- <button type="button" class="btn btn-dark " data-onsuccess="onSignIn" >Submit</button> -->
+              <div id="gSignInWrapper">
+
+                <div id="customBtn" class="customGPlusSignIn">
+
+                  <button type="button" class="btn btn-dark" data-onsuccess="onSignIn">Submit</button>
+                  <!--<span class="buttonText">submit</span>-->
+                  <div id="name">
+
+                  </div>
+                  <p style="color:black;">If you are already signed in, then sign out from the browser and sign in with institute email-id</p>
+
+                </div>
+              </div>
+
+
+
+              <template id="uploadtemplate">
+                  <div class="encloseForm">
+                      <form enctype="multipart/form-data" class="upload-form-subunit">
+                          <div class="form-row">
+                            <div class="form-group col">
+                            <div class="subjectBar autocomplete" style="width: 100%">
+                                  <label for="subjectName">Subject Name</label>
+                                    <input class="form-control subjectName" id="subjectName" type="text" name="subjectName" placeholder="Enter Subject Name " autocomplete="off" required>
+                            </div>
+                            </div>
+                              <div class="form-group autocomplete col-sm-4">
+                                      <label for="subjectCode">Subject Code</label>
+                                        <input class="form-control subjectCode" id="subjectCode" type="text" name="subjectCode" placeholder="Subject Code (e.g CS1L001)" autocomplete="off" required>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="form-group col-sm-4">
+                                  <label for="Type">Type</label>
+                                  <select class="form-control restype" id="type" name="type" required >
+                                      <option value="endsem" selected>Endsem</option>
+                                      <option value="midsem">Midsem</option>
+                                      <option value="tutorial">Tutorial</option>
+                                      <option value="quiz">Quiz</option>
+                                      <option value="others">Others</option>
+                                  </select>
+                              </div>
+
+                              <div class="form-group resDescription col-lg-8" style="display:none ">
+                                <label for="resDesc">Describe Resource (3 words)</label><br>
+                                <input type="text" class="col-lg-12" name="resDesc" id ="description" style=" padding:4px;padding-left:25px;"placeholder="E.g.   Diodes tutorial , Fluid Mechanics Material.">
+                              </div>
+                          </div>
+                          <div class="form-group col-sm-4" style="padding:0;">
+                              <label for="Semester">Semester</label>
+                              <select class="form-control" id="semester" name="semester" required>
+                                  <option value="autumn" selected>Autumn</option>
+                                  <option value="spring">Spring</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="Year">Question paper of Year</label>
+                              <select class="form-control col-sm-6 col-lg-2" id="year" name="year" required>
+                                  <option value="2019" selected>2019</option>
+                                  <option value='2018'>2018</option>
+                                  <option value='2017'>2017</option>
+                                  <option value='2016'>2016</option>
+                              </select>
+                          </div>
+
+                          <div class="form-row">
+                            <div id="filesubmit" class="form-group col-9 col-sm-3">
+                              <input type="file" class="file-select file" accept="pdf/*" required/>
+                            </div>
+                          </div>
+                      </form>
+                      <button class="btn btn-danger removeBtn mx-auto" style="float:right;">Remove</button>
+                      <br>
+                      <hr>
+                  </div>
+              </template>
+          </div>
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+          <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+          <!-- TODO: Add SDKs for Firebase products that you want to use
+               https://firebase.google.com/docs/web/setup#available-libraries -->
+          <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+          <script>
+            // Your web app's Firebase configuration
+         
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+
+          const storageRef = firebase.storage().ref();
+
+          </script>
+          <script>startApp();</script>
+</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <!-- <script src="./resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script> -->
+<!--        <script>-->
+<!--            document.addEventListener('DOMContentLoaded', function() {-->
+<!--                // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥-->
+<!--                // // The Firebase SDK is initialized and available here!-->
+<!--                //-->
+<!--                // firebase.auth().onAuthStateChanged(user => { });-->
+<!--                // firebase.database().ref('/path/to/ref').on('value', snapshot => { });-->
+<!--                // firebase.messaging().requestPermission().then(() => { });-->
+<!--                // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });-->
+<!--                //-->
+<!--                // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥-->
+
+<!--                try {-->
+<!--                    let app = firebase.app();-->
+<!--                    let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');-->
+<!--                    document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;-->
+<!--                } catch (e) {-->
+<!--                    console.error(e);-->
+<!--                    document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';-->
+<!--                }-->
+<!--            });-->
+<!--        </script>-->
+<!--bootstrap scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--bootbox scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.3.2/bootbox.js" integrity="sha256-/xtAmLBY+m2arbG5tgC75nJ3pC0zGLdo0hw8zEOuVF4=" crossorigin="anonymous"></script>
+<script src="./resources/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+  </div>
+    </body>
+</html>
