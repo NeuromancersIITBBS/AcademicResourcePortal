@@ -5,17 +5,7 @@
 
 var searchArray = [];
 var searchResult = [];
-/*
-$(document).ready(async function(){
-    let jsArray = await jsAllSubjects();  //calling model function
-    jsArray.forEach(function(item){
-        let searchID = item.subjectName + item.subjectCode;
-        searchID = searchID.toLowerCase();
-        let obj = { information: item, searchID: searchID};
-        searchArray.push(obj);
-    });
-});
-*/
+
 $(document).ready(async function(){
 
       $('#loadingDivContainer').css('z-index', '1');
